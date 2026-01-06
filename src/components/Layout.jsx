@@ -57,10 +57,10 @@ function Layout() {
                 right: 0,
                 zIndex: 100,
                 padding: scrolled ? '0.8rem 0' : '1.2rem 0',
-                background: scrolled ? 'rgba(10, 10, 12, 0.85)' : 'transparent',
+                background: scrolled ? 'rgba(255, 255, 255, 0.9)' : 'transparent',
                 backdropFilter: scrolled ? 'blur(20px)' : 'none',
                 WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
-                borderBottom: scrolled ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                borderBottom: scrolled ? '1px solid rgba(0, 0, 0, 0.05)' : 'none',
                 transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)'
             }}>
                 <div className="container" style={{
@@ -119,7 +119,7 @@ function Layout() {
                                     fontSize: '0.85rem',
                                     fontWeight: isActive ? 500 : 400,
                                     color: isActive ? 'var(--text-yuki)' : 'var(--text-ishi)',
-                                    background: isActive ? 'rgba(255,255,255,0.08)' : 'transparent',
+                                    background: isActive ? 'rgba(0, 0, 0, 0.05)' : 'transparent',
                                     textDecoration: 'none',
                                     transition: 'all 0.3s ease',
                                     letterSpacing: '0.02em'

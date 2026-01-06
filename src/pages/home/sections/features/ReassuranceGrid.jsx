@@ -35,7 +35,7 @@ const ReassuranceCard = ({ title, subtitle, desc, icon: Icon }) => {
                     padding: '2.5rem',
                     display: 'flex',
                     flexDirection: 'column',
-                    background: 'rgba(22, 22, 30, 0.4)',
+
                     border: '1px solid var(--border-kasumi)',
                     position: 'relative',
                     overflow: 'hidden'
