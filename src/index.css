@@ -751,15 +751,14 @@ a:hover {
   animation: skeleton-shimmer 2s infinite;
 }
 
-/* ===== Full Page Scroll Snap ===== */
+/* ===== Full Page Scroll Snap (Disabled) ===== */
+/* 
 .snap-container {
   height: 100vh;
   height: 100dvh;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
-  /* Hide scrollbar for cleaner look if desired, but keeping it for UX is usually better. 
-     User requested "One page one page", which implies strict pages. */
 }
 
 .snap-section {
@@ -774,10 +773,8 @@ a:hover {
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
-  /* Prevent spillover from breaking snap */
 }
 
-/* Allow scrolling within a section if content is too tall (e.g. mobile) */
 @media (max-height: 800px) {
   .snap-section.allow-scroll {
     justify-content: flex-start;
@@ -795,7 +792,7 @@ a:hover {
   height: 100vh;
   height: 100dvh;
   z-index: 60;
-  /* Above bg-grain (50) but below header (100) */
   padding-top: 0 !important;
   background: transparent;
-}
+} 
+*/
