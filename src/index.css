@@ -2,63 +2,62 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600&display=swap');
 
 :root {
-  /* === 色彩系統 (Color Palette) === */
+  /* === 色彩系統 (Color Palette - Light Mode) === */
 
-  /* 背景層 - 墨色系 */
-  --bg-sumi: #0a0a0c;
-  /* 墨 - 最深層 */
-  --bg-yoru: #0f0f14;
-  /* 夜 - 基礎層 */
-  --bg-shitan: #16161e;
-  /* 紫檀 - 浮層 */
-  --bg-kiri: rgba(255, 255, 255, 0.02);
-  /* 霧 - 薄透層 */
-  --bg-washi: rgba(255, 255, 255, 0.04);
+  /* 背景層 - 亮色系 */
+  --bg-sumi: #F5F5F7;
+  /* 雲 - 整體背景 */
+  --bg-yoru: #FFFFFF;
+  /* 雪 - 內容層 */
+  --bg-shitan: #FFFFFF;
+  /* 白 - 基礎層 */
+  --bg-kiri: rgba(0, 0, 0, 0.03);
+  /* 霧 - 浮層 */
+  --bg-washi: rgba(255, 255, 255, 0.7);
   /* 和紙 - 卡片質感 */
 
-  /* 主色調 - 和風色彩 */
+  /* 主色調 - 和風色彩 (適配亮色) */
   --shu: #E85C4A;
-  /* 朱赤 - 日本傳統紅 */
-  --shu-soft: #E85C4A20;
-  --shu-glow: rgba(232, 92, 74, 0.15);
+  /* 朱赤 */
+  --shu-soft: #E85C4A15;
+  --shu-glow: rgba(232, 92, 74, 0.1);
 
-  --fuji: #9D7CD8;
-  /* 藤紫 - 柔紫 */
-  --fuji-soft: #9D7CD820;
-  --fuji-glow: rgba(157, 124, 216, 0.15);
+  --fuji: #8A63D2;
+  /* 藤紫 - 加深以提高對比 */
+  --fuji-soft: #9D7CD815;
+  --fuji-glow: rgba(157, 124, 216, 0.1);
 
-  --asagi: #5EEAD4;
-  /* 淺蔥 - 青綠 */
-  --asagi-soft: #5EEAD420;
-  --asagi-glow: rgba(94, 234, 212, 0.15);
+  --asagi: #2DA493;
+  /* 淺蔥 - 加深以提高對比 */
+  --asagi-soft: #5EEAD415;
+  --asagi-glow: rgba(45, 164, 147, 0.1);
 
-  --kincha: #F5A623;
-  /* 金茶 - 暖金 */
-  --kincha-soft: #F5A62320;
+  --kincha: #D48806;
+  /* 金茶 - 加深 */
+  --kincha-soft: #F5A62315;
 
   --sakura: #FFB7C5;
-  /* 櫻 - 花粉 */
-  --sakura-soft: rgba(255, 183, 197, 0.1);
+  /* 櫻 - 裝飾用 */
 
-  /* 漸層 */
-  --grad-sunset: linear-gradient(135deg, #E85C4A 0%, #9D7CD8 100%);
-  --grad-dawn: linear-gradient(135deg, #9D7CD8 0%, #5EEAD4 100%);
-  --grad-washi: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.01) 100%);
-  --grad-ink: linear-gradient(180deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
+  /* 漸層 - 亮色版 */
+  --grad-sunset: linear-gradient(135deg, #E85C4A 0%, #8A63D2 100%);
+  --grad-dawn: linear-gradient(135deg, #8A63D2 0%, #2DA493 100%);
+  --grad-washi: linear-gradient(180deg, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 100%);
+  --grad-ink: linear-gradient(180deg, rgba(200, 200, 200, 0.3) 0%, transparent 100%);
 
-  /* 文字色彩 */
-  --text-yuki: #FAFAFA;
-  /* 雪白 - 主要文字 */
-  --text-nezumi: #A8A8B3;
-  /* 銀鼠 - 次要文字 */
-  --text-ishi: #626270;
-  /* 石墨 - 靜默文字 */
+  /* 文字色彩 - 深色 */
+  --text-yuki: #1D1D21;
+  /* 墨 - 主要文字 */
+  --text-nezumi: #5E5E66;
+  /* 鼠 - 次要文字 */
+  --text-ishi: #8E8E99;
+  /* 石 - 靜默文字 */
 
   /* 邊框 */
-  --border-kasumi: rgba(255, 255, 255, 0.06);
+  --border-kasumi: rgba(0, 0, 0, 0.08);
   /* 霞 - 柔邊 */
-  --border-kin: rgba(255, 255, 255, 0.12);
-  /* 金絲 */
+  --border-kin: rgba(0, 0, 0, 0.12);
+  /* 輪廓 */
 
   /* === 字體系統 === */
   --font-gothic: 'Zen Kaku Gothic New', 'Noto Sans JP', sans-serif;
@@ -72,10 +71,10 @@
   --radius-xl: 28px;
   --radius-full: 9999px;
 
-  /* === 陰影 - 水墨效果 === */
-  --shadow-ink: 0 4px 20px rgba(0, 0, 0, 0.4);
-  --shadow-float: 0 8px 30px rgba(0, 0, 0, 0.3);
-  --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.35);
+  /* === 陰影 - 柔和陰影 === */
+  --shadow-ink: 0 4px 20px rgba(0, 0, 0, 0.06);
+  --shadow-float: 0 8px 30px rgba(0, 0, 0, 0.08);
+  --shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
 
   /* === Z-Index === */
   --z-base: 1;
@@ -366,17 +365,7 @@ a:hover {
   }
 }
 
-@keyframes sakuraFall {
-  0% {
-    transform: translateY(-10px) rotate(0deg);
-    opacity: 1;
-  }
 
-  100% {
-    transform: translateY(100vh) rotate(360deg);
-    opacity: 0.3;
-  }
-}
 
 @keyframes pulse-soft {
 
@@ -526,17 +515,7 @@ a:hover {
 }
 
 /* ===== 櫻花粒子 ===== */
-.sakura-particle {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  background: var(--sakura);
-  border-radius: 50% 0 50% 50%;
-  opacity: 0.4;
-  pointer-events: none;
-  animation: sakuraFall linear infinite;
-  z-index: var(--z-particles);
-}
+
 
 /* ===== 捲軸樣式 ===== */
 ::-webkit-scrollbar {

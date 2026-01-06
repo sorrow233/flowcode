@@ -6,37 +6,6 @@ import { loadSavedTheme } from '../utils/theme'
 
 import { useTranslation } from 'react-i18next'
 
-// Sakura Particle Component
-const SakuraParticles = () => {
-    const [particles] = useState(() =>
-        Array.from({ length: 15 }, (_, i) => ({
-            id: i,
-            left: Math.random() * 100,
-            delay: Math.random() * 10,
-            duration: 10 + Math.random() * 15,
-            size: 6 + Math.random() * 8
-        }))
-    )
-
-    return (
-        <>
-            {particles.map(p => (
-                <div
-                    key={p.id}
-                    className="sakura-particle"
-                    style={{
-                        left: `${p.left}%`,
-                        width: `${p.size}px`,
-                        height: `${p.size}px`,
-                        animationDelay: `${p.delay}s`,
-                        animationDuration: `${p.duration}s`
-                    }}
-                />
-            ))}
-        </>
-    )
-}
-
 function Layout() {
     const { t } = useTranslation(['nav', 'common'])
     const location = useLocation()
@@ -79,7 +48,6 @@ function Layout() {
             {/* 背景層 */}
             <div className="bg-ink-wash" />
             <div className="bg-grain" />
-            <SakuraParticles />
 
             {/* 極簡導航 */}
             <header style={{
