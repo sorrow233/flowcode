@@ -158,8 +158,8 @@ function HomePage() {
                     color: 'var(--text-ishi)',
                     opacity: 0.4
                 }}>
-                    <div>版本 2.1.5</div>
-                    <div>穩定運行中</div>
+                    <div>{t('home.version', { version: '2.1.5' })}</div>
+                    <div>{t('home.stable')}</div>
                 </div>
 
                 {/* 左側裝飾 */}
@@ -173,7 +173,7 @@ function HomePage() {
                     opacity: 0.15,
                     writingMode: 'vertical-rl'
                 }}>
-                    流動的程式碼
+                    {t('home.flowing_code')}
                 </div>
             </section>
 
@@ -193,10 +193,10 @@ function HomePage() {
                             color: 'var(--text-yuki)',
                             marginBottom: '0.5rem'
                         }}>
-                            七步成詩
+                            {t('home.steps_title')}
                         </h2>
                         <p style={{ color: 'var(--text-ishi)', fontSize: '0.95rem' }}>
-                            從想法到上線，只需七個簡單步驟
+                            {t('home.steps_desc')}
                         </p>
                     </div>
 
@@ -245,7 +245,7 @@ function HomePage() {
                                     marginBottom: '1rem',
                                     fontWeight: 500
                                 }}>
-                                    視覺智能
+                                    {t('home.visual_intelligence_title')}
                                 </h3>
                                 <p style={{
                                     fontSize: '1.1rem',
@@ -253,7 +253,7 @@ function HomePage() {
                                     color: 'var(--text-nezumi)',
                                     marginBottom: 0
                                 }}>
-                                    停止編寫樣板代碼。FlowCode 理解您的意圖，即時構建架構。
+                                    {t('home.visual_intelligence_desc')}
                                 </p>
                             </div>
                         </WashiCard>
@@ -279,23 +279,23 @@ function HomePage() {
                                 fontSize: '1.2rem',
                                 marginBottom: '0.5rem'
                             }}>
-                                認知負荷：零
+                                {t('home.cognitive_load_title')}
                             </h4>
                             <p style={{
                                 fontSize: '0.9rem',
                                 color: 'var(--text-ishi)',
                                 marginBottom: 0
                             }}>
-                                忘記語法錯誤。IDE 處理語法，您專注於邏輯。
+                                {t('home.cognitive_load_desc')}
                             </p>
                         </WashiCard>
 
                         {/* 模塊卡片行 */}
                         {[
-                            { to: '/vision', num: '弐', title: '願景', desc: '描繪夢想藍圖', icon: '👁️', color: 'var(--asagi)' },
-                            { to: '/generation', num: '参', title: '生成', desc: '即時程式碼合成', icon: '⚡', color: 'var(--fuji)' },
-                            { to: '/cloudflare', num: '肆', title: '部署', desc: '全球邊緣網路', icon: '☁️', color: 'var(--kincha)' },
-                            { to: '/firebase', num: '伍', title: '存儲', desc: '無伺服器後端', icon: '🔥', color: 'var(--shu)' }
+                            { to: '/vision', num: '弐', title: t('home.vision_title'), desc: t('home.vision_desc'), icon: '👁️', color: 'var(--asagi)' },
+                            { to: '/generation', num: '参', title: t('home.generation_title'), desc: t('home.generation_desc'), icon: '⚡', color: 'var(--fuji)' },
+                            { to: '/cloudflare', num: '肆', title: t('home.deploy_title'), desc: t('home.deploy_desc'), icon: '☁️', color: 'var(--kincha)' },
+                            { to: '/firebase', num: '伍', title: t('home.storage_title'), desc: t('home.storage_desc'), icon: '🔥', color: 'var(--shu)' }
                         ].map((card, i) => (
                             <WashiCard
                                 key={card.to}
@@ -364,15 +364,14 @@ function HomePage() {
                         lineHeight: 2,
                         fontFamily: 'var(--font-gothic)'
                     }}>
-                        「不執著於語法，專注於創意。<br />
-                        讓 AI 成為你的執行者，你只需做決策者。」
+                        {t('home.philosophy_quote').split('\n').map((line, i) => <span key={i}>{line}<br /></span>)}
                     </p>
                     <div style={{
                         marginTop: '2rem',
                         fontSize: '0.85rem',
                         color: 'var(--text-ishi)'
                     }}>
-                        — FlowCode 開發理念
+                        {t('home.philosophy_author')}
                     </div>
                 </div>
 
@@ -389,9 +388,9 @@ function HomePage() {
                     fontSize: '0.75rem',
                     color: 'var(--text-ishi)'
                 }}>
-                    <span>© 2026 FlowCode v2.1.5</span>
+                    <span>{t('home.copyright', { year: 2026, version: '2.1.5' })}</span>
                     <a href="https://github.com/sorrow233/flowcode" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>GitHub</a>
-                    <span>Built with Antigravity</span>
+                    <span>{t('home.built_with')}</span>
                 </div>
             </section>
         </div>

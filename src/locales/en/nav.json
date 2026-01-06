@@ -1,0 +1,15 @@
+{
+    "nav": "Navigation",
+    "theme": "Theme",
+    "lang": "Language",
+    "system": "System",
+    "home": "Home",
+    "download": "I. Download",
+    "vision": "II. Vision",
+    "generation": "III. Gen",
+    "deploy": "IV. Deploy",
+    "storage": "V. Storage",
+    "domain": "VI. Domain",
+    "success": "VII. Success",
+    "lang_zh": "Chinese"
+}

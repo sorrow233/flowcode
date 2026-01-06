@@ -1,0 +1,37 @@
+{
+    "hero": {
+        "system_online": "System Online",
+        "title_flow": "F L O W",
+        "title_code": "C O D E",
+        "subtitle": "\"Create infinite possibilities with natural language\"",
+        "subtitle_sub": "AI Native Development Environment",
+        "cta_start": "Start Journey",
+        "cta_github": "GitHub →"
+    },
+    "cmd": {
+        "placeholder": "Type a command or search...",
+        "empty": "No results found.",
+        "success": "Success",
+        "switch_theme": "Switch to",
+        "github": "View GitHub Source"
+    },
+    "home": {
+        "steps_title": "Seven Steps to Poetry",
+        "steps_desc": "From Idea to Live in 7 Simple Steps",
+        "visual_intelligence_title": "Visual Intelligence",
+        "visual_intelligence_desc": "Stop writing boilerplate. FlowCode understands your intent and builds architecture instantly.",
+        "cognitive_load_title": "Cognitive Load: Zero",
+        "cognitive_load_desc": "Forget syntax errors. The IDE handles syntax, you focus on logic.",
+        "vision_desc": "Paint the Dream Blueprint",
+        "generation_desc": "Instant Code Synthesis",
+        "deploy_desc": "Global Edge Network",
+        "storage_desc": "Serverless Backend",
+        "philosophy_quote": "\"Don't obsess over syntax, focus on creativity.\nLet AI be your executor, you just be the decision maker.\"",
+        "philosophy_author": "— FlowCode Development Philosophy",
+        "version": "Version {{version}}",
+        "stable": "System Stable",
+        "flowing_code": "Flowing Code",
+        "copyright": "© {{year}} FlowCode v{{version}}",
+        "built_with": "Built with Antigravity"
+    }
+}

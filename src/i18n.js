@@ -2,20 +2,62 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-import translationZH from './locales/zh/translation.json';
-import translationEN from './locales/en/translation.json';
-import translationJA from './locales/ja/translation.json';
+import commonCN from './locales/zh-CN/common.json';
+import navCN from './locales/zh-CN/nav.json';
+import authCN from './locales/zh-CN/auth.json';
+import errorsCN from './locales/zh-CN/errors.json';
+
+import commonTW from './locales/zh-TW/common.json';
+import navTW from './locales/zh-TW/nav.json';
+import authTW from './locales/zh-TW/auth.json';
+import errorsTW from './locales/zh-TW/errors.json';
+
+import commonEN from './locales/en/common.json';
+import navEN from './locales/en/nav.json';
+import authEN from './locales/en/auth.json';
+import errorsEN from './locales/en/errors.json';
+
+import commonJA from './locales/ja/common.json';
+import navJA from './locales/ja/nav.json';
+import authJA from './locales/ja/auth.json';
+import errorsJA from './locales/ja/errors.json';
+
+import commonKO from './locales/ko/common.json';
+import navKO from './locales/ko/nav.json';
+import authKO from './locales/ko/auth.json';
+import errorsKO from './locales/ko/errors.json';
 
 const resources = {
-    zh: {
-        translation: translationZH,
+    'zh-CN': {
+        common: commonCN,
+        nav: navCN,
+        auth: authCN,
+        errors: errorsCN
+    },
+    'zh-TW': {
+        common: commonTW,
+        nav: navTW,
+        auth: authTW,
+        errors: errorsTW
     },
     en: {
-        translation: translationEN,
+        common: commonEN,
+        nav: navEN,
+        auth: authEN,
+        errors: errorsEN
     },
     ja: {
-        translation: translationJA,
+        common: commonJA,
+        nav: navJA,
+        auth: authJA,
+        errors: errorsJA
     },
+    ko: {
+        common: commonKO,
+        nav: navKO,
+        auth: authKO,
+        errors: errorsKO
+    }
 };
 
 i18n
@@ -23,12 +65,17 @@ i18n
     .use(initReactI18next)
     .init({
         resources,
-        fallbackLng: 'zh',
+        fallbackLng: 'en',
+        ns: ['common', 'nav', 'auth', 'errors'],
+        defaultNS: 'common',
         debug: true,
-
         interpolation: {
-            escapeValue: false, // not needed for react as it escapes by default
+            escapeValue: false,
         },
+        detection: {
+            order: ['localStorage', 'navigator'],
+            caches: ['localStorage'],
+        }
     });
 
 export default i18n;

@@ -18,7 +18,7 @@ import {
 import { themes, applyTheme } from '../utils/theme'
 
 export const CommandPalette = () => {
-    const { t } = useTranslation()
+    const { t } = useTranslation(['common', 'nav'])
     const [open, setOpen] = useState(false)
     const navigate = useNavigate()
 
@@ -40,14 +40,14 @@ export const CommandPalette = () => {
     }
 
     const navItems = [
-        { icon: <Home size={18} />, label: t('cmd.home'), path: '/' },
-        { icon: <Download size={18} />, label: t('cmd.download'), path: '/download' },
-        { icon: <Map size={18} />, label: t('cmd.vision'), path: '/vision' },
-        { icon: <Zap size={18} />, label: t('cmd.generation'), path: '/generation' },
-        { icon: <Cloud size={18} />, label: t('cmd.deploy'), path: '/cloudflare' },
-        { icon: <Database size={18} />, label: t('cmd.storage'), path: '/firebase' },
-        { icon: <Globe size={18} />, label: t('cmd.domain'), path: '/domain' },
-        { icon: <CheckCircle size={18} />, label: t('cmd.success'), path: '/success' },
+        { icon: <Home size={18} />, label: t('nav:home'), path: '/' },
+        { icon: <Download size={18} />, label: t('nav:download'), path: '/download' },
+        { icon: <Map size={18} />, label: t('nav:vision'), path: '/vision' },
+        { icon: <Zap size={18} />, label: t('nav:generation'), path: '/generation' },
+        { icon: <Cloud size={18} />, label: t('nav:deploy'), path: '/cloudflare' },
+        { icon: <Database size={18} />, label: t('nav:storage'), path: '/firebase' },
+        { icon: <Globe size={18} />, label: t('nav:domain'), path: '/domain' },
+        { icon: <CheckCircle size={18} />, label: t('nav:success'), path: '/success' },
     ]
 
     return (
@@ -57,11 +57,11 @@ export const CommandPalette = () => {
             label="Global Command Menu"
         >
             <div className="cmdk-overlay" />
-            <Command.Input placeholder={t('cmd.placeholder')} />
+            <Command.Input placeholder={t('common:cmd.placeholder')} />
             <Command.List>
-                <Command.Empty>{t('cmd.empty')}</Command.Empty>
+                <Command.Empty>{t('common:cmd.empty')}</Command.Empty>
 
-                <Command.Group heading={t('cmd.nav')}>
+                <Command.Group heading={t('nav:nav')}>
                     {navItems.map((item) => (
                         <Command.Item
                             key={item.path}
@@ -73,37 +73,37 @@ export const CommandPalette = () => {
                     ))}
                 </Command.Group>
 
-                <Command.Group heading={t('cmd.theme')}>
+                <Command.Group heading={t('nav:theme')}>
                     {Object.entries(themes).map(([key, theme]) => (
                         <Command.Item
                             key={key}
                             onSelect={() => runCommand(() => applyTheme(key))}
                         >
                             <Palette size={18} />
-                            {t('cmd.switch_theme')} {theme.name}
+                            {t('common:cmd.switch_theme')} {theme.name}
                         </Command.Item>
                     ))}
                 </Command.Group>
 
-                <Command.Group heading={t('cmd.lang')}>
-                    <Command.Item onSelect={() => runCommand(() => i18n.changeLanguage('zh'))}>
+                <Command.Group heading={t('nav:lang')}>
+                    <Command.Item onSelect={() => runCommand(() => i18n.changeLanguage('zh-CN'))}>
                         <Globe size={18} />
-                        {t('cmd.lang_zh')}
+                        {t('nav:lang_zh')}
                     </Command.Item>
                     <Command.Item onSelect={() => runCommand(() => i18n.changeLanguage('en'))}>
                         <Globe size={18} />
-                        {t('cmd.lang_en')}
+                        {t('nav:lang_en')}
                     </Command.Item>
                     <Command.Item onSelect={() => runCommand(() => i18n.changeLanguage('ja'))}>
                         <Globe size={18} />
-                        {t('cmd.lang_ja')}
+                        {t('nav:lang_ja')}
                     </Command.Item>
                 </Command.Group>
 
-                <Command.Group heading={t('cmd.system')}>
+                <Command.Group heading={t('nav:system')}>
                     <Command.Item onSelect={() => runCommand(() => window.open('https://github.com/sorrow233/flowcode', '_blank'))}>
                         <Monitor size={18} />
-                        {t('cmd.github')}
+                        {t('common:cmd.github')}
                     </Command.Item>
                 </Command.Group>
 

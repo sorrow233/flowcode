@@ -4,6 +4,8 @@ import { CommandPalette } from './CommandPalette'
 import AnimatedOutlet from './AnimatedOutlet'
 import { loadSavedTheme } from '../utils/theme'
 
+import { useTranslation } from 'react-i18next'
+
 // Sakura Particle Component
 const SakuraParticles = () => {
     const [particles] = useState(() =>
@@ -36,6 +38,7 @@ const SakuraParticles = () => {
 }
 
 function Layout() {
+    const { t } = useTranslation(['nav', 'common'])
     const location = useLocation()
     const [scrolled, setScrolled] = useState(false)
 
@@ -59,14 +62,14 @@ function Layout() {
     }, [])
 
     const navLinks = [
-        { path: '/', label: '首頁', icon: '◈' },
-        { path: '/download', label: '壱・下載' },
-        { path: '/vision', label: '弐・願景' },
-        { path: '/generation', label: '参・生成' },
-        { path: '/cloudflare', label: '肆・部署' },
-        { path: '/firebase', label: '伍・存儲' },
-        { path: '/domain', label: '陸・域名' },
-        { path: '/success', label: '柒・完成' }
+        { path: '/', label: t('nav:home'), icon: '◈' },
+        { path: '/download', label: t('nav:download') },
+        { path: '/vision', label: t('nav:vision') },
+        { path: '/generation', label: t('nav:generation') },
+        { path: '/cloudflare', label: t('nav:deploy') },
+        { path: '/firebase', label: t('nav:storage') },
+        { path: '/domain', label: t('nav:domain') },
+        { path: '/success', label: t('nav:success') }
     ]
 
     return (

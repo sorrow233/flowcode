@@ -1,0 +1,37 @@
+{
+    "hero": {
+        "system_online": "系统在线",
+        "title_flow": "F L O W",
+        "title_code": "C O D E",
+        "subtitle": "「 用自然语言，创造无限可能 」",
+        "subtitle_sub": "AI 原生开发环境",
+        "cta_start": "开始旅程",
+        "cta_github": "GitHub →"
+    },
+    "cmd": {
+        "placeholder": "输入指令 or 搜索页面...",
+        "empty": "找不到结果",
+        "success": "完成",
+        "switch_theme": "切换至",
+        "github": "查看 GitHub 源码"
+    },
+    "home": {
+        "steps_title": "七步成诗",
+        "steps_desc": "从想法到上线，只需七个简单步骤",
+        "visual_intelligence_title": "视觉智能",
+        "visual_intelligence_desc": "停止编写样板代码。FlowCode 理解您的意图，即时构建架构。",
+        "cognitive_load_title": "认知负荷：零",
+        "cognitive_load_desc": "忘记语法错误。IDE 处理语法，您专注于逻辑。",
+        "vision_desc": "描绘梦想蓝图",
+        "generation_desc": "即时代码合成",
+        "deploy_desc": "全球边缘网络",
+        "storage_desc": "无服务器后端",
+        "philosophy_quote": "「不执着于语法，专注于创意。\n让 AI 成为你的执行者，你只需做决策者。」",
+        "philosophy_author": "— FlowCode 开发理念",
+        "version": "版本 {{version}}",
+        "stable": "稳定运行中",
+        "flowing_code": "流动的代码",
+        "copyright": "© {{year}} FlowCode v{{version}}",
+        "built_with": "Built with Antigravity"
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "nav": "ナビゲーション",
+    "theme": "テーマ",
+    "lang": "言語",
+    "system": "システム",
+    "home": "ホーム",
+    "download": "壱・ダウンロード",
+    "vision": "弐・ビジョン",
+    "generation": "参・生成",
+    "deploy": "肆・デプロイ",
+    "storage": "伍・ストレージ",
+    "domain": "陸・ドメイン",
+    "success": "柒・完了",
+    "lang_zh": "中国語"
+}

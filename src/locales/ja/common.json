@@ -1,0 +1,41 @@
+{
+    "hero": {
+        "system_online": "System Online",
+        "title_flow": "F L O W",
+        "title_code": "C O D E",
+        "subtitle": "「 自然言語で、無限の可能性を 」",
+        "subtitle_sub": "AI ネイティブ開発環境",
+        "cta_start": "旅を始める",
+        "cta_github": "GitHub →"
+    },
+    "cmd": {
+        "placeholder": "コマンドを入力または検索...",
+        "empty": "結果が見つかりません",
+        "success": "完了",
+        "switch_theme": "切り替え",
+        "github": "GitHub ソースを表示"
+    },
+    "home": {
+        "steps_title": "七歩の詩",
+        "steps_desc": "アイデアから公開まで、たった7つのステップ",
+        "visual_intelligence_title": "視覚的知能",
+        "visual_intelligence_desc": "テンプレートコードを書くのをやめましょう。FlowCode は意図を理解し、アーキテクチャを即座に構築します。",
+        "cognitive_load_title": "認知負荷：ゼロ",
+        "cognitive_load_desc": "構文エラーを忘れてください。IDE が構文を処理し、あなたはロジックに集中します。",
+        "vision_title": "ビジョン",
+        "vision_desc": "夢の青写真を描く",
+        "generation_title": "生成",
+        "generation_desc": "即時コード合成",
+        "deploy_title": "デプロイ",
+        "deploy_desc": "グローバルエッジネットワーク",
+        "storage_title": "ストレージ",
+        "storage_desc": "サーバーレスバックエンド",
+        "philosophy_quote": "「構文に固執せず、創造性に集中する。\nAI を実行者にし、あなたは意思決定者になる。」",
+        "philosophy_author": "— FlowCode 開発理念",
+        "version": "バージョン {{version}}",
+        "stable": "安定稼働中",
+        "flowing_code": "流動するコード",
+        "copyright": "© {{year}} FlowCode v{{version}}",
+        "built_with": "Built with Antigravity"
+    }
+}

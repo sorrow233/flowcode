@@ -1,0 +1,41 @@
+{
+    "hero": {
+        "system_online": "시스템 온라인",
+        "title_flow": "F L O W",
+        "title_code": "C O D E",
+        "subtitle": "「 자연어 코딩, 무한한 가능성을 창조하다 」",
+        "subtitle_sub": "AI 네이티브 개발 환경",
+        "cta_start": "시작하기",
+        "cta_github": "GitHub →"
+    },
+    "cmd": {
+        "placeholder": "명령어 입력 또는 검색...",
+        "empty": "결과를 찾을 수 없습니다",
+        "success": "완료",
+        "switch_theme": "테마 변경",
+        "github": "GitHub 소스 보기"
+    },
+    "home": {
+        "steps_title": "일곱 걸음의 시",
+        "steps_desc": "아이디어에서 출시까지, 단 7단계",
+        "visual_intelligence_title": "시각적 지능",
+        "visual_intelligence_desc": "상용구 코드 작성을 멈추세요. FlowCode가 의도를 이해하고 아키텍처를 즉시 구축합니다.",
+        "cognitive_load_title": "인지 부하: 제로",
+        "cognitive_load_desc": "문법 오류는 잊으세요. IDE가 문법을 처리하고, 당신은 로직에 집중하세요.",
+        "vision_title": "비전",
+        "vision_desc": "꿈의 청사진 그리기",
+        "generation_title": "생성",
+        "generation_desc": "즉각적인 코드 합성",
+        "deploy_title": "배포",
+        "deploy_desc": "글로벌 엣지 네트워크",
+        "storage_title": "스토리지",
+        "storage_desc": "서버리스 백엔드",
+        "philosophy_quote": "「문법에 집착하지 말고 창의성에 집중하세요.\nAI가 실행자가 되고, 당신은 결정자가 되세요.」",
+        "philosophy_author": "— FlowCode 개발 철학",
+        "version": "버전 {{version}}",
+        "stable": "시스템 안정",
+        "flowing_code": "흐르는 코드",
+        "copyright": "© {{year}} FlowCode v{{version}}",
+        "built_with": "Built with Antigravity"
+    }
+}

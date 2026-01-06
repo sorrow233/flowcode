@@ -1,0 +1,15 @@
+{
+    "nav": "탐색",
+    "theme": "테마",
+    "lang": "언어",
+    "system": "시스템",
+    "home": "홈",
+    "download": "1・다운로드",
+    "vision": "2・비전",
+    "generation": "3・생성",
+    "deploy": "4・배포",
+    "storage": "5・스토리지",
+    "domain": "6・도 main",
+    "success": "7・완료",
+    "lang_zh": "중국어"
+}

@@ -1,0 +1,41 @@
+{
+    "hero": {
+        "system_online": "系統在線",
+        "title_flow": "F L O W",
+        "title_code": "C O D E",
+        "subtitle": "「 用自然語言，創造無限可能 」",
+        "subtitle_sub": "AI 原生開發環境",
+        "cta_start": "開始旅程",
+        "cta_github": "GitHub →"
+    },
+    "cmd": {
+        "placeholder": "輸入指令 or 搜尋頁面...",
+        "empty": "找不到結果",
+        "success": "完成",
+        "switch_theme": "切換至",
+        "github": "查看 GitHub 源碼"
+    },
+    "home": {
+        "steps_title": "七步成詩",
+        "steps_desc": "從想法到上線，只需七個簡單步驟",
+        "visual_intelligence_title": "視覺智能",
+        "visual_intelligence_desc": "停止編寫樣板代碼。FlowCode 理解您的意圖，即時構建架構。",
+        "cognitive_load_title": "認知負荷：零",
+        "cognitive_load_desc": "忘記語法錯誤。IDE 處理語法，您專注於邏輯。",
+        "vision_title": "願景",
+        "vision_desc": "描繪夢想藍圖",
+        "generation_title": "生成",
+        "generation_desc": "即時代碼合成",
+        "deploy_title": "部署",
+        "deploy_desc": "全球邊緣網絡",
+        "storage_title": "存儲",
+        "storage_desc": "無服務器後端",
+        "philosophy_quote": "「不執著於語法，專注於創意。\n讓 AI 成為你的執行者，你只需做決策者。」",
+        "philosophy_author": "— FlowCode 開發理念",
+        "version": "版本 {{version}}",
+        "stable": "穩定運行中",
+        "flowing_code": "流動的程式碼",
+        "copyright": "© {{year}} FlowCode v{{version}}",
+        "built_with": "Built with Antigravity"
+    }
+}
