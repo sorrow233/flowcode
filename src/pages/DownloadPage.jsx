@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import CodeBlock from '../components/CodeBlock'
 
 function DownloadPage() {
@@ -58,10 +59,15 @@ function DownloadPage() {
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn btn-primary"
-                                style={{ width: '100%', maxWidth: '300px' }}
+                                style={{ width: '100%', maxWidth: '300px', marginBottom: 'var(--space-lg)' }}
                             >
                                 前往官网下载
                             </a>
+                            <div>
+                                <Link to="/vision" className="btn btn-secondary">
+                                    下一步：定义愿景 →
+                                </Link>
+                            </div>
                             <p style={{ marginTop: 'var(--space-md)', fontSize: 'var(--text-sm)' }}>
                                 支持 macOS, Windows 和 Linux
                             </p>
