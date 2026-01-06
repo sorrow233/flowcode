@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom'
-import { useTranslation, Trans } from 'react-i18next'
-import ProgressSidebar from '../components/ProgressSidebar'
+import { useStepProgress } from '../utils/useStepProgress'
 
 function DomainPage() {
     const { t } = useTranslation(['pages'])
+    const [activeIndex, setActiveIndex] = useStepProgress('domain', 0)
     const sidebarItems = t('domain.sidebar.items', { returnObjects: true })
 
     const providers = [
@@ -74,7 +73,7 @@ function DomainPage() {
                     <ProgressSidebar
                         title={t('domain.sidebar.title')}
                         items={sidebarItems}
-                        activeIndex={0}
+                        activeIndex={activeIndex}
                         whyTitle={t('domain.sidebar.why_title')}
                         whyDesc={t('domain.sidebar.why_desc')}
                     />
@@ -118,6 +117,7 @@ function DomainPage() {
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="surface-card"
+                                        onClick={() => setActiveIndex(1)}
                                         style={{
                                             padding: '1.25rem',
                                             display: 'flex',
