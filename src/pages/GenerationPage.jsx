@@ -1,26 +1,17 @@
 import { Link } from 'react-router-dom'
+import { Copy, Coffee } from 'lucide-react'
+import { toast } from 'sonner'
+import { useTranslation, Trans } from 'react-i18next'
 
 function GenerationPage() {
-    const steps = [
-        {
-            num: '01',
-            title: '整合指令',
-            desc: '將你的原始願景與 AI 在第二步中的「理解確認 + 建議」合併成一個完整的指令塊。',
-            color: 'var(--asagi)'
-        },
-        {
-            num: '02',
-            title: '發送至 Antigravity',
-            desc: '將這個指令塊貼入 IDE 對話框，按下 Enter。',
-            color: 'var(--fuji)'
-        },
-        {
-            num: '03',
-            title: '等待創造',
-            desc: 'AI 會自動規劃文件結構並編寫程式碼。觀察進度條直到顯示「任務完成」。',
-            color: 'var(--kincha)'
-        }
-    ]
+    const { t } = useTranslation(['pages'])
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(t('generation.ai_cmd.text'))
+        toast.success(t('vision.generator.copy_toast'))
+    }
+
+    const steps = t('generation.steps', { returnObjects: true })
 
     return (
         <>
@@ -30,15 +21,15 @@ function GenerationPage() {
                     <div className="scroll-title animate-enter">
                         <span style={{
                             fontFamily: 'var(--font-mincho)',
-                            color: 'var(--fuji)'
-                        }}>参</span>
-                        <span style={{ color: 'var(--text-nezumi)' }}>第三步</span>
+                            color: 'var(--kincha)'
+                        }}>{t('generation.step_num_kanji')}</span>
+                        <span style={{ color: 'var(--text-nezumi)' }}>{t('generation.step_num_text')}</span>
                     </div>
                     <h1 className="animate-enter delay-100 text-gradient-asagi" style={{
                         fontSize: '2.8rem',
                         marginBottom: '1rem'
                     }}>
-                        程式碼生成
+                        {t('generation.title')}
                     </h1>
                     <p className="animate-enter delay-200" style={{
                         fontSize: '1.1rem',
@@ -46,87 +37,83 @@ function GenerationPage() {
                         maxWidth: '500px',
                         margin: '0 auto'
                     }}>
-                        見證魔法。讓 AI 將你的想法轉化為現實。
+                        {t('generation.subtitle')}
                     </p>
                 </div>
             </section>
 
             {/* 主要內容 */}
             <section className="page-content" style={{ marginTop: '-2rem' }}>
-                <div className="container" style={{ maxWidth: '700px' }}>
+                <div className="container" style={{ maxWidth: '750px' }}>
                     <div className="washi-card-dark animate-enter delay-300" style={{ padding: '3rem' }}>
 
                         {/* 步驟列表 */}
-                        <div style={{
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '1.5rem',
-                            marginBottom: '2.5rem'
-                        }}>
-                            {steps.map((step, i) => (
-                                <div
-                                    key={step.num}
-                                    className="surface-card"
-                                    style={{
-                                        padding: '1.5rem',
-                                        display: 'flex',
-                                        gap: '1.25rem',
-                                        alignItems: 'flex-start'
-                                    }}
-                                >
+                        <div className="steps-list" style={{ marginBottom: '3rem' }}>
+                            {Array.isArray(steps) && steps.map((step, index) => (
+                                <div key={index} className="step-item" style={{
+                                    display: 'flex',
+                                    gap: '1.5rem',
+                                    marginBottom: '2rem'
+                                }}>
                                     <div style={{
-                                        fontFamily: 'var(--font-mincho)',
-                                        fontSize: '1.8rem',
-                                        fontWeight: 400,
-                                        color: step.color,
-                                        opacity: 0.6,
-                                        lineHeight: 1
-                                    }}>{step.num}</div>
+                                        fontSize: '1.5rem',
+                                        fontFamily: 'var(--font-mono)',
+                                        color: 'var(--kincha)',
+                                        opacity: 0.5,
+                                        fontWeight: 600
+                                    }}>
+                                        {step.num}
+                                    </div>
                                     <div>
                                         <h3 style={{
-                                            fontSize: '1.15rem',
-                                            marginBottom: '0.4rem',
-                                            fontWeight: 500
+                                            fontSize: '1.2rem',
+                                            marginBottom: '0.5rem',
+                                            color: 'var(--text-yuki)'
                                         }}>{step.title}</h3>
                                         <p style={{
-                                            color: 'var(--text-ishi)',
-                                            fontSize: '0.9rem',
+                                            color: 'var(--text-nezumi)',
                                             marginBottom: 0,
-                                            lineHeight: 1.7
+                                            lineHeight: 1.6
                                         }}>{step.desc}</p>
                                     </div>
                                 </div>
                             ))}
                         </div>
 
-                        {/* 提示卡片 */}
-                        <div style={{
-                            textAlign: 'center',
+                        {/* 休息卡片 */}
+                        <div className="surface-card" style={{
                             padding: '1.5rem',
-                            background: 'var(--bg-washi)',
-                            borderRadius: 'var(--radius-lg)'
+                            display: 'flex',
+                            gap: '1.25rem',
+                            alignItems: 'start',
+                            backgroundColor: 'rgba(212, 163, 115, 0.05)',
+                            borderColor: 'var(--kincha)',
+                            marginBottom: '2.5rem'
                         }}>
                             <div style={{
-                                fontSize: '1.5rem',
-                                marginBottom: '0.5rem'
-                            }}>☕️</div>
-                            <h4 style={{
-                                color: 'var(--text-yuki)',
-                                marginBottom: '0.5rem',
-                                fontWeight: 500
-                            }}>泡杯咖啡</h4>
-                            <p style={{
-                                color: 'var(--text-ishi)',
-                                fontSize: '0.9rem',
-                                marginBottom: 0
+                                color: 'var(--kincha)',
+                                marginTop: '0.2rem'
                             }}>
-                                根據複雜度，這可能需要幾分鐘。<br />
-                                你可以利用這段時間註冊下一步所需的帳號。
-                            </p>
+                                <Coffee size={24} />
+                            </div>
+                            <div>
+                                <h4 style={{
+                                    color: 'var(--kincha)',
+                                    marginBottom: '0.5rem',
+                                    fontSize: '1.1rem'
+                                }}>{t('generation.coffee_break.title')}</h4>
+                                <p style={{
+                                    color: 'var(--text-ishi)',
+                                    marginBottom: 0,
+                                    fontSize: '0.95rem'
+                                }}>
+                                    <Trans i18nKey="generation.coffee_break.desc" ns="pages" />
+                                </p>
+                            </div>
                         </div>
 
                         {/* AI 指令 */}
-                        <div style={{ marginTop: '2.5rem' }}>
+                        <div style={{ marginBottom: '2.5rem' }}>
                             <div style={{
                                 display: 'flex',
                                 alignItems: 'center',
@@ -144,19 +131,19 @@ function GenerationPage() {
                                     fontSize: '0.85rem',
                                     color: 'var(--bg-sumi)',
                                     fontWeight: 600
-                                }}>✨</span>
+                                }}>⚡</span>
                                 <h3 style={{
                                     fontSize: '1.2rem',
                                     margin: 0,
                                     fontWeight: 500
-                                }}>AI 生成指令</h3>
+                                }}>{t('generation.ai_cmd.title')}</h3>
                             </div>
                             <p style={{
                                 color: 'var(--text-ishi)',
                                 marginBottom: '1rem',
                                 paddingLeft: '2.5rem'
                             }}>
-                                複製以下指令給 AI，開始你的魔法之旅：
+                                {t('generation.ai_cmd.desc')}
                             </p>
                             <div style={{ paddingLeft: '2.5rem' }}>
                                 <div style={{
@@ -170,24 +157,53 @@ function GenerationPage() {
                                     position: 'relative',
                                     fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
                                 }}>
-                                    請幫我將我想法中的願景與你之前的建議合併，開始編寫程式碼。請確保使用最新的 React 和 CSS 技術棧。
+                                    {t('generation.ai_cmd.text')}
+                                    <button
+                                        onClick={handleCopy}
+                                        title={t('vision.generator.copy_toast')}
+                                        style={{
+                                            position: 'absolute',
+                                            top: '0.8rem',
+                                            right: '0.8rem',
+                                            background: 'var(--bg-sumi)',
+                                            border: '1px solid var(--border-kasumi)',
+                                            color: 'var(--text-nezumi)',
+                                            width: '32px',
+                                            height: '32px',
+                                            borderRadius: '6px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.2s'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.color = 'var(--asagi)'
+                                            e.currentTarget.style.borderColor = 'var(--asagi)'
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.color = 'var(--text-nezumi)'
+                                            e.currentTarget.style.borderColor = 'var(--border-kasumi)'
+                                        }}
+                                    >
+                                        <Copy size={14} />
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
                         {/* 導航按鈕 */}
                         <div style={{
-                            marginTop: '2.5rem',
                             display: 'flex',
                             justifyContent: 'space-between',
                             paddingTop: '2rem',
                             borderTop: '1px solid var(--border-kasumi)'
                         }}>
                             <Link to="/vision" className="btn btn-secondary">
-                                ← 願景
+                                {t('generation.nav.vision')}
                             </Link>
                             <Link to="/cloudflare" className="btn btn-primary">
-                                下一步：部署 →
+                                {t('generation.nav.cloudflare')}
                             </Link>
                         </div>
                     </div>

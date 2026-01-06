@@ -33,5 +33,14 @@
         "flowing_code": "流动的代码",
         "copyright": "© {{year}} FlowCode v{{version}}",
         "built_with": "Built with Antigravity"
+    },
+    "footer": {
+        "antigravity": "Antigravity",
+        "github": "GitHub",
+        "year": "二〇二六"
+    },
+    "logo": {
+        "char": "流",
+        "text": "FlowCode"
     }
 }

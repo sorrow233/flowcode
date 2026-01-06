@@ -1,28 +1,31 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 function DomainPage() {
+    const { t } = useTranslation(['pages'])
+
     const providers = [
         {
             icon: '🏷️',
-            name: 'Spaceship',
-            tag: '超低價',
-            desc: 'Namecheap 旗下新平台。介面極簡，價格極其透明，適合購買 .top, .xyz 等極速啟動域名。',
+            name: t('domain.providers.0.name'),
+            tag: t('domain.providers.0.tag'),
+            desc: t('domain.providers.0.desc'),
             featured: true,
             url: 'https://www.spaceship.com/'
         },
         {
             icon: '⚡',
-            name: 'Namecheap',
-            tag: '首年折扣',
-            desc: '老牌服務商，首年優惠力度極大 ( .xyz ~$1, .top ~$2 )，非常適合低成本專案實驗。',
+            name: t('domain.providers.1.name'),
+            tag: t('domain.providers.1.tag'),
+            desc: t('domain.providers.1.desc'),
             featured: false,
             url: 'https://www.namecheap.com/'
         },
         {
             icon: '☁️',
-            name: 'Cloudflare',
-            tag: '安全穩定',
-            desc: '以成本價售賣 (無任何加價)，長期持有成本最低。與 Pages 服務完美整合。',
+            name: t('domain.providers.2.name'),
+            tag: t('domain.providers.2.tag'),
+            desc: t('domain.providers.2.desc'),
             featured: false,
             url: 'https://www.cloudflare.com/products/registrar/'
         }
@@ -37,14 +40,14 @@ function DomainPage() {
                         <span style={{
                             fontFamily: 'var(--font-mincho)',
                             color: 'var(--sakura)'
-                        }}>陸</span>
-                        <span style={{ color: 'var(--text-nezumi)' }}>第六步</span>
+                        }}>{t('domain.step_num_kanji')}</span>
+                        <span style={{ color: 'var(--text-nezumi)' }}>{t('domain.step_num_text')}</span>
                     </div>
                     <h1 className="animate-enter delay-100 text-gradient-asagi" style={{
                         fontSize: '2.8rem',
                         marginBottom: '1rem'
                     }}>
-                        你的身份
+                        {t('domain.title')}
                     </h1>
                     <p className="animate-enter delay-200" style={{
                         fontSize: '1.1rem',
@@ -52,7 +55,7 @@ function DomainPage() {
                         maxWidth: '500px',
                         margin: '0 auto'
                     }}>
-                        自訂域名是你的數位資產
+                        {t('domain.subtitle')}
                     </p>
                 </div>
             </section>
@@ -66,12 +69,12 @@ function DomainPage() {
                             fontSize: '1.2rem',
                             marginBottom: '0.5rem',
                             fontWeight: 500
-                        }}>域名提供商</h3>
+                        }}>{t('domain.providers_title')}</h3>
                         <p style={{
                             color: 'var(--text-ishi)',
                             marginBottom: '0.5rem'
                         }}>
-                            我們推薦這些穩定且價格合理的提供商：
+                            {t('domain.providers_desc')}
                         </p>
                         <p style={{
                             fontSize: '0.8rem',
@@ -79,7 +82,7 @@ function DomainPage() {
                             marginBottom: '1.5rem',
                             opacity: 0.8
                         }}>
-                            * 均為官方直達連結，本專案無任何利益關係或佣金抽成。
+                            {t('domain.disclaimer')}
                         </p>
 
                         {/* 提供商卡片 */}
@@ -156,15 +159,13 @@ function DomainPage() {
                             background: 'var(--asagi-soft)'
                         }}>
                             <div className="info-box-title" style={{ color: 'var(--asagi)' }}>
-                                🔗 如何連結？
+                                {t('domain.connect_info.title')}
                             </div>
                             <p style={{
                                 color: 'var(--text-nezumi)',
                                 marginBottom: 0
                             }}>
-                                購買後，前往 Cloudflare Pages 專案設定 → <strong style={{ color: 'var(--text-yuki)' }}>Custom Domains</strong>。
-                                <br />
-                                Cloudflare 會自動處理 SSL 和 DNS。
+                                <Trans i18nKey="domain.connect_info.desc" ns="pages" />
                             </p>
                         </div>
 
@@ -177,10 +178,10 @@ function DomainPage() {
                             borderTop: '1px solid var(--border-kasumi)'
                         }}>
                             <Link to="/firebase" className="btn btn-secondary">
-                                ← 存儲
+                                {t('domain.nav.firebase')}
                             </Link>
                             <Link to="/success" className="btn btn-primary">
-                                完成 →
+                                {t('domain.nav.success')}
                             </Link>
                         </div>
                     </div>

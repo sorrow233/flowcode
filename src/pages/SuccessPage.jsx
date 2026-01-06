@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
+import { useTranslation, Trans } from 'react-i18next'
 
 function SuccessPage() {
+    const { t } = useTranslation(['pages'])
+
     return (
         <>
             {/* 頁面標題 */}
@@ -16,13 +19,13 @@ function SuccessPage() {
                         fontSize: '3rem',
                         marginBottom: '1rem'
                     }}>
-                        準備起飛
+                        {t('success.title')}
                     </h1>
                     <p className="animate-enter delay-200" style={{
                         fontSize: '1.2rem',
                         color: 'var(--text-nezumi)'
                     }}>
-                        你現在是一名開發者了
+                        {t('success.subtitle')}
                     </p>
                 </div>
             </section>
@@ -39,7 +42,7 @@ function SuccessPage() {
                             fontSize: '1.6rem',
                             marginBottom: '1rem',
                             fontWeight: 500
-                        }}>世界是你的畫布</h2>
+                        }}>{t('success.canvas_title')}</h2>
                         <p style={{
                             fontSize: '1.05rem',
                             color: 'var(--text-nezumi)',
@@ -47,8 +50,7 @@ function SuccessPage() {
                             margin: '0 auto 2.5rem',
                             lineHeight: 1.8
                         }}>
-                            你已擁有工具、願景和 AI。<br />
-                            從此刻起，你只需做兩件事：
+                            <Trans i18nKey="success.canvas_desc" ns="pages" />
                         </p>
 
                         {/* 兩步驟卡片 */}
@@ -69,12 +71,12 @@ function SuccessPage() {
                                     color: 'var(--text-yuki)',
                                     fontSize: '1.2rem',
                                     marginBottom: '0.5rem'
-                                }}>1. 提問</h3>
+                                }}>{t('success.steps.ask.title')}</h3>
                                 <p style={{
                                     color: 'var(--text-ishi)',
                                     fontSize: '0.9rem',
                                     marginBottom: 0
-                                }}>用日常語言描述你的想法</p>
+                                }}>{t('success.steps.ask.desc')}</p>
                             </div>
                             <div className="surface-card animate-float delay-200" style={{
                                 padding: '1.75rem',
@@ -88,12 +90,12 @@ function SuccessPage() {
                                     color: 'var(--text-yuki)',
                                     fontSize: '1.2rem',
                                     marginBottom: '0.5rem'
-                                }}>2. 迭代</h3>
+                                }}>{t('success.steps.iterate.title')}</h3>
                                 <p style={{
                                     color: 'var(--text-ishi)',
                                     fontSize: '0.9rem',
                                     marginBottom: 0
-                                }}>反覆優化直至完美</p>
+                                }}>{t('success.steps.iterate.desc')}</p>
                             </div>
                         </div>
 
@@ -120,23 +122,21 @@ function SuccessPage() {
                                 marginBottom: '1rem',
                                 fontFamily: 'var(--font-mincho)'
                             }}>
-                                🌟 巨人與你同行
+                                {t('success.giant.title')}
                             </div>
                             <p style={{
                                 marginBottom: '0.75rem',
                                 fontSize: '1.05rem',
                                 color: 'var(--text-yuki)'
                             }}>
-                                永遠不要懷疑自己。<br />
-                                在你身後站著<strong>人類歷史上最強大的 AI 模型</strong>。
+                                <Trans i18nKey="success.giant.text_1" ns="pages" />
                             </p>
                             <p style={{
                                 color: 'var(--text-nezumi)',
                                 fontSize: '0.95rem',
                                 marginBottom: 0
                             }}>
-                                你不是一個人在編程。你有一支世界級工程團隊 24/7 待命。<br />
-                                釋放創意，剩下的交給 AI。
+                                <Trans i18nKey="success.giant.text_2" ns="pages" />
                             </p>
                         </div>
 
@@ -152,7 +152,7 @@ function SuccessPage() {
                                 color: 'var(--text-ishi)',
                                 fontSize: '0.85rem'
                             }}>
-                                ℹ️ 本專案是 AI 輔助編程的非官方指南。我們強烈推薦 Google 的 Antigravity IDE 作為當前技術的巔峰之作。
+                                {t('success.disclaimer')}
                             </div>
                         </div>
 
@@ -168,14 +168,14 @@ function SuccessPage() {
                                 marginBottom: '1.5rem'
                             }}
                         >
-                            啟動任務 🚀
+                            {t('success.cta')}
                         </a>
                         <br />
                         <Link to="/domain" style={{
                             color: 'var(--text-ishi)',
                             fontSize: '0.9rem'
                         }}>
-                            ← 返回域名設定
+                            {t('success.back_domain')}
                         </Link>
                     </div>
                 </div>

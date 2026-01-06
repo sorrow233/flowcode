@@ -8,6 +8,28 @@
         "cta_start": "Start Journey",
         "cta_github": "GitHub →"
     },
+    "features": {
+        "eyebrow": "Development Flow",
+        "title": "Idea to Reality",
+        "title_highlight": "in 4 Steps",
+        "subtitle": "FlowCode distills complex development into a seamless journey. No coding experience. No environment setup.",
+        "step1_num": "壱",
+        "step1_title": "Capture Inspiration",
+        "step1_desc": "A screenshot, a sketch, or just a sentence. AI understands your intent — no technical jargon required. Your idea is the best input.",
+        "step1_cta": "Explore Vision",
+        "step2_num": "弐",
+        "step2_title": "Code Flows",
+        "step2_desc": "Watch code flow like ink across the screen. AI transforms your vision into real, runnable code — line by line, building your dream.",
+        "step2_cta": "Explore Generation",
+        "step3_num": "参",
+        "step3_title": "One-Click Deploy",
+        "step3_desc": "No server setup. No DevOps knowledge needed. Cloudflare's global edge network makes your creation accessible worldwide, instantly.",
+        "step3_cta": "Learn Deployment",
+        "step4_num": "肆",
+        "step4_title": "Website Born",
+        "step4_desc": "From a thought in your mind to a live website — in 10 minutes. This isn't magic. This is FlowCode.",
+        "step4_cta": "Start Creating"
+    },
     "cmd": {
         "placeholder": "Type a command or search...",
         "empty": "No results found.",

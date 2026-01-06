@@ -1,0 +1,226 @@
+```json
+{
+    "nav": {
+        "home": "← 首页",
+        "vision": "下一步：愿景 →"
+    },
+    "vision": {
+        "step_num_kanji": "弐",
+        "step_num_text": "第二步",
+        "title": "描绘愿景",
+        "subtitle": "告诉 AI 你想要什么。简单即是终极的复杂。",
+        "desc_title": "自然语言描述",
+        "desc_text": "打开 Antigravity IDE，在对话框中输入你的想法。<br />无需专业术语，只需回答这三个问题：",
+        "features": {
+            "target": {
+                "title": "目标",
+                "desc": "你想构建什么？"
+            },
+            "purpose": {
+                "title": "目的",
+                "desc": "为什么需要它？"
+            }
+        },
+        "generator": {
+            "title": "指令生成器",
+            "app_type_label": "1. 应用类型 <0>(Application Type)</0>",
+            "app_type_placeholder": "例如：极简待办清单、番茄钟、个人部落格",
+            "goal_label": "2. 解决什么问题 / 达成什么目标 <0>(Goal/Purpose)</0>",
+            "goal_placeholder": "例如：提醒我买牛奶、记录我的学习进度",
+            "button": "生成指令块",
+            "result_title": "✨ 已生成的指令 (Your Prompt)",
+            "copy_toast": "已复制到剪贴簿",
+            "prompt_template": "我正在开发一些软件，我给你一些我的想法，你理解我的想法之后，完整的把想法复述一下,然后给我完美的实现或者解决方案什么的，你只需要给思路，不要写代码\n\n我想构建一个：{{appType}}。我希望这个软件能解决：{{goal}}。",
+            "error_toast": "请填写完整资讯",
+            "success_toast": "提示词已生成！"
+        },
+        "gemini_link": "前往 Gemini 问 AI ↗",
+        "example": {
+            "title": "对话示例",
+            "user_text": "我想做一个极简的待办清单，用来提醒我买牛奶，风格像便利贴一样。",
+            "ai_response_title": "理解了：",
+            "ai_response_text_1": "你想要一个 <strong>便利贴风格的极简待办清单</strong>。",
+            "ai_response_title_2": "我的方案：",
+            "ai_response_text_2": "很棒的想法！便利贴美学增添了有趣的触感。建议使用黄色背景卡片搭配手写字体，去除复杂分类以保持纯粹。"
+        },
+        "ai_cmd": {
+            "title": "AI 沟通指令",
+            "desc": "复制以下指令给 AI，让它为你提供专业建议：",
+            "text": "请针对我的需求给出合理的建议，在你的回复中，你应该针对这个需求给出一个合理的方案，这个方案不涉及任何技术点。如果你没问题，我们将进行下一步。"
+        },
+        "nav": {
+            "download": "← 下载 IDE",
+            "generation": "下一步：生成 →"
+        }
+    },
+    "generation": {
+        "step_num_kanji": "参",
+        "step_num_text": "第三步",
+        "title": "程式码生成",
+        "subtitle": "见证魔法。让 AI 将你的想法转化为现实。",
+        "steps": [
+            {
+                "num": "01",
+                "title": "整合指令",
+                "desc": "将你的原始愿景与 AI 在第二步中的「理解确认 + 建议」合并成一个完整的指令块。"
+            },
+            {
+                "num": "02",
+                "title": "发送至 Antigravity",
+                "desc": "将这个指令块贴入 IDE 对话框，按下 Enter。"
+            },
+            {
+                "num": "03",
+                "title": "等待创造",
+                "desc": "AI 会自动规划文件结构并编写程式码。观察进度条直到显示「任务完成」。"
+            }
+        ],
+        "coffee_break": {
+            "title": "泡杯咖啡",
+            "desc": "根据复杂度，这可能需要几分钟。<br />你可以利用这段时间注册下一步所需的帐号。"
+        },
+        "ai_cmd": {
+            "title": "AI 生成指令",
+            "desc": "复制以下指令给 AI，开始你的魔法之旅：",
+            "text": "请帮我将我想法中的愿景与你之前的建议合并，开始编写程式码。请确保使用最新的 React 和 CSS 技术栈。"
+        },
+        "nav": {
+            "vision": "← 愿景",
+            "cloudflare": "下一步：部署 →"
+        }
+    },
+    "cloudflare": {
+        "step_num_kanji": "肆",
+        "step_num_text": "第四步",
+        "title": "全球部署",
+        "subtitle": "注册 Cloudflare，将你的网站推向全球边缘网路",
+        "steps": {
+            "1": {
+                "title": "创建帐号",
+                "desc": "Cloudflare 是全球领先的边缘网路。我们将使用它免费托管你的网站，享受企业级速度。",
+                "button": "前往 Cloudflare 注册 →"
+            },
+            "2": {
+                "title": "获取 API Token",
+                "desc": "让 AI 为你自动部署，需要生成一个 API Token：",
+                "list": [
+                    "登入 Cloudflare Dashboard",
+                    "点击右上角用户图示 → <0>My Profile</0>",
+                    "左侧选择 <0>API Tokens</0>",
+                    "点击 <0>Create Token</0>",
+                    "使用模板：<0>Edit Cloudflare Workers</0>",
+                    "滚动到底部点击 <0>Create Token</0>"
+                ]
+            },
+            "3": {
+                "title": "AI 部署指令",
+                "desc": "复制以下指令给 AI，让它为你完成部署：",
+                "text": "请在本地安装 npm 依赖，完成构建后推送到 Cloudflare Pages，并返回可点击的网站连结。"
+            }
+        },
+        "warning": {
+            "title": "🔑 重要：保存你的 Token",
+            "text_1": "Token 只会显示 <0>一次</0>。",
+            "text_2": "请立即复制到安全的地方（备忘录/密码管理器）。<br />下一步你将需要用到它。"
+        },
+        "nav": {
+            "generation": "← 生成",
+            "firebase": "下一步：存储 →"
+        }
+    },
+    "firebase": {
+        "step_num_kanji": "伍",
+        "step_num_text": "第五步",
+        "title": "无限存储",
+        "subtitle": "连接 Google Firebase，实现规模化数据存储",
+        "steps": {
+            "1": {
+                "title": "创建项目",
+                "desc": "Firebase 提供即用型实时数据库和身份验证服务。",
+                "button": "打开 Firebase 控制台 →"
+            },
+            "2": {
+                "title": "配置设定",
+                "list": [
+                    "点击 <0>当前项目</0>（在 IDE 设定中）",
+                    "选择 <0>Project Settings</0>",
+                    "滚动到 「Your apps」",
+                    "选择 <0>Web app</0> <1>&lt;/&gt;</1>",
+                    "复制 <0>firebaseConfig</0> 对象"
+                ]
+            },
+            "3": {
+                "title": "AI 配置指令",
+                "desc": "复制以下指令给 AI，让它为你完成数据库配置：",
+                "text": "我已经获取了 Firebase 配置，请帮我在 src/firebase.js 中填写，并完成初始化，确保应用可以正常进行数据库读写。"
+            }
+        },
+        "config_info": {
+            "title": "💾 配置放在哪里？",
+            "desc": "将配置贴入："
+        },
+        "nav": {
+            "cloudflare": "← 部署",
+            "domain": "下一步：域名 →"
+        }
+    },
+    "domain": {
+        "step_num_kanji": "陆",
+        "step_num_text": "第六步",
+        "title": "你的身份",
+        "subtitle": "自订域名是你的位元资产",
+        "providers_title": "域名提供商",
+        "providers_desc": "我们推荐这些稳定且价格合理的提供商：",
+        "disclaimer": "* 均为官方直达连结，本专案无任何利益关系或佣金抽成。",
+        "providers": [
+            {
+                "name": "Spaceship",
+                "tag": "超低价",
+                "desc": "Namecheap 旗下新平台。介面极简，价格极其透明，适合购买 .top, .xyz 等极速启动域名。"
+            },
+            {
+                "name": "Namecheap",
+                "tag": "首年折扣",
+                "desc": "老牌服务商，首年优惠力度极大 ( .xyz ~$1, .top ~$2 )，非常适合低成本专案实验。"
+            },
+            {
+                "name": "Cloudflare",
+                "tag": "安全稳定",
+                "desc": "以成本价售卖 (无任何加价)，长期持有成本最低。与 Pages 服务完美整合。"
+            }
+        ],
+        "connect_info": {
+            "title": "🔗 如何连结？",
+            "desc": "购买后，前往 Cloudflare Pages 专案设定 → <0>Custom Domains</0>。<br />Cloudflare 会自动处理 SSL 和 DNS。"
+        },
+        "nav": {
+            "firebase": "← 存储",
+            "success": "完成 →"
+        }
+    },
+    "success": {
+        "title": "准备起飞",
+        "subtitle": "你现在是一名开发者了",
+        "canvas_title": "世界是你的画布",
+        "canvas_desc": "你已拥有工具、愿景和 AI。<br />从此刻起，你只需做两件事：",
+        "steps": {
+            "ask": {
+                "title": "1. 提问",
+                "desc": "用日常语言描述你的想法"
+            },
+            "iterate": {
+                "title": "2. 迭代",
+                "desc": "反复优化直至完美"
+            }
+        },
+        "giant": {
+            "title": "🌟 巨人与你同行",
+            "text_1": "永远不要怀疑自己。<br />在你身后站着<strong>人类历史上最强大的 AI 模型</strong>。",
+            "text_2": "你不是一个人在编程。你有一支世界级工程团队 24/7 待命。<br />释放创意，剩下的交给 AI。"
+        },
+        "disclaimer": "ℹ️ 本专案是 AI 辅助编程的非官方指南。我们强烈推荐 Google 的 Antigravity IDE 作为当前技术的巅峰之作。",
+        "cta": "启动任务 🚀",
+        "back_domain": "← 返回域名设定"
+    }
+}
+```

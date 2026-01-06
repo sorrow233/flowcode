@@ -66,7 +66,7 @@ i18n
     .init({
         resources,
         fallbackLng: 'en',
-        ns: ['common', 'nav', 'auth', 'errors'],
+        ns: ['common', 'nav', 'auth', 'errors', 'pages'],
         defaultNS: 'common',
         debug: true,
         interpolation: {

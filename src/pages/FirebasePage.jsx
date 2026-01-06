@@ -1,6 +1,18 @@
 import { Link } from 'react-router-dom'
+import { useTranslation, Trans } from 'react-i18next'
+import { Copy } from 'lucide-react'
+import { toast } from 'sonner'
 
 function FirebasePage() {
+    const { t } = useTranslation(['pages'])
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(t('firebase.steps.3.text'))
+        toast.success(t('vision.generator.copy_toast'))
+    }
+
+    const step2List = t('firebase.steps.2.list', { returnObjects: true })
+
     return (
         <>
             {/* 頁面標題 */}
@@ -10,14 +22,14 @@ function FirebasePage() {
                         <span style={{
                             fontFamily: 'var(--font-mincho)',
                             color: 'var(--shu)'
-                        }}>伍</span>
-                        <span style={{ color: 'var(--text-nezumi)' }}>第五步</span>
+                        }}>{t('firebase.step_num_kanji')}</span>
+                        <span style={{ color: 'var(--text-nezumi)' }}>{t('firebase.step_num_text')}</span>
                     </div>
                     <h1 className="animate-enter delay-100 text-gradient-asagi" style={{
                         fontSize: '2.8rem',
                         marginBottom: '1rem'
                     }}>
-                        無限存儲
+                        {t('firebase.title')}
                     </h1>
                     <p className="animate-enter delay-200" style={{
                         fontSize: '1.1rem',
@@ -25,7 +37,7 @@ function FirebasePage() {
                         maxWidth: '500px',
                         margin: '0 auto'
                     }}>
-                        連接 Google Firebase，實現規模化數據存儲
+                        {t('firebase.subtitle')}
                     </p>
                 </div>
             </section>
@@ -59,7 +71,7 @@ function FirebasePage() {
                                     fontSize: '1.2rem',
                                     margin: 0,
                                     fontWeight: 500
-                                }}>創建專案</h3>
+                                }}>{t('firebase.steps.1.title')}</h3>
                             </div>
                             <p style={{
                                 color: 'var(--text-ishi)',
@@ -67,7 +79,7 @@ function FirebasePage() {
                                 paddingLeft: '2.5rem',
                                 lineHeight: 1.8
                             }}>
-                                Firebase 提供即用型實時數據庫和身份驗證服務。
+                                {t('firebase.steps.1.desc')}
                             </p>
                             <div style={{ paddingLeft: '2.5rem' }}>
                                 <a
@@ -81,7 +93,7 @@ function FirebasePage() {
                                         boxShadow: '0 0 15px var(--shu-soft)'
                                     }}
                                 >
-                                    打開 Firebase 控制台 →
+                                    {t('firebase.steps.1.button')}
                                 </a>
                             </div>
                         </div>
@@ -110,7 +122,7 @@ function FirebasePage() {
                                     fontSize: '1.2rem',
                                     margin: 0,
                                     fontWeight: 500
-                                }}>配置設定</h3>
+                                }}>{t('firebase.steps.2.title')}</h3>
                             </div>
 
                             <ul style={{
@@ -118,11 +130,13 @@ function FirebasePage() {
                                 color: 'var(--text-nezumi)',
                                 lineHeight: 2
                             }}>
-                                <li>點擊 <strong style={{ color: 'var(--text-yuki)' }}>當前專案</strong>（在 IDE 設定中）</li>
-                                <li>選擇 <strong style={{ color: 'var(--text-yuki)' }}>Project Settings</strong></li>
-                                <li>滾動到 「Your apps」</li>
-                                <li>選擇 <strong style={{ color: 'var(--text-yuki)' }}>Web app</strong> <code style={{ color: 'var(--asagi)' }}>&lt;/&gt;</code></li>
-                                <li>複製 <code style={{ color: 'var(--asagi)' }}>firebaseConfig</code> 對象</li>
+                                {Array.isArray(step2List) && step2List.map((item, index) => (
+                                    <li key={index}>
+                                        <Trans i18nKey={`firebase.steps.2.list.${index}`} ns="pages">
+                                            {item}
+                                        </Trans>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
@@ -132,13 +146,13 @@ function FirebasePage() {
                             background: 'var(--fuji-soft)'
                         }}>
                             <div className="info-box-title" style={{ color: 'var(--fuji)' }}>
-                                💾 配置放在哪裡？
+                                {t('firebase.config_info.title')}
                             </div>
                             <p style={{
                                 marginBottom: '0.75rem',
                                 color: 'var(--text-nezumi)'
                             }}>
-                                將配置貼入：
+                                {t('firebase.config_info.desc')}
                             </p>
                             <div style={{
                                 background: 'var(--bg-yoru)',
@@ -177,14 +191,14 @@ function FirebasePage() {
                                     fontSize: '1.2rem',
                                     margin: 0,
                                     fontWeight: 500
-                                }}>AI 配置指令</h3>
+                                }}>{t('firebase.steps.3.title')}</h3>
                             </div>
                             <p style={{
                                 color: 'var(--text-ishi)',
                                 marginBottom: '1rem',
                                 paddingLeft: '2.5rem'
                             }}>
-                                複製以下指令給 AI，讓它為你完成數據庫配置：
+                                {t('firebase.steps.3.desc')}
                             </p>
                             <div style={{ paddingLeft: '2.5rem' }}>
                                 <div style={{
@@ -198,7 +212,37 @@ function FirebasePage() {
                                     position: 'relative',
                                     fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
                                 }}>
-                                    我已經獲取了 Firebase 配置，請幫我在 src/firebase.js 中填寫，並完成初始化，確保應用可以正常進行數據庫讀寫。
+                                    {t('firebase.steps.3.text')}
+                                    <button
+                                        onClick={handleCopy}
+                                        title={t('vision.generator.copy_toast')}
+                                        style={{
+                                            position: 'absolute',
+                                            top: '0.8rem',
+                                            right: '0.8rem',
+                                            background: 'var(--bg-sumi)',
+                                            border: '1px solid var(--border-kasumi)',
+                                            color: 'var(--text-nezumi)',
+                                            width: '32px',
+                                            height: '32px',
+                                            borderRadius: '6px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.2s'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.color = 'var(--asagi)'
+                                            e.currentTarget.style.borderColor = 'var(--asagi)'
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.color = 'var(--text-nezumi)'
+                                            e.currentTarget.style.borderColor = 'var(--border-kasumi)'
+                                        }}
+                                    >
+                                        <Copy size={14} />
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -212,10 +256,10 @@ function FirebasePage() {
                             borderTop: '1px solid var(--border-kasumi)'
                         }}>
                             <Link to="/cloudflare" className="btn btn-secondary">
-                                ← 部署
+                                {t('firebase.nav.cloudflare')}
                             </Link>
                             <Link to="/domain" className="btn btn-primary">
-                                下一步：域名 →
+                                {t('firebase.nav.domain')}
                             </Link>
                         </div>
                     </div>

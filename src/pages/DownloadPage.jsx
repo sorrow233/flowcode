@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 function DownloadPage() {
+    const { t } = useTranslation(['pages'])
+
     return (
         <>
             {/* 頁面標題 */}
@@ -10,14 +13,14 @@ function DownloadPage() {
                         <span style={{
                             fontFamily: 'var(--font-mincho)',
                             color: 'var(--asagi)'
-                        }}>壱</span>
-                        <span style={{ color: 'var(--text-nezumi)' }}>第一步</span>
+                        }}>{t('download.step_num_kanji')}</span>
+                        <span style={{ color: 'var(--text-nezumi)' }}>{t('download.step_num_text')}</span>
                     </div>
                     <h1 className="animate-enter delay-100 text-gradient-asagi" style={{
                         fontSize: '2.8rem',
                         marginBottom: '1rem'
                     }}>
-                        獲取工具
+                        {t('download.title')}
                     </h1>
                     <p className="animate-enter delay-200" style={{
                         fontSize: '1.1rem',
@@ -25,7 +28,7 @@ function DownloadPage() {
                         maxWidth: '500px',
                         margin: '0 auto'
                     }}>
-                        下載 Google Antigravity，開啟你的創作旅程
+                        {t('download.subtitle')}
                     </p>
                 </div>
             </section>
@@ -52,14 +55,14 @@ function DownloadPage() {
                                 color: 'var(--text-yuki)',
                                 marginBottom: '0.5rem'
                             }}>
-                                Google Antigravity IDE
+                                {t('download.card.title')}
                             </div>
                             <p style={{
                                 color: 'var(--text-ishi)',
                                 marginBottom: '1.5rem',
                                 fontSize: '0.95rem'
                             }}>
-                                由 Google DeepMind 打造的 AI 原生開發環境
+                                {t('download.card.desc')}
                             </p>
                             <a
                                 href="https://antigravity.google/"
@@ -68,7 +71,7 @@ function DownloadPage() {
                                 className="btn btn-primary"
                                 style={{ padding: '1rem 2.5rem', fontSize: '1rem' }}
                             >
-                                前往官方下載 →
+                                {t('download.card.button')}
                             </a>
                         </div>
 
@@ -78,20 +81,20 @@ function DownloadPage() {
                             background: 'var(--kincha-soft)'
                         }}>
                             <div className="info-box-title" style={{ color: 'var(--kincha)' }}>
-                                ⚠️ 重要提醒
+                                {t('download.warning.title')}
                             </div>
                             <p style={{
                                 marginBottom: '0.5rem',
                                 color: 'var(--text-nezumi)'
                             }}>
-                                我們使用的是 <strong style={{ color: 'var(--text-yuki)' }}>官方 Google Antigravity IDE</strong>。
+                                {t('download.warning.text_1')} <strong style={{ color: 'var(--text-yuki)' }}>{t('download.warning.highlight')}</strong>。
                             </p>
                             <p style={{
                                 fontSize: '0.9rem',
                                 color: 'var(--text-ishi)',
                                 marginBottom: 0
                             }}>
-                                請務必從官方渠道下載，以確保安全性並獲取最新的 Gemini 2.0 模型支持。
+                                {t('download.warning.text_2')}
                             </p>
                         </div>
 
@@ -104,10 +107,10 @@ function DownloadPage() {
                             borderTop: '1px solid var(--border-kasumi)'
                         }}>
                             <Link to="/" className="btn btn-secondary">
-                                ← 首頁
+                                {t('download.nav.home')}
                             </Link>
                             <Link to="/vision" className="btn btn-primary">
-                                下一步：願景 →
+                                {t('download.nav.vision')}
                             </Link>
                         </div>
                     </div>

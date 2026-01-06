@@ -2,26 +2,28 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Copy, Sparkles } from 'lucide-react'
 import { toast } from 'sonner'
+import { useTranslation, Trans } from 'react-i18next'
 
 function VisionPage() {
+    const { t } = useTranslation(['pages'])
     const [appType, setAppType] = useState('')
     const [goal, setGoal] = useState('')
     const [generatedPrompt, setGeneratedPrompt] = useState('')
 
     const handleGenerate = () => {
         if (!appType.trim() || !goal.trim()) {
-            toast.error('請填寫完整資訊')
+            toast.error(t('vision.generator.error_toast'))
             return
         }
-        const prompt = `我正在開發一些軟件，我給你一些我的想法，你理解我的想法之後，完整的把想法複述一下,然後給我完美的實現或者解決方案什麼的，你只需要給思路，不要寫代碼\n\n我想構建一個：${appType}。我希望這個軟件能解決：${goal}。`
+        const prompt = t('vision.generator.prompt_template', { appType, goal })
         setGeneratedPrompt(prompt)
-        toast.success('提示詞已生成！')
+        toast.success(t('vision.generator.success_toast'))
     }
 
     const handleCopy = () => {
         if (!generatedPrompt) return
         navigator.clipboard.writeText(generatedPrompt)
-        toast.success('已複製到剪貼簿')
+        toast.success(t('vision.generator.copy_toast'))
     }
     return (
         <>
@@ -32,14 +34,14 @@ function VisionPage() {
                         <span style={{
                             fontFamily: 'var(--font-mincho)',
                             color: 'var(--fuji)'
-                        }}>弐</span>
-                        <span style={{ color: 'var(--text-nezumi)' }}>第二步</span>
+                        }}>{t('vision.step_num_kanji')}</span>
+                        <span style={{ color: 'var(--text-nezumi)' }}>{t('vision.step_num_text')}</span>
                     </div>
                     <h1 className="animate-enter delay-100 text-gradient-asagi" style={{
                         fontSize: '2.8rem',
                         marginBottom: '1rem'
                     }}>
-                        描繪願景
+                        {t('vision.title')}
                     </h1>
                     <p className="animate-enter delay-200" style={{
                         fontSize: '1.1rem',
@@ -47,7 +49,7 @@ function VisionPage() {
                         maxWidth: '500px',
                         margin: '0 auto'
                     }}>
-                        告訴 AI 你想要什麼。簡單即是終極的複雜。
+                        {t('vision.subtitle')}
                     </p>
                 </div>
             </section>
@@ -61,21 +63,20 @@ function VisionPage() {
                             fontSize: '1.5rem',
                             marginBottom: '1rem',
                             fontWeight: 500
-                        }}>自然語言描述</h2>
+                        }}>{t('vision.desc_title')}</h2>
                         <p style={{
                             marginBottom: '2.5rem',
                             color: 'var(--text-nezumi)',
                             lineHeight: 1.8
                         }}>
-                            打開 Antigravity IDE，在對話框中輸入你的想法。<br />
-                            無需專業術語，只需回答這三個問題：
+                            <Trans i18nKey="vision.desc_text" ns="pages" />
                         </p>
 
                         {/* 三要素 */}
                         <div className="feature-grid" style={{ marginBottom: '2.5rem' }}>
                             {[
-                                { icon: '🎯', title: '目標', desc: '你想構建什麼？', color: 'var(--asagi)' },
-                                { icon: '💡', title: '目的', desc: '為什麼需要它？', color: 'var(--fuji)' }
+                                { icon: '🎯', title: t('vision.features.target.title'), desc: t('vision.features.target.desc'), color: 'var(--asagi)' },
+                                { icon: '💡', title: t('vision.features.purpose.title'), desc: t('vision.features.purpose.desc'), color: 'var(--fuji)' }
                             ].map(item => (
                                 <div key={item.title} className="surface-card" style={{
                                     padding: '1.25rem',
@@ -105,7 +106,7 @@ function VisionPage() {
                         }}>
                             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                                 <Sparkles size={20} color="var(--asagi)" />
-                                <h3 style={{ fontSize: '1.2rem', margin: 0 }}>指令生成器</h3>
+                                <h3 style={{ fontSize: '1.2rem', margin: 0 }}>{t('vision.generator.title')}</h3>
                             </div>
 
                             <div style={{ display: 'grid', gap: '1.5rem' }}>
@@ -117,11 +118,13 @@ function VisionPage() {
                                         fontSize: '0.9rem',
                                         marginBottom: '0.5rem'
                                     }}>
-                                        1. 應用類型 <span style={{ opacity: 0.5 }}>(Application Type)</span>
+                                        <Trans i18nKey="vision.generator.app_type_label" ns="pages">
+                                            1. 應用類型 <span style={{ opacity: 0.5 }}>(Application Type)</span>
+                                        </Trans>
                                     </label>
                                     <input
                                         type="text"
-                                        placeholder="例如：極簡待辦清單、番茄鐘、個人部落格"
+                                        placeholder={t('vision.generator.app_type_placeholder')}
                                         value={appType}
                                         onChange={(e) => setAppType(e.target.value)}
                                         style={{
@@ -149,11 +152,13 @@ function VisionPage() {
                                         fontSize: '0.9rem',
                                         marginBottom: '0.5rem'
                                     }}>
-                                        2. 解決什麼問題 / 達成什麼目標 <span style={{ opacity: 0.5 }}>(Goal/Purpose)</span>
+                                        <Trans i18nKey="vision.generator.goal_label" ns="pages">
+                                            2. 解決什麼問題 / 達成什麼目標 <span style={{ opacity: 0.5 }}>(Goal/Purpose)</span>
+                                        </Trans>
                                     </label>
                                     <input
                                         type="text"
-                                        placeholder="例如：提醒我買牛奶、記錄我的學習進度"
+                                        placeholder={t('vision.generator.goal_placeholder')}
                                         value={goal}
                                         onChange={(e) => setGoal(e.target.value)}
                                         style={{
@@ -179,7 +184,7 @@ function VisionPage() {
                                     className="btn btn-primary"
                                     style={{ width: '100%', marginTop: '0.5rem' }}
                                 >
-                                    生成指令塊
+                                    {t('vision.generator.button')}
                                 </button>
                             </div>
 
@@ -197,7 +202,7 @@ function VisionPage() {
                                         marginBottom: '0.8rem',
                                         fontWeight: 500
                                     }}>
-                                        ✨ 已生成的指令 (Your Prompt)
+                                        {t('vision.generator.result_title')}
                                     </label>
                                     <div style={{
                                         position: 'relative',
@@ -219,7 +224,7 @@ function VisionPage() {
                                         </div>
                                         <button
                                             onClick={handleCopy}
-                                            title="複製到剪貼簿"
+                                            title={t('vision.generator.copy_toast')}
                                             style={{
                                                 position: 'absolute',
                                                 top: '0.8rem',
@@ -277,7 +282,7 @@ function VisionPage() {
                                                 e.currentTarget.style.transform = 'translateY(0)';
                                             }}
                                         >
-                                            前往 Gemini 問 AI ↗
+                                            {t('vision.gemini_link')}
                                         </a>
                                     </div>
                                 </div>
@@ -289,7 +294,7 @@ function VisionPage() {
                             marginBottom: '1.5rem',
                             fontSize: '1.2rem',
                             fontWeight: 500
-                        }}>對話示例</h3>
+                        }}>{t('vision.example.title')}</h3>
 
                         <div className="code-block" style={{
                             padding: '1.5rem',
@@ -312,7 +317,7 @@ function VisionPage() {
                                     justifyContent: 'center',
                                     fontSize: '0.75rem',
                                     color: 'var(--text-ishi)'
-                                }}>你</div>
+                                }}>{t('common:cmd.switch_theme') === 'Switch to' ? 'You' : '你'}</div>
                                 <div style={{
                                     background: 'var(--bg-shitan)',
                                     padding: '1rem',
@@ -320,7 +325,7 @@ function VisionPage() {
                                     color: 'var(--text-yuki)',
                                     fontSize: '0.95rem'
                                 }}>
-                                    我想做一個極簡的待辦清單，用來提醒我買牛奶，風格像便利貼一樣。
+                                    {t('vision.example.user_text')}
                                 </div>
                             </div>
 
@@ -346,12 +351,14 @@ function VisionPage() {
                                     fontSize: '0.95rem'
                                 }}>
                                     <p style={{ marginBottom: '0.75rem', color: 'var(--text-yuki)' }}>
-                                        <strong>理解了：</strong><br />
-                                        你想要一個 <strong>便利貼風格的極簡待辦清單</strong>。
+                                        <Trans i18nKey="vision.example.ai_response_text_1" ns="pages">
+                                            <strong>{t('vision.example.ai_response_title')}</strong><br />
+                                            你想要一個 <strong>便利貼風格的極簡待辦清單</strong>。
+                                        </Trans>
                                     </p>
                                     <p style={{ color: 'var(--text-nezumi)', marginBottom: 0 }}>
-                                        <strong>我的方案：</strong><br />
-                                        很棒的想法！便利貼美學增添了有趣的觸感。建議使用黃色背景卡片搭配手寫字體，去除複雜分類以保持純粹。
+                                        <strong>{t('vision.example.ai_response_title_2')}</strong><br />
+                                        {t('vision.example.ai_response_text_2')}
                                     </p>
                                 </div>
                             </div>
@@ -381,14 +388,14 @@ function VisionPage() {
                                     fontSize: '1.2rem',
                                     margin: 0,
                                     fontWeight: 500
-                                }}>AI 溝通指令</h3>
+                                }}>{t('vision.ai_cmd.title')}</h3>
                             </div>
                             <p style={{
                                 color: 'var(--text-ishi)',
                                 marginBottom: '1rem',
                                 paddingLeft: '2.5rem'
                             }}>
-                                複製以下指令給 AI，讓它為你提供專業建議：
+                                {t('vision.ai_cmd.desc')}
                             </p>
                             <div style={{ paddingLeft: '2.5rem' }}>
                                 <div style={{
@@ -402,7 +409,7 @@ function VisionPage() {
                                     position: 'relative',
                                     fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
                                 }}>
-                                    請針對我的需求給出合理的建議，在你的回覆中，你應該針對這個需求給出一個合理的方案，這個方案不涉及任何技術點。如果你沒問題，我們將進行下一步。
+                                    {t('vision.ai_cmd.text')}
                                 </div>
                             </div>
                         </div>
@@ -415,10 +422,10 @@ function VisionPage() {
                             borderTop: '1px solid var(--border-kasumi)'
                         }}>
                             <Link to="/download" className="btn btn-secondary">
-                                ← 下載 IDE
+                                {t('vision.nav.download')}
                             </Link>
                             <Link to="/generation" className="btn btn-primary">
-                                下一步：生成 →
+                                {t('vision.nav.generation')}
                             </Link>
                         </div>
                     </div>

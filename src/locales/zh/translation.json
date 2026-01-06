@@ -8,6 +8,28 @@
         "cta_start": "開始旅程",
         "cta_github": "GitHub →"
     },
+    "features": {
+        "eyebrow": "開發流程",
+        "title": "想法到現實",
+        "title_highlight": "只需四步",
+        "subtitle": "FlowCode 將複雜的開發流程，濃縮成一場流暢的旅程。無需編程經驗，無需配置環境。",
+        "step1_num": "壱",
+        "step1_title": "捕捉靈感",
+        "step1_desc": "截圖、手繪草稿、或僅僅一句話。AI 理解你的意圖，無需精確的技術術語。你的想法，就是最好的輸入。",
+        "step1_cta": "了解 Vision",
+        "step2_num": "弐",
+        "step2_title": "代碼自生",
+        "step2_desc": "觀看代碼如墨水般在屏幕上流淌。AI 將你的願景轉化為真正可運行的程式碼，逐行構建你的夢想。",
+        "step2_cta": "探索 Generation",
+        "step3_num": "参",
+        "step3_title": "一鍵上雲",
+        "step3_desc": "無需配置伺服器，無需理解 DevOps。透過 Cloudflare 的全球邊緣網絡，讓世界任何角落都能極速訪問你的作品。",
+        "step3_cta": "學習部署",
+        "step4_num": "肆",
+        "step4_title": "網站誕生",
+        "step4_desc": "從腦海中的一個念頭，到真實上線的網站——全程 10 分鐘。這不是魔法，這是 FlowCode。",
+        "step4_cta": "開始創建"
+    },
     "cmd": {
         "placeholder": "輸入指令或是搜尋頁面...",
         "empty": "找不到結果",

@@ -1,6 +1,18 @@
 import { Link } from 'react-router-dom'
+import { useTranslation, Trans } from 'react-i18next'
+import { Copy } from 'lucide-react'
+import { toast } from 'sonner'
 
 function CloudflarePage() {
+    const { t } = useTranslation(['pages'])
+
+    const handleCopy = () => {
+        navigator.clipboard.writeText(t('cloudflare.steps.3.text'))
+        toast.success(t('vision.generator.copy_toast'))
+    }
+
+    const step2List = t('cloudflare.steps.2.list', { returnObjects: true })
+
     return (
         <>
             {/* 頁面標題 */}
@@ -10,14 +22,14 @@ function CloudflarePage() {
                         <span style={{
                             fontFamily: 'var(--font-mincho)',
                             color: 'var(--kincha)'
-                        }}>肆</span>
-                        <span style={{ color: 'var(--text-nezumi)' }}>第四步</span>
+                        }}>{t('cloudflare.step_num_kanji')}</span>
+                        <span style={{ color: 'var(--text-nezumi)' }}>{t('cloudflare.step_num_text')}</span>
                     </div>
                     <h1 className="animate-enter delay-100 text-gradient-asagi" style={{
                         fontSize: '2.8rem',
                         marginBottom: '1rem'
                     }}>
-                        全球部署
+                        {t('cloudflare.title')}
                     </h1>
                     <p className="animate-enter delay-200" style={{
                         fontSize: '1.1rem',
@@ -25,7 +37,7 @@ function CloudflarePage() {
                         maxWidth: '500px',
                         margin: '0 auto'
                     }}>
-                        註冊 Cloudflare，將你的網站推向全球邊緣網路
+                        {t('cloudflare.subtitle')}
                     </p>
                 </div>
             </section>
@@ -59,7 +71,7 @@ function CloudflarePage() {
                                     fontSize: '1.2rem',
                                     margin: 0,
                                     fontWeight: 500
-                                }}>創建帳號</h3>
+                                }}>{t('cloudflare.steps.1.title')}</h3>
                             </div>
                             <p style={{
                                 color: 'var(--text-ishi)',
@@ -67,7 +79,7 @@ function CloudflarePage() {
                                 paddingLeft: '2.5rem',
                                 lineHeight: 1.8
                             }}>
-                                Cloudflare 是全球領先的邊緣網路。我們將使用它免費託管你的網站，享受企業級速度。
+                                {t('cloudflare.steps.1.desc')}
                             </p>
                             <div style={{ paddingLeft: '2.5rem' }}>
                                 <a
@@ -76,7 +88,7 @@ function CloudflarePage() {
                                     rel="noopener noreferrer"
                                     className="btn btn-ghost"
                                 >
-                                    前往 Cloudflare 註冊 →
+                                    {t('cloudflare.steps.1.button')}
                                 </a>
                             </div>
                         </div>
@@ -105,14 +117,14 @@ function CloudflarePage() {
                                     fontSize: '1.2rem',
                                     margin: 0,
                                     fontWeight: 500
-                                }}>獲取 API Token</h3>
+                                }}>{t('cloudflare.steps.2.title')}</h3>
                             </div>
                             <p style={{
                                 color: 'var(--text-ishi)',
                                 marginBottom: '1rem',
                                 paddingLeft: '2.5rem'
                             }}>
-                                讓 AI 為你自動部署，需要生成一個 API Token：
+                                {t('cloudflare.steps.2.desc')}
                             </p>
 
                             <ul style={{
@@ -120,12 +132,13 @@ function CloudflarePage() {
                                 color: 'var(--text-nezumi)',
                                 lineHeight: 2
                             }}>
-                                <li>登入 Cloudflare Dashboard</li>
-                                <li>點擊右上角用戶圖標 → <strong style={{ color: 'var(--text-yuki)' }}>My Profile</strong></li>
-                                <li>左側選擇 <strong style={{ color: 'var(--text-yuki)' }}>API Tokens</strong></li>
-                                <li>點擊 <strong style={{ color: 'var(--text-yuki)' }}>Create Token</strong></li>
-                                <li>使用模板：<strong style={{ color: 'var(--text-yuki)' }}>Edit Cloudflare Workers</strong></li>
-                                <li>滾動到底部點擊 <strong style={{ color: 'var(--text-yuki)' }}>Create Token</strong></li>
+                                {Array.isArray(step2List) && step2List.map((item, index) => (
+                                    <li key={index}>
+                                        <Trans i18nKey={`cloudflare.steps.2.list.${index}`} ns="pages">
+                                            {item}
+                                        </Trans>
+                                    </li>
+                                ))}
                             </ul>
                         </div>
 
@@ -135,21 +148,20 @@ function CloudflarePage() {
                             background: 'var(--shu-soft)'
                         }}>
                             <div className="info-box-title" style={{ color: 'var(--shu)' }}>
-                                🔑 重要：保存你的 Token
+                                {t('cloudflare.warning.title')}
                             </div>
                             <p style={{
                                 marginBottom: '0.5rem',
                                 color: 'var(--text-nezumi)'
                             }}>
-                                Token 只會顯示 <strong style={{ color: 'var(--text-yuki)' }}>一次</strong>。
+                                <Trans i18nKey="cloudflare.warning.text_1" ns="pages" />
                             </p>
                             <p style={{
                                 fontSize: '0.9rem',
                                 color: 'var(--text-ishi)',
                                 marginBottom: 0
                             }}>
-                                請立即複製到安全的地方（備忘錄/密碼管理器）。<br />
-                                下一步你將需要用到它。
+                                <Trans i18nKey="cloudflare.warning.text_2" ns="pages" />
                             </p>
                         </div>
 
@@ -177,14 +189,14 @@ function CloudflarePage() {
                                     fontSize: '1.2rem',
                                     margin: 0,
                                     fontWeight: 500
-                                }}>AI 部署指令</h3>
+                                }}>{t('cloudflare.steps.3.title')}</h3>
                             </div>
                             <p style={{
                                 color: 'var(--text-ishi)',
                                 marginBottom: '1rem',
                                 paddingLeft: '2.5rem'
                             }}>
-                                複製以下指令給 AI，讓它為你完成部署：
+                                {t('cloudflare.steps.3.desc')}
                             </p>
                             <div style={{ paddingLeft: '2.5rem' }}>
                                 <div style={{
@@ -198,7 +210,37 @@ function CloudflarePage() {
                                     position: 'relative',
                                     fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
                                 }}>
-                                    請在本地安裝 npm 依賴，完成構建後推送到 Cloudflare Pages，並返回可點擊的網站連結。
+                                    {t('cloudflare.steps.3.text')}
+                                    <button
+                                        onClick={handleCopy}
+                                        title={t('vision.generator.copy_toast')}
+                                        style={{
+                                            position: 'absolute',
+                                            top: '0.8rem',
+                                            right: '0.8rem',
+                                            background: 'var(--bg-sumi)',
+                                            border: '1px solid var(--border-kasumi)',
+                                            color: 'var(--text-nezumi)',
+                                            width: '32px',
+                                            height: '32px',
+                                            borderRadius: '6px',
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            justifyContent: 'center',
+                                            cursor: 'pointer',
+                                            transition: 'all 0.2s'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.currentTarget.style.color = 'var(--asagi)'
+                                            e.currentTarget.style.borderColor = 'var(--asagi)'
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.currentTarget.style.color = 'var(--text-nezumi)'
+                                            e.currentTarget.style.borderColor = 'var(--border-kasumi)'
+                                        }}
+                                    >
+                                        <Copy size={14} />
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -212,10 +254,10 @@ function CloudflarePage() {
                             borderTop: '1px solid var(--border-kasumi)'
                         }}>
                             <Link to="/generation" className="btn btn-secondary">
-                                ← 生成
+                                {t('cloudflare.nav.generation')}
                             </Link>
                             <Link to="/firebase" className="btn btn-primary">
-                                下一步：存儲 →
+                                {t('cloudflare.nav.firebase')}
                             </Link>
                         </div>
                     </div>

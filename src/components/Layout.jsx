@@ -121,7 +121,7 @@ function Layout() {
                             fontWeight: 600,
                             color: 'white'
                         }}>
-                            流
+                            {t('common:logo.char')}
                         </div>
                         <span style={{
                             fontFamily: 'var(--font-gothic)',
@@ -130,7 +130,7 @@ function Layout() {
                             color: 'var(--text-yuki)',
                             letterSpacing: '0.05em'
                         }}>
-                            FlowCode
+                            {t('common:logo.text')}
                         </span>
                     </NavLink>
 
@@ -194,8 +194,8 @@ function Layout() {
                         <span style={{
                             fontFamily: 'var(--font-mincho)',
                             fontSize: '1rem'
-                        }}>流</span>
-                        <span>FlowCode</span>
+                        }}>{t('common:logo.char')}</span>
+                        <span>{t('common:logo.text')}</span>
                     </div>
 
                     <div style={{ display: 'flex', gap: '2rem' }}>
@@ -205,7 +205,7 @@ function Layout() {
                             rel="noopener noreferrer"
                             style={{ color: 'inherit', textDecoration: 'none' }}
                         >
-                            Antigravity
+                            {t('common:footer.antigravity')}
                         </a>
                         <a
                             href="https://github.com/sorrow233/flowcode"
@@ -213,12 +213,12 @@ function Layout() {
                             rel="noopener noreferrer"
                             style={{ color: 'inherit', textDecoration: 'none' }}
                         >
-                            GitHub
+                            {t('common:footer.github')}
                         </a>
                     </div>
 
                     <span style={{ fontFamily: 'var(--font-mincho)' }}>
-                        二〇二六
+                        {t('common:footer.year')}
                     </span>
                 </div>
             </footer>
