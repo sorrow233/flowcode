@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import { version } from '../../../../package.json'
 
 const HeroSection = () => {
     const { t } = useTranslation()
@@ -120,7 +121,7 @@ const HeroSection = () => {
                 color: 'var(--text-ishi)',
                 opacity: 0.4
             }}>
-                <div>{t('home.version', { version: '2.1.5' })}</div>
+                <div>{t('home.version', { version })}</div>
                 <div>{t('home.stable')}</div>
             </div>
 

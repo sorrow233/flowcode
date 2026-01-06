@@ -12,7 +12,7 @@ import commonTW from './locales/zh-TW/common.json';
 import navTW from './locales/zh-TW/nav.json';
 import authTW from './locales/zh-TW/auth.json';
 import errorsTW from './locales/zh-TW/errors.json';
-// import pagesTW from './locales/zh-TW/pages.json'; // Not created yet
+import pagesTW from './locales/zh-TW/pages.json';
 
 import commonEN from './locales/en/common.json';
 import navEN from './locales/en/nav.json';
@@ -24,13 +24,13 @@ import commonJA from './locales/ja/common.json';
 import navJA from './locales/ja/nav.json';
 import authJA from './locales/ja/auth.json';
 import errorsJA from './locales/ja/errors.json';
-// import pagesJA from './locales/ja/pages.json'; // Not created yet
+import pagesJA from './locales/ja/pages.json';
 
 import commonKO from './locales/ko/common.json';
 import navKO from './locales/ko/nav.json';
 import authKO from './locales/ko/auth.json';
 import errorsKO from './locales/ko/errors.json';
-// import pagesKO from './locales/ko/pages.json'; // Not created yet
+import pagesKO from './locales/ko/pages.json';
 
 const resources = {
     'zh-CN': {
@@ -44,7 +44,8 @@ const resources = {
         common: commonTW,
         nav: navTW,
         auth: authTW,
-        errors: errorsTW
+        errors: errorsTW,
+        pages: pagesTW
     },
     en: {
         common: commonEN,
@@ -57,13 +58,15 @@ const resources = {
         common: commonJA,
         nav: navJA,
         auth: authJA,
-        errors: errorsJA
+        errors: errorsJA,
+        pages: pagesJA
     },
     ko: {
         common: commonKO,
         nav: navKO,
         auth: authKO,
-        errors: errorsKO
+        errors: errorsKO,
+        pages: pagesKO
     }
 };
 
@@ -75,7 +78,7 @@ i18n
         fallbackLng: 'zh-CN',
         ns: ['common', 'nav', 'auth', 'errors', 'pages'],
         defaultNS: 'common',
-        debug: true,
+        debug: import.meta.env.DEV,
         interpolation: {
             escapeValue: false,
         },

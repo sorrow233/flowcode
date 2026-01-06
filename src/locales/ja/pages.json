@@ -1,0 +1,241 @@
+{
+    "download": {
+        "step_num_kanji": "I",
+        "step_num_text": "Step 01",
+        "title": "Get Tools",
+        "subtitle": "Download Google Antigravity, start your creative journey",
+        "card": {
+            "title": "Google Antigravity IDE",
+            "desc": "AI Native Development Environment by Google DeepMind",
+            "button": "Official Download →"
+        },
+        "warning": {
+            "title": "⚠️ Important",
+            "text_1": "We use the",
+            "highlight": "Official Google Antigravity IDE",
+            "text_2": "Please download from official channels to ensure security and get the latest Gemini 2.0 model support."
+        },
+        "nav": {
+            "home": "← Home",
+            "vision": "Next: Vision →"
+        }
+    },
+    "vision": {
+        "step_num_kanji": "II",
+        "step_num_text": "Step 02",
+        "title": "Define Vision",
+        "subtitle": "Tell AI what you want. Simplicity is the ultimate sophistication.",
+        "desc_title": "Natural Language Description",
+        "desc_text": "Open Antigravity IDE and type your ideas in the chat.<br />No jargon needed, just answer these questions:",
+        "features": {
+            "target": {
+                "title": "Target",
+                "desc": "What do you want to build?"
+            },
+            "purpose": {
+                "title": "Purpose",
+                "desc": "Why do you need it?"
+            }
+        },
+        "generator": {
+            "title": "Prompt Generator",
+            "app_type_label": "1. Application Type <0>(Application Type)</0>",
+            "app_type_placeholder": "e.g., Todo List, Pomodoro Timer, Blog",
+            "goal_label": "2. Problem to Solve / Goal <0>(Goal/Purpose)</0>",
+            "goal_placeholder": "e.g., Remind me to buy milk, Track study progress",
+            "button": "Generate Prompt",
+            "result_title": "✨ Generated Prompt (Your Prompt)",
+            "copy_toast": "Copied to clipboard",
+            "prompt_template": "I am developing some software. I'll share my ideas with you. Once you understand them, please completely restate them, and then provide a perfect implementation plan or solution. Just give me the approach, do not write code.\n\nI want to build a: {{appType}}. I hope this software can solve: {{goal}}.",
+            "error_toast": "Please fill in all fields",
+            "success_toast": "Prompt Generated!"
+        },
+        "gemini_link": "Ask Gemini AI ↗",
+        "example": {
+            "title": "Conversation Example",
+            "user_text": "I want to make a minimal todo list to remind me to buy milk, styled like sticky notes.",
+            "ai_response_title": "Understood:",
+            "ai_response_text_1": "You want a <strong>sticky-note styled minimal todo list</strong>.",
+            "ai_response_title_2": "My Plan:",
+            "ai_response_text_2": "Great idea! Sticky note aesthetics add a fun touch. I suggest using yellow background cards with handwritten fonts, removing complex categories to keep it pure."
+        },
+        "ai_cmd": {
+            "title": "AI Communication Command",
+            "desc": "Copy this command to AI to get professional advice:",
+            "text": "Please provide reasonable suggestions for my requirements. In your reply, you should offer a reasonable plan that does not involve technical details. If you have no questions, we will proceed to the next step."
+        },
+        "nav": {
+            "download": "← Download IDE",
+            "generation": "Next: Generation →"
+        }
+    },
+    "generation": {
+        "step_num_kanji": "III",
+        "step_num_text": "Step 03",
+        "title": "Code Synthesis",
+        "subtitle": "Witness magic. Let AI turn your thoughts into reality.",
+        "steps": [
+            {
+                "num": "01",
+                "title": "Integrate Prompt",
+                "desc": "Combine your original vision with the 'Understanding + Suggestions' from step 2 into a complete prompt block."
+            },
+            {
+                "num": "02",
+                "title": "Send to Antigravity",
+                "desc": "Paste this prompt block into the IDE chat and press Enter."
+            },
+            {
+                "num": "03",
+                "title": "Wait for Creation",
+                "desc": "AI will automatically plan the file structure and write code. Watch the progress bar until 'Task Completed'."
+            }
+        ],
+        "coffee_break": {
+            "title": "Grab a Coffee",
+            "desc": "Depending on complexity, this may take a few minutes.<br />You can use this time to sign up for accounts needed in the next step."
+        },
+        "ai_cmd": {
+            "title": "AI Generation Command",
+            "desc": "Copy the command below to AI to start your magical journey:",
+            "text": "Please help me merge the vision from my ideas with your previous suggestions and start writing code. Please ensure the latest React and CSS tech stack is used."
+        },
+        "nav": {
+            "vision": "← Vision",
+            "cloudflare": "Next: Deploy →"
+        }
+    },
+    "cloudflare": {
+        "step_num_kanji": "IV",
+        "step_num_text": "Step 04",
+        "title": "Global Deploy",
+        "subtitle": "Sign up for Cloudflare and push your site to the global edge network",
+        "steps": {
+            "1": {
+                "title": "Create Account",
+                "desc": "Cloudflare is the leading global edge network. We will use it to host your site for free with enterprise-grade speed.",
+                "button": "Go to Cloudflare Sign Up →"
+            },
+            "2": {
+                "title": "Get API Token",
+                "desc": "To let AI deploy automatically, you need to generate an API Token:",
+                "list": [
+                    "Log in to Cloudflare Dashboard",
+                    "Click user icon top right → <0>My Profile</0>",
+                    "Select <0>API Tokens</0> on the left",
+                    "Click <0>Create Token</0>",
+                    "Use template: <0>Edit Cloudflare Workers</0>",
+                    "Scroll to bottom and click <0>Create Token</0>"
+                ]
+            },
+            "3": {
+                "title": "AI Deploy Command",
+                "desc": "Copy the command below to AI to complete deployment:",
+                "text": "Please install npm dependencies locally, push to Cloudflare Pages after build, and return the clickable website link."
+            }
+        },
+        "warning": {
+            "title": "🔑 Important: Save your Token",
+            "text_1": "Token will only be shown <0>once</0>.",
+            "text_2": "Please copy it to a safe place (Notes/Password Manager) immediately.<br />You will need it in the next step."
+        },
+        "nav": {
+            "generation": "← Generation",
+            "firebase": "Next: Storage →"
+        }
+    },
+    "firebase": {
+        "step_num_kanji": "V",
+        "step_num_text": "Step 05",
+        "title": "Infinite Storage",
+        "subtitle": "Connect Google Firebase for scalable data storage",
+        "steps": {
+            "1": {
+                "title": "Create Project",
+                "desc": "Firebase provides ready-to-use real-time database and authentication services.",
+                "button": "Open Firebase Console →"
+            },
+            "2": {
+                "title": "Configure Settings",
+                "list": [
+                    "Click <0>Current Project</0> (in IDE settings)",
+                    "Select <0>Project Settings</0>",
+                    "Scroll to 'Your apps'",
+                    "Select <0>Web app</0> <1>&lt;/&gt;</1>",
+                    "Copy <0>firebaseConfig</0> object"
+                ]
+            },
+            "3": {
+                "title": "AI Config Command",
+                "desc": "Copy the command below to AI to complete database configuration:",
+                "text": "I have obtained the Firebase config, please help me fill it in src/firebase.js and complete initialization to ensure the app can read/write data normally."
+            }
+        },
+        "config_info": {
+            "title": "💾 Where to put config?",
+            "desc": "Paste config into:"
+        },
+        "nav": {
+            "cloudflare": "← Deploy",
+            "domain": "Next: Domain →"
+        }
+    },
+    "domain": {
+        "step_num_kanji": "VI",
+        "step_num_text": "Step 06",
+        "title": "Your Identity",
+        "subtitle": "Custom domain is your digital asset",
+        "providers_title": "Domain Providers",
+        "providers_desc": "We recommend these stable and reasonably priced providers:",
+        "disclaimer": "* All are direct official links, this project has no affiliation or commissions.",
+        "providers": [
+            {
+                "name": "Spaceship",
+                "tag": "Ultra Low Price",
+                "desc": "New platform by Namecheap. Minimalist interface, extremely transparent pricing, great for .top, .xyz quick starts."
+            },
+            {
+                "name": "Namecheap",
+                "tag": "First Year Discount",
+                "desc": "Veteran provider, huge first year discounts (.xyz ~$1, .top ~$2), perfect for low cost experiments."
+            },
+            {
+                "name": "Cloudflare",
+                "tag": "Secure & Stable",
+                "desc": "Sold at cost (no markup), lowest long-term holding cost. Perfectly integrated with Pages service."
+            }
+        ],
+        "connect_info": {
+            "title": "🔗 How to connect?",
+            "desc": "After purchase, go to Cloudflare Pages project settings → <0>Custom Domains</0>.<br />Cloudflare handles SSL and DNS automatically."
+        },
+        "nav": {
+            "firebase": "← Storage",
+            "success": "Finish →"
+        }
+    },
+    "success": {
+        "title": "Ready for Takeoff",
+        "subtitle": "You are now a developer",
+        "canvas_title": "The World is Your Canvas",
+        "canvas_desc": "You have the tools, the vision, and the AI.<br />From now on, you only need to do two things:",
+        "steps": {
+            "ask": {
+                "title": "1. Ask",
+                "desc": "Describe your ideas in everyday language"
+            },
+            "iterate": {
+                "title": "2. Iterate",
+                "desc": "Refine repeatedly until perfect"
+            }
+        },
+        "giant": {
+            "title": "🌟 Giants Walk With You",
+            "text_1": "Never doubt yourself.<br />Standing behind you is <strong>the most powerful AI model in human history</strong>.",
+            "text_2": "You are not coding alone. You have a world-class engineering team on standby 24/7.<br />Unleash your creativity, leave the rest to AI."
+        },
+        "disclaimer": "ℹ️ This project is an unofficial guide for AI-assisted coding. We strongly recommend Google's Antigravity IDE as the pinnacle of current technology.",
+        "cta": "Launch Mission 🚀",
+        "back_domain": "← Back to Domain Settings"
+    }
+}

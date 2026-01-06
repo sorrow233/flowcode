@@ -3,6 +3,7 @@ import { useTranslation, Trans } from 'react-i18next'
 import { Copy } from 'lucide-react'
 import { toast } from 'sonner'
 import { useStepProgress } from '../utils/useStepProgress'
+import ProgressSidebar from '../components/ProgressSidebar'
 
 function CloudflarePage() {
     const { t } = useTranslation(['pages'])
