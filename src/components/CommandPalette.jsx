@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Command } from 'cmdk'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 import {
     Home,
     Download,
@@ -16,6 +17,7 @@ import {
 import { themes, applyTheme } from '../utils/theme'
 
 export const CommandPalette = () => {
+    const { t } = useTranslation()
     const [open, setOpen] = useState(false)
     const navigate = useNavigate()
 
@@ -37,14 +39,14 @@ export const CommandPalette = () => {
     }
 
     const navItems = [
-        { icon: <Home size={18} />, label: '首頁 (Home)', path: '/' },
-        { icon: <Download size={18} />, label: '下載 (Download)', path: '/download' },
-        { icon: <Map size={18} />, label: '願景 (Vision)', path: '/vision' },
-        { icon: <Zap size={18} />, label: '生成 (Generation)', path: '/generation' },
-        { icon: <Cloud size={18} />, label: '部署 (Cloudflare)', path: '/cloudflare' },
-        { icon: <Database size={18} />, label: '存儲 (Firebase)', path: '/firebase' },
-        { icon: <Globe size={18} />, label: '域名 (Domain)', path: '/domain' },
-        { icon: <CheckCircle size={18} />, label: '完成 (Success)', path: '/success' },
+        { icon: <Home size={18} />, label: t('cmd.home'), path: '/' },
+        { icon: <Download size={18} />, label: t('cmd.download'), path: '/download' },
+        { icon: <Map size={18} />, label: t('cmd.vision'), path: '/vision' },
+        { icon: <Zap size={18} />, label: t('cmd.generation'), path: '/generation' },
+        { icon: <Cloud size={18} />, label: t('cmd.deploy'), path: '/cloudflare' },
+        { icon: <Database size={18} />, label: t('cmd.storage'), path: '/firebase' },
+        { icon: <Globe size={18} />, label: t('cmd.domain'), path: '/domain' },
+        { icon: <CheckCircle size={18} />, label: t('cmd.success'), path: '/success' },
     ]
 
     return (
@@ -54,11 +56,11 @@ export const CommandPalette = () => {
             label="Global Command Menu"
         >
             <div className="cmdk-overlay" />
-            <Command.Input placeholder="輸入指令或是搜尋頁面..." />
+            <Command.Input placeholder={t('cmd.placeholder')} />
             <Command.List>
-                <Command.Empty>找不到結果</Command.Empty>
+                <Command.Empty>{t('cmd.empty')}</Command.Empty>
 
-                <Command.Group heading="導航 (Navigation)">
+                <Command.Group heading={t('cmd.nav')}>
                     {navItems.map((item) => (
                         <Command.Item
                             key={item.path}
@@ -70,22 +72,22 @@ export const CommandPalette = () => {
                     ))}
                 </Command.Group>
 
-                <Command.Group heading="主題 (Theme)">
+                <Command.Group heading={t('cmd.theme')}>
                     {Object.entries(themes).map(([key, theme]) => (
                         <Command.Item
                             key={key}
                             onSelect={() => runCommand(() => applyTheme(key))}
                         >
                             <Palette size={18} />
-                            切換至 {theme.name}
+                            {t('cmd.switch_theme')} {theme.name}
                         </Command.Item>
                     ))}
                 </Command.Group>
 
-                <Command.Group heading="系統 (System)">
+                <Command.Group heading={t('cmd.system')}>
                     <Command.Item onSelect={() => runCommand(() => window.open('https://github.com/sorrow233/flowcode', '_blank'))}>
                         <Monitor size={18} />
-                        查看 GitHub 源碼
+                        {t('cmd.github')}
                     </Command.Item>
                 </Command.Group>
 

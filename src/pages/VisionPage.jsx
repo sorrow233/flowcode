@@ -75,23 +75,162 @@ function VisionPage() {
                             ))}
                         </div>
 
-                        {/* 提示模板 */}
-                        <div className="info-box" style={{
-                            marginBottom: '2.5rem',
-                            borderLeftColor: 'var(--asagi)',
-                            background: 'var(--asagi-soft)'
+                        {/* 提示生成器 (Interactive Prompt Generator) */}
+                        <div className="surface-card" style={{
+                            padding: '2rem',
+                            marginBottom: '2rem',
+                            border: '1px solid var(--border-kin)',
+                            background: 'linear-gradient(180deg, rgba(22, 22, 30, 0.4) 0%, rgba(22, 22, 30, 0.6) 100%)'
                         }}>
-                            <div className="info-box-title" style={{ color: 'var(--asagi)' }}>
-                                📝 提示模板
+                            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+                                <Sparkles size={20} color="var(--asagi)" />
+                                <h3 style={{ fontSize: '1.2rem', margin: 0 }}>指令生成器</h3>
                             </div>
-                            <div style={{
-                                fontFamily: 'var(--font-mono)',
-                                fontSize: '0.95rem',
-                                color: 'var(--text-yuki)',
-                                lineHeight: 1.6
-                            }}>
-                                「我想構建一個 [應用類型] 來 [解決什麼問題/達成什麼目標]。（保持簡潔）」
+
+                            <div style={{ display: 'grid', gap: '1.5rem' }}>
+                                {/* Input 1: Application Type */}
+                                <div>
+                                    <label style={{
+                                        display: 'block',
+                                        color: 'var(--text-nezumi)',
+                                        fontSize: '0.9rem',
+                                        marginBottom: '0.5rem'
+                                    }}>
+                                        1. 應用類型 <span style={{ opacity: 0.5 }}>(Application Type)</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder="例如：極簡待辦清單、番茄鐘、個人部落格"
+                                        value={appType}
+                                        onChange={(e) => setAppType(e.target.value)}
+                                        style={{
+                                            width: '100%',
+                                            padding: '1rem',
+                                            borderRadius: 'var(--radius-md)',
+                                            background: 'var(--bg-sumi)',
+                                            border: '1px solid var(--border-kasumi)',
+                                            color: 'var(--text-yuki)',
+                                            fontSize: '1rem',
+                                            fontFamily: 'var(--font-gothic)',
+                                            outline: 'none',
+                                            transition: 'border-color 0.2s'
+                                        }}
+                                        onFocus={(e) => e.target.style.borderColor = 'var(--asagi)'}
+                                        onBlur={(e) => e.target.style.borderColor = 'var(--border-kasumi)'}
+                                    />
+                                </div>
+
+                                {/* Input 2: Goal */}
+                                <div>
+                                    <label style={{
+                                        display: 'block',
+                                        color: 'var(--text-nezumi)',
+                                        fontSize: '0.9rem',
+                                        marginBottom: '0.5rem'
+                                    }}>
+                                        2. 解決什麼問題 / 達成什麼目標 <span style={{ opacity: 0.5 }}>(Goal/Purpose)</span>
+                                    </label>
+                                    <input
+                                        type="text"
+                                        placeholder="例如：提醒我買牛奶、記錄我的學習進度"
+                                        value={goal}
+                                        onChange={(e) => setGoal(e.target.value)}
+                                        style={{
+                                            width: '100%',
+                                            padding: '1rem',
+                                            borderRadius: 'var(--radius-md)',
+                                            background: 'var(--bg-sumi)',
+                                            border: '1px solid var(--border-kasumi)',
+                                            color: 'var(--text-yuki)',
+                                            fontSize: '1rem',
+                                            fontFamily: 'var(--font-gothic)',
+                                            outline: 'none',
+                                            transition: 'border-color 0.2s'
+                                        }}
+                                        onFocus={(e) => e.target.style.borderColor = 'var(--asagi)'}
+                                        onBlur={(e) => e.target.style.borderColor = 'var(--border-kasumi)'}
+                                    />
+                                    <div style={{ textAlign: 'right', fontSize: '0.8rem', color: 'var(--text-ishi)', marginTop: '0.4rem' }}>
+                                        {goal.length > 30 && <span style={{ color: 'var(--shu)' }}>⚠️ 建議保持在 30 字以內 ({goal.length})</span>}
+                                    </div>
+                                </div>
+
+                                {/* Generate Button */}
+                                <button
+                                    onClick={handleGenerate}
+                                    className="btn btn-primary"
+                                    style={{ width: '100%', marginTop: '0.5rem' }}
+                                >
+                                    生成指令塊
+                                </button>
                             </div>
+
+                            {/* Generated Result Area */}
+                            {generatedPrompt && (
+                                <div className="animate-enter" style={{
+                                    marginTop: '2rem',
+                                    paddingtop: '2rem',
+                                    borderTop: '1px solid var(--border-kasumi)'
+                                }}>
+                                    <label style={{
+                                        display: 'block',
+                                        color: 'var(--asagi)',
+                                        fontSize: '0.9rem',
+                                        marginBottom: '0.8rem',
+                                        fontWeight: 500
+                                    }}>
+                                        ✨ 已生成的指令 (Your Prompt)
+                                    </label>
+                                    <div style={{
+                                        position: 'relative',
+                                        background: 'var(--bg-shitan)',
+                                        borderRadius: 'var(--radius-md)',
+                                        border: '1px solid var(--asagi-soft)',
+                                        overflow: 'hidden'
+                                    }}>
+                                        <div style={{
+                                            padding: '1.25rem',
+                                            paddingRight: '3.5rem',
+                                            color: 'var(--text-yuki)',
+                                            fontFamily: 'var(--font-mono)',
+                                            fontSize: '0.95rem',
+                                            lineHeight: 1.6
+                                        }}>
+                                            {generatedPrompt}
+                                        </div>
+                                        <button
+                                            onClick={handleCopy}
+                                            title="複製到剪貼簿"
+                                            style={{
+                                                position: 'absolute',
+                                                top: '0.8rem',
+                                                right: '0.8rem',
+                                                background: 'var(--bg-sumi)',
+                                                border: '1px solid var(--border-kasumi)',
+                                                color: 'var(--text-nezumi)',
+                                                width: '36px',
+                                                height: '36px',
+                                                borderRadius: '8px',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                cursor: 'pointer',
+                                                transition: 'all 0.2s'
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.color = 'var(--asagi)'
+                                                e.currentTarget.style.borderColor = 'var(--asagi)'
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.color = 'var(--text-nezumi)'
+                                                e.currentTarget.style.borderColor = 'var(--border-kasumi)'
+                                            }}
+                                        >
+                                            <Copy size={16} />
+                                        </button>
+                                    </div>
+                                </div>
+                            )}
                         </div>
 
                         {/* 對話示例 */}
