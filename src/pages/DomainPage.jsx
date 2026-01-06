@@ -168,56 +168,6 @@ function DomainPage() {
                             </p>
                         </div>
 
-                        {/* 步驟 3 */}
-                        <div style={{ marginTop: '2.5rem' }}>
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.75rem',
-                                marginBottom: '1rem'
-                            }}>
-                                <span style={{
-                                    width: '28px',
-                                    height: '28px',
-                                    background: 'var(--asagi)',
-                                    borderRadius: '8px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontSize: '0.85rem',
-                                    color: 'var(--bg-sumi)',
-                                    fontWeight: 600
-                                }}>3</span>
-                                <h3 style={{
-                                    fontSize: '1.2rem',
-                                    margin: 0,
-                                    fontWeight: 500
-                                }}>AI 優化指令</h3>
-                            </div>
-                            <p style={{
-                                color: 'var(--text-ishi)',
-                                marginBottom: '1rem',
-                                paddingLeft: '2.5rem'
-                            }}>
-                                複製以下指令給 AI，讓它為你完成最後的優化：
-                            </p>
-                            <div style={{ paddingLeft: '2.5rem' }}>
-                                <div style={{
-                                    background: 'var(--bg-kuro)',
-                                    padding: '1.25rem',
-                                    borderRadius: '8px',
-                                    border: '1px solid var(--border-kasumi)',
-                                    color: 'var(--text-yuki)',
-                                    fontSize: '0.95rem',
-                                    lineHeight: '1.6',
-                                    position: 'relative',
-                                    fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
-                                }}>
-                                    請幫我進行全站 SEO 優化，確保標題、描述、Meta 標籤以及移動端體驗都達到商業化標準，準備好在自定義域名下發布。
-                                </div>
-                            </div>
-                        </div>
-
                         {/* 導航按鈕 */}
                         <div style={{
                             marginTop: '2.5rem',
