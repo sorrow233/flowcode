@@ -158,42 +158,7 @@ export function ProgressSidebar({ title, items = [], activeIndex = 0, whyTitle, 
                 </div>
             </div>
 
-            {/* Why Section */}
-            {whyTitle && (
-                <motion.div
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.5 }}
-                    className="surface-card"
-                    style={{
-                        padding: '1.25rem',
-                        background: 'rgba(94, 234, 212, 0.05)',
-                        borderColor: 'rgba(94, 234, 212, 0.15)',
-                        borderStyle: 'dashed'
-                    }}
-                >
-                    <div style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.5rem',
-                        color: 'var(--asagi)',
-                        fontSize: '0.85rem',
-                        fontWeight: 600,
-                        marginBottom: '0.6rem'
-                    }}>
-                        <HelpCircle size={14} />
-                        {whyTitle}
-                    </div>
-                    <p style={{
-                        fontSize: '0.8rem',
-                        color: 'var(--text-nezumi)',
-                        lineHeight: 1.6,
-                        marginBottom: 0
-                    }}>
-                        {whyDesc}
-                    </p>
-                </motion.div>
-            )}
+
         </aside>
     )
 }

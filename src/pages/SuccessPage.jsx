@@ -145,7 +145,7 @@ function SuccessPage() {
                             padding: '1rem 1.5rem',
                             borderRadius: 'var(--radius-md)',
                             border: '1px dashed var(--border-kasumi)',
-                            background: 'rgba(0,0,0,0.2)',
+                            background: 'rgba(0, 0, 0, 0.03)',
                             marginBottom: '2.5rem'
                         }}>
                             <div style={{
