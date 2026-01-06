@@ -42,5 +42,25 @@
     "logo": {
         "char": "流",
         "text": "FlowCode"
+    },
+    "features": {
+        "eyebrow": "寫給未來的創造者",
+        "title": "打破創造的邊界",
+        "title_highlight": "無所畏懼",
+        "subtitle": "我們聽到了你的顧慮。但在 FlowCode，這些都不再是阻礙。",
+        "card1_title": "擔心不會寫代碼？",
+        "card1_subtitle": "沒問題",
+        "card1_desc": "我們有最強的 AI 代碼編輯程序。你不需要懂語法，AI 會處理所有的邏輯與結構。你只需要專注於「做什麼」，而不是「怎麼做」。",
+        "card2_title": "覺得自己沒有想法？",
+        "card2_subtitle": "沒問題",
+        "card2_desc": "AI 會幫你完善你的想法。你只需要有一個最簡單、最本能的衝動——那個靈感的火花。剩下的，交給我們。",
+        "card3_title": "擔心軟體太複雜？",
+        "card3_subtitle": "沒問題",
+        "card3_desc": "不需要學習複雜的傳統軟體，只需要你會說自然語言。這裡有 Google 穩定的免費同步，有 Cloudflare 穩定的免費部署。一切都是為了讓你的創意自由流動。",
+        "vision_quote_1": "我希望每個人都能用 AI 做他自己喜歡的事。",
+        "vision_quote_2": "這是 AI 編程最後的時代，",
+        "vision_quote_highlight": "也是最初的時代。",
+        "vision_desc": "一個更完善的 AI 流程，會比我們想像中更容易實現你的夢想。歡迎加入這場變革。",
+        "vision_cta": "開始創造"
     }
 }

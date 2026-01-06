@@ -42,5 +42,25 @@
     "logo": {
         "char": "Flow",
         "text": "FlowCode"
+    },
+    "features": {
+        "eyebrow": "To Future Creators",
+        "title": "Break the Boundaries",
+        "title_highlight": "Fearlessly",
+        "subtitle": "We hear your concerns. But at FlowCode, they are no longer obstacles.",
+        "card1_title": "Can't write code?",
+        "card1_subtitle": "No Problem.",
+        "card1_desc": "We have the strongest AI code editor. You don't need to know syntax; AI handles all the logic and structure. Focus on 'What', not 'How'.",
+        "card2_title": "No specific ideas?",
+        "card2_subtitle": "No Problem.",
+        "card2_desc": "AI will help refine your thoughts. You just need a simple, instinctual impulse—that spark of inspiration. Leave the rest to us.",
+        "card3_title": "Too complex or expensive?",
+        "card3_subtitle": "No Problem.",
+        "card3_desc": "No need to learn complex traditional software, just Natural Language. With stable Google Sync and free Cloudflare deployment, everything is built for your creative freedom.",
+        "vision_quote_1": "I hope everyone can use AI to do what they love.",
+        "vision_quote_2": "This is the last era of traditional coding,",
+        "vision_quote_highlight": "and the first era of AI creation.",
+        "vision_desc": "A perfect AI workflow makes your dreams easier to realize than you imagine. Join history.",
+        "vision_cta": "Start Creating"
     }
 }

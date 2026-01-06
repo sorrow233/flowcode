@@ -1,4 +1,25 @@
 {
+    "download": {
+        "step_num_kanji": "壱",
+        "step_num_text": "第一步",
+        "title": "获取工具",
+        "subtitle": "下载 Google Antigravity，开启你的创造之旅",
+        "card": {
+            "title": "Google Antigravity IDE",
+            "desc": "Google DeepMind 打造的 AI 原生开发环境",
+            "button": "官方下载 →"
+        },
+        "warning": {
+            "title": "⚠️ 重要提示",
+            "text_1": "我们使用",
+            "highlight": "官方 Google Antigravity IDE",
+            "text_2": "请务必从官方渠道下载，以确保安全性并获得最新的 Gemini 2.0 模型支持。"
+        },
+        "nav": {
+            "home": "← 首页",
+            "vision": "下一步：愿景 →"
+        }
+    },
     "nav": {
         "home": "← 首页",
         "vision": "下一步：愿景 →"
