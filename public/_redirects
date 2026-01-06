@@ -1,0 +1,5 @@
+/* SPA fallback for Cloudflare Pages */
+/* 所有路由都重定向到 index.html */
+/*
+  /index.html 200
+*/
