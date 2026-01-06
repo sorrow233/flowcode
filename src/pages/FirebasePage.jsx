@@ -4,9 +4,11 @@ import { Copy } from 'lucide-react'
 import { toast } from 'sonner'
 import { useStepProgress } from '../utils/useStepProgress'
 import ProgressSidebar from '../components/ProgressSidebar'
+import { useAuth } from '../contexts/AuthContext'
 
 function FirebasePage() {
     const { t } = useTranslation(['pages'])
+    const { loginWithGoogle, currentUser, logout } = useAuth()
     const [activeIndex, setActiveIndex] = useStepProgress('firebase', 0)
     const sidebarItems = t('firebase.sidebar.items', { returnObjects: true })
 
@@ -217,6 +219,48 @@ function FirebasePage() {
                                         </button>
                                     </div>
                                 </div>
+                            </div>
+
+                            {/* Connection Test Section */}
+                            <div className="washi-card-dark" style={{
+                                padding: '2rem',
+                                marginBottom: '3.5rem',
+                                border: '1px solid var(--shu)',
+                                background: 'rgba(232, 92, 74, 0.02)'
+                            }}>
+                                <h3 style={{ fontSize: '1.2rem', marginBottom: '1rem', color: 'var(--shu)' }}>
+                                    Connection Verification (Test)
+                                </h3>
+                                <div style={{ marginBottom: '1rem', color: 'var(--text-nezumi)' }}>
+                                    Status: {currentUser ?
+                                        <span style={{ color: 'var(--asagi)', fontWeight: 'bold' }}>Connected ({currentUser.email})</span> :
+                                        <span style={{ color: 'var(--text-ishi)' }}>Disconnected</span>
+                                    }
+                                </div>
+                                {!currentUser ? (
+                                    <button
+                                        onClick={async () => {
+                                            try {
+                                                await loginWithGoogle();
+                                                toast.success('Login Successful!');
+                                            } catch (error) {
+                                                console.error(error);
+                                                toast.error('Login Failed: ' + error.message);
+                                            }
+                                        }}
+                                        className="btn btn-primary"
+                                        style={{ background: 'var(--shu)', borderColor: 'var(--shu)' }}
+                                    >
+                                        Test Google Login
+                                    </button>
+                                ) : (
+                                    <button
+                                        onClick={() => logout()}
+                                        className="btn btn-secondary"
+                                    >
+                                        Logout
+                                    </button>
+                                )}
                             </div>
 
                             {/* 導航按鈕 */}
