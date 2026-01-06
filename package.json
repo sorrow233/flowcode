@@ -1,7 +1,7 @@
 {
   "name": "flowcode",
-  "version": "2.4.0",
-  "description": "© 2026 FlowCode v2.4.0 - AI辅助网站开发教程 | 中日韩英四语支持",
+  "version": "2.4.1",
+  "description": "© 2026 FlowCode v2.4.1 - AI辅助网站开发教程 | 中日韩英四语支持",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "cmdk": "^1.1.1",
+    "firebase": "^12.7.0",
     "framer-motion": "^12.24.7",
     "i18next": "^25.7.3",
     "i18next-browser-languagedetector": "^8.2.0",
