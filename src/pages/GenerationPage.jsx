@@ -1,68 +1,143 @@
 import { Link } from 'react-router-dom'
 
 function GenerationPage() {
+    const steps = [
+        {
+            num: '01',
+            title: '整合指令',
+            desc: '將你的原始願景與 AI 在第二步中的「理解確認 + 建議」合併成一個完整的指令塊。',
+            color: 'var(--asagi)'
+        },
+        {
+            num: '02',
+            title: '發送至 Antigravity',
+            desc: '將這個指令塊貼入 IDE 對話框，按下 Enter。',
+            color: 'var(--fuji)'
+        },
+        {
+            num: '03',
+            title: '等待創造',
+            desc: 'AI 會自動規劃文件結構並編寫程式碼。觀察進度條直到顯示「任務完成」。',
+            color: 'var(--kincha)'
+        }
+    ]
+
     return (
         <>
+            {/* 頁面標題 */}
             <section className="page-header">
-                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-                    <div style={{ display: 'inline-block', padding: '0.5rem 1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', marginBottom: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <span style={{ color: 'var(--secondary)' }}>Step 03</span>
+                <div className="container" style={{ maxWidth: '800px' }}>
+                    <div className="scroll-title animate-enter">
+                        <span style={{
+                            fontFamily: 'var(--font-mincho)',
+                            color: 'var(--fuji)'
+                        }}>参</span>
+                        <span style={{ color: 'var(--text-nezumi)' }}>第三步</span>
                     </div>
-                    <h1 className="text-gradient-cyber" style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Code Generation</h1>
-                    <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>Witness the magic. Let AI turn your thoughts into reality.</p>
+                    <h1 className="animate-enter delay-100 text-gradient-asagi" style={{
+                        fontSize: '2.8rem',
+                        marginBottom: '1rem'
+                    }}>
+                        程式碼生成
+                    </h1>
+                    <p className="animate-enter delay-200" style={{
+                        fontSize: '1.1rem',
+                        color: 'var(--text-nezumi)',
+                        maxWidth: '500px',
+                        margin: '0 auto'
+                    }}>
+                        見證魔法。讓 AI 將你的想法轉化為現實。
+                    </p>
                 </div>
             </section>
 
-            <section className="page-content" style={{ marginTop: '-4rem' }}>
-                <div className="container">
-                    <div className="glass-panel card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem' }}>
-                        <div className="steps-grid" style={{ gridTemplateColumns: '1fr', gap: '2rem' }}>
+            {/* 主要內容 */}
+            <section className="page-content" style={{ marginTop: '-2rem' }}>
+                <div className="container" style={{ maxWidth: '700px' }}>
+                    <div className="washi-card-dark animate-enter delay-300" style={{ padding: '3rem' }}>
 
-                            <div className="glass-panel-heavy" style={{ padding: '2rem', borderRadius: '16px', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                                <div style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--secondary)', lineHeight: 1, opacity: 0.5 }}>01</div>
-                                <div>
-                                    <h3 style={{ marginBottom: '0.5rem' }}>Prepare Command</h3>
-                                    <p className="text-muted" style={{ marginBottom: 0 }}>
-                                        Combine your original vision with the AI's <strong>"Restated Understanding + Suggestions"</strong> from Step 2 into one complete instruction block.
-                                    </p>
+                        {/* 步驟列表 */}
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '1.5rem',
+                            marginBottom: '2.5rem'
+                        }}>
+                            {steps.map((step, i) => (
+                                <div
+                                    key={step.num}
+                                    className="surface-card"
+                                    style={{
+                                        padding: '1.5rem',
+                                        display: 'flex',
+                                        gap: '1.25rem',
+                                        alignItems: 'flex-start'
+                                    }}
+                                >
+                                    <div style={{
+                                        fontFamily: 'var(--font-mincho)',
+                                        fontSize: '1.8rem',
+                                        fontWeight: 400,
+                                        color: step.color,
+                                        opacity: 0.6,
+                                        lineHeight: 1
+                                    }}>{step.num}</div>
+                                    <div>
+                                        <h3 style={{
+                                            fontSize: '1.15rem',
+                                            marginBottom: '0.4rem',
+                                            fontWeight: 500
+                                        }}>{step.title}</h3>
+                                        <p style={{
+                                            color: 'var(--text-ishi)',
+                                            fontSize: '0.9rem',
+                                            marginBottom: 0,
+                                            lineHeight: 1.7
+                                        }}>{step.desc}</p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div className="glass-panel-heavy" style={{ padding: '2rem', borderRadius: '16px', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                                <div style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--accent)', lineHeight: 1, opacity: 0.5 }}>02</div>
-                                <div>
-                                    <h3 style={{ marginBottom: '0.5rem' }}>Send to Antigravity</h3>
-                                    <p className="text-muted" style={{ marginBottom: 0 }}>
-                                        Paste this block into the IDE chat and press Enter.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className="glass-panel-heavy" style={{ padding: '2rem', borderRadius: '16px', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
-                                <div style={{ fontSize: '3rem', fontWeight: 800, color: '#fbbf24', lineHeight: 1, opacity: 0.5 }}>03</div>
-                                <div>
-                                    <h3 style={{ marginBottom: '0.5rem' }}>Wait for Creation</h3>
-                                    <p className="text-muted" style={{ marginBottom: 0 }}>
-                                        AI will automatically plan the file structure and write code. Just watch the progress bar until you see "Task Completed".
-                                    </p>
-                                </div>
-                            </div>
-
+                            ))}
                         </div>
 
-                        <div className="surface-card" style={{ marginTop: '3rem', padding: '2rem', borderRadius: '16px', textAlign: 'center' }}>
-                            <div className="info-box-title" style={{ justifyContent: 'center', marginBottom: '1rem', color: 'var(--text-primary)' }}>☕️ Grab a Coffee</div>
-                            <p style={{ color: 'var(--text-secondary)', marginBottom: 0 }}>
-                                Depending on complexity, this may take a few minutes. You can use this time to register for the next step's accounts.
+                        {/* 提示卡片 */}
+                        <div style={{
+                            textAlign: 'center',
+                            padding: '1.5rem',
+                            background: 'var(--bg-washi)',
+                            borderRadius: 'var(--radius-lg)'
+                        }}>
+                            <div style={{
+                                fontSize: '1.5rem',
+                                marginBottom: '0.5rem'
+                            }}>☕️</div>
+                            <h4 style={{
+                                color: 'var(--text-yuki)',
+                                marginBottom: '0.5rem',
+                                fontWeight: 500
+                            }}>泡杯咖啡</h4>
+                            <p style={{
+                                color: 'var(--text-ishi)',
+                                fontSize: '0.9rem',
+                                marginBottom: 0
+                            }}>
+                                根據複雜度，這可能需要幾分鐘。<br />
+                                你可以利用這段時間註冊下一步所需的帳號。
                             </p>
                         </div>
 
-                        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-dim)', paddingTop: '2rem' }}>
+                        {/* 導航按鈕 */}
+                        <div style={{
+                            marginTop: '2.5rem',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            paddingTop: '2rem',
+                            borderTop: '1px solid var(--border-kasumi)'
+                        }}>
                             <Link to="/vision" className="btn btn-secondary">
-                                ← Previous
+                                ← 願景
                             </Link>
                             <Link to="/cloudflare" className="btn btn-primary">
-                                Next: Cloudflare Config →
+                                下一步：部署 →
                             </Link>
                         </div>
                     </div>

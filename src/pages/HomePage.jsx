@@ -1,8 +1,8 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 
-// --- Tilt Card Component ---
-const TiltCard = ({ children, to, className = '', style = {} }) => {
+// --- 和紙卡片組件 ---
+const WashiCard = ({ children, to, className = '', style = {} }) => {
     const ref = useRef(null)
 
     const handleMouseMove = (e) => {
@@ -13,18 +13,15 @@ const TiltCard = ({ children, to, className = '', style = {} }) => {
         const centerX = rect.width / 2
         const centerY = rect.height / 2
 
-        // Intensity of the tilt
-        const rotateX = ((y - centerY) / centerY) * -5
-        const rotateY = ((x - centerX) / centerX) * 5
+        const rotateX = ((y - centerY) / centerY) * -3
+        const rotateY = ((x - centerX) / centerX) * 3
 
-        ref.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`
-        ref.current.style.boxShadow = '0 20px 40px rgba(0,0,0,0.3), 0 0 20px rgba(99, 102, 241, 0.2)'
+        ref.current.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
     }
 
     const handleMouseLeave = () => {
         if (!ref.current) return
-        ref.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)'
-        ref.current.style.boxShadow = 'var(--shadow-md)'
+        ref.current.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg)'
     }
 
     const Component = to ? Link : 'div'
@@ -33,194 +30,356 @@ const TiltCard = ({ children, to, className = '', style = {} }) => {
         <Component
             to={to}
             ref={ref}
-            className={`glass-panel card ${className}`}
+            className={`washi-card ${className}`}
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
             style={{
-                transition: 'transform 0.1s ease-out, box-shadow 0.3s ease',
+                display: 'block',
+                transition: 'transform 0.15s ease-out, box-shadow 0.4s ease',
                 textDecoration: 'none',
                 ...style
             }}
         >
             {children}
-            {/* Glossy overlay effect */}
-            <div style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(125deg, rgba(255,255,255,0.1) 0%, transparent 40%, transparent 60%, rgba(255,255,255,0.05) 100%)',
-                pointerEvents: 'none',
-                borderRadius: 'inherit'
-            }} />
         </Component>
     )
 }
 
 function HomePage() {
     return (
-        <div className="home-container" style={{ overflowX: 'hidden' }}>
+        <div style={{ overflowX: 'hidden' }}>
 
-            {/* === Radical Hero Section === */}
+            {/* === 英雄區域 === */}
             <section style={{
-                minHeight: '100vh',
+                minHeight: '90vh',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'center',
                 alignItems: 'center',
                 position: 'relative',
-                marginTop: '-80px' // Offset header
+                padding: '2rem 0 4rem',
+                marginTop: '-60px'
             }}>
-
-                {/* Background Glow */}
+                {/* 墨暈背景 */}
                 <div style={{
                     position: 'absolute',
-                    top: '50%',
+                    top: '30%',
                     left: '50%',
                     transform: 'translate(-50%, -50%)',
-                    width: '60vw',
-                    height: '60vw',
-                    background: 'radial-gradient(circle, rgba(99,102,241,0.15) 0%, rgba(0,0,0,0) 70%)',
-                    zIndex: -1,
-                    filter: 'blur(60px)'
+                    width: '80vw',
+                    maxWidth: '800px',
+                    height: '400px',
+                    background: 'radial-gradient(ellipse at center, var(--shu-glow) 0%, transparent 70%)',
+                    filter: 'blur(60px)',
+                    opacity: 0.4,
+                    zIndex: -1
                 }} />
 
                 <div className="container" style={{ textAlign: 'center', position: 'relative', zIndex: 10 }}>
 
-                    <div className="animate-enter fade-in-delay-1" style={{ marginBottom: '1rem' }}>
-                        <span style={{
-                            fontFamily: 'var(--font-mono)',
-                            color: 'var(--primary)',
-                            fontSize: '0.9rem',
-                            letterSpacing: '0.2em',
-                            textTransform: 'uppercase',
-                            background: 'rgba(99, 102, 241, 0.1)',
-                            padding: '0.5rem 1rem',
-                            borderRadius: 'var(--radius-full)',
-                            border: '1px solid rgba(99, 102, 241, 0.2)'
+                    {/* 狀態標籤 */}
+                    <div className="animate-enter" style={{ marginBottom: '2rem' }}>
+                        <span className="scroll-title" style={{
+                            fontSize: '0.85rem',
+                            color: 'var(--text-nezumi)',
+                            letterSpacing: '0.15em'
                         }}>
                             System Online
                         </span>
                     </div>
 
-                    <h1 className="animate-enter fade-in-delay-2" style={{
-                        position: 'relative',
-                        fontSize: 'clamp(4rem, 15vw, 12rem)',
+                    {/* 主標題 - 書法風格 */}
+                    <h1 className="animate-enter delay-100 calligraphy-title" style={{
+                        fontSize: 'clamp(3.5rem, 12vw, 8rem)',
                         fontWeight: 300,
-                        lineHeight: 0.9,
-                        letterSpacing: '-0.04em',
-                        fontFamily: 'var(--font-display)',
-                        textTransform: 'uppercase',
-                        margin: '1rem 0'
+                        lineHeight: 1,
+                        letterSpacing: '0.1em',
+                        marginBottom: '0.5rem'
                     }}>
-                        <span style={{ display: 'block', color: 'transparent', WebkitTextStroke: '1px rgba(255,255,255,0.3)' }}>Flow</span>
-                        <span className="text-gradient" style={{ display: 'block', fontWeight: 800 }}>Code</span>
+                        <span style={{
+                            display: 'block',
+                            color: 'transparent',
+                            WebkitTextStroke: '1px rgba(255,255,255,0.2)',
+                            fontFamily: 'var(--font-mincho)'
+                        }}>
+                            F L O W
+                        </span>
+                        <span className="text-gradient-shu" style={{
+                            display: 'block',
+                            fontWeight: 500,
+                            fontFamily: 'var(--font-gothic)'
+                        }}>
+                            C O D E
+                        </span>
                     </h1>
 
-                    <p className="animate-enter fade-in-delay-3" style={{
-                        fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
-                        color: 'var(--text-secondary)',
-                        maxWidth: '600px',
-                        margin: '2rem auto',
-                        lineHeight: 1.6
+                    {/* 副標題 */}
+                    <p className="animate-enter delay-200" style={{
+                        fontSize: 'clamp(1rem, 2.5vw, 1.3rem)',
+                        color: 'var(--text-nezumi)',
+                        maxWidth: '500px',
+                        margin: '2rem auto 3rem',
+                        lineHeight: 1.8,
+                        fontFamily: 'var(--font-gothic)'
                     }}>
-                        Reject the syntax. Embrace the logic. <br />
-                        <span style={{ color: 'white' }}>The first AI-native development environment.</span>
+                        「 用自然語言，創造無限可能 」
+                        <br />
+                        <span style={{ color: 'var(--text-ishi)', fontSize: '0.9em' }}>
+                            AI 原生開發環境
+                        </span>
                     </p>
 
-                    <div className="animate-enter fade-in-delay-3" style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', marginTop: '3rem' }}>
-                        <Link to="/download" className="btn btn-primary" style={{ height: '60px', padding: '0 3rem', fontSize: '1.2rem' }}>
-                            Initialize
+                    {/* CTA 按鈕 */}
+                    <div className="animate-enter delay-300" style={{
+                        display: 'flex',
+                        gap: '1rem',
+                        justifyContent: 'center',
+                        flexWrap: 'wrap'
+                    }}>
+                        <Link to="/download" className="btn btn-primary" style={{
+                            padding: '1rem 2.5rem',
+                            fontSize: '1rem'
+                        }}>
+                            開始旅程
                         </Link>
+                        <a
+                            href="https://github.com/sorrow233/flowcode"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="btn btn-secondary"
+                            style={{ padding: '1rem 2rem' }}
+                        >
+                            GitHub →
+                        </a>
                     </div>
-
                 </div>
 
-                {/* Decor Elements */}
+                {/* 裝飾元素 */}
                 <div style={{
                     position: 'absolute',
-                    bottom: '10%',
-                    right: '10%',
+                    bottom: '8%',
+                    right: '8%',
                     textAlign: 'right',
-                    fontFamily: 'var(--font-mono)',
+                    fontFamily: 'var(--font-mincho)',
                     fontSize: '0.8rem',
-                    color: 'var(--text-muted)',
-                    opacity: 0.5
+                    color: 'var(--text-ishi)',
+                    opacity: 0.4
                 }}>
-                    <div style={{ marginBottom: '0.5rem' }}>VER 2.4.0</div>
-                    <div>STATUS: STABLE</div>
+                    <div>版本 2.4.0</div>
+                    <div>穩定運行中</div>
+                </div>
+
+                {/* 左側裝飾 */}
+                <div style={{
+                    position: 'absolute',
+                    bottom: '8%',
+                    left: '8%',
+                    fontFamily: 'var(--font-mincho)',
+                    fontSize: '2rem',
+                    color: 'var(--text-ishi)',
+                    opacity: 0.15,
+                    writingMode: 'vertical-rl'
+                }}>
+                    流動的程式碼
                 </div>
             </section>
 
 
-            {/* === Modular Grid Section === */}
-            <section className="section" style={{ padding: '4rem 0 8rem' }}>
-                <div className="container">
-                    <div className="bento-grid" style={{
+            {/* === 功能模塊區域 === */}
+            <section style={{ padding: '4rem 0 8rem' }}>
+                <div className="container" style={{ maxWidth: '1100px' }}>
+
+                    {/* 區域標題 */}
+                    <div style={{
+                        textAlign: 'center',
+                        marginBottom: '4rem'
+                    }}>
+                        <h2 className="animate-enter" style={{
+                            fontSize: '1.8rem',
+                            fontWeight: 400,
+                            color: 'var(--text-yuki)',
+                            marginBottom: '0.5rem'
+                        }}>
+                            七步成詩
+                        </h2>
+                        <p style={{ color: 'var(--text-ishi)', fontSize: '0.95rem' }}>
+                            從想法到上線，只需七個簡單步驟
+                        </p>
+                    </div>
+
+                    {/* Bento Grid */}
+                    <div style={{
                         display: 'grid',
                         gridTemplateColumns: 'repeat(12, 1fr)',
-                        gridAutoRows: 'minmax(200px, auto)',
-                        gap: '24px',
+                        gap: '1.25rem'
                     }}>
+                        {/* CSS for responsive grid */}
+                        <style>{`
+                            .grid-card { grid-column: span 12; }
+                            @media (min-width: 768px) {
+                                .grid-span-8 { grid-column: span 8 !important; }
+                                .grid-span-6 { grid-column: span 6 !important; }
+                                .grid-span-4 { grid-column: span 4 !important; }
+                            }
+                        `}</style>
 
-                        {/* 1. Large Feature Card (Span 8) */}
-                        <TiltCard className="surface-card" style={{ gridColumn: 'span 12', md: { gridColumn: 'span 8' }, padding: '3rem', minHeight: '400px', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative', overflow: 'hidden' }}>
-                            {/* Abstract graphic */}
-                            <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '400px', height: '400px', background: 'radial-gradient(circle, var(--primary-dim) 0%, transparent 70%)', filter: 'blur(40px)', zIndex: 0 }} />
+                        {/* 大型特色卡片 */}
+                        <WashiCard
+                            className="grid-card grid-span-8"
+                            style={{
+                                padding: '2.5rem',
+                                minHeight: '320px',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'flex-end'
+                            }}
+                        >
+                            {/* 背景裝飾 */}
+                            <div style={{
+                                position: 'absolute',
+                                top: 0,
+                                right: 0,
+                                width: '200px',
+                                height: '200px',
+                                background: 'radial-gradient(circle, var(--fuji-glow) 0%, transparent 70%)',
+                                filter: 'blur(40px)',
+                                opacity: 0.5
+                            }} />
 
                             <div style={{ position: 'relative', zIndex: 1 }}>
-                                <h3 className="text-gradient" style={{ fontSize: '3rem', marginBottom: '1rem', maxWidth: '600px' }}>Visual Intelligence</h3>
-                                <p style={{ fontSize: '1.5rem', maxWidth: '500px', color: 'var(--text-secondary)' }}>
-                                    Stop writing boilerplate. FlowCode understands your intent and constructs the architecture instantly.
+                                <h3 className="text-gradient-shu" style={{
+                                    fontSize: '2rem',
+                                    marginBottom: '1rem',
+                                    fontWeight: 500
+                                }}>
+                                    視覺智能
+                                </h3>
+                                <p style={{
+                                    fontSize: '1.1rem',
+                                    maxWidth: '400px',
+                                    color: 'var(--text-nezumi)',
+                                    marginBottom: 0
+                                }}>
+                                    停止編寫樣板代碼。FlowCode 理解您的意圖，即時構建架構。
                                 </p>
                             </div>
-                        </TiltCard>
+                        </WashiCard>
 
-                        {/* 2. Side Stack (Span 4) */}
-                        <div style={{ gridColumn: 'span 12', display: 'flex', flexDirection: 'column', gap: '24px', '@media (min-width: 768px)': { gridColumn: 'span 4' } }} className="mobile-stack">
-                            {/* I can't easily do media queries in inline styles without a library, so I'll just make them span 12 for mobile and handle responsive via CSS generic classes if I had them, or just use 6/6 logic. Let's stick to 6/6 or 4/4/4 for simplicity in this generated code or assume desktop first for the "wow" factor, but better to be safe. I'll make them 12 (full width) but add a style block. */}
+                        {/* 側邊卡片 */}
+                        <WashiCard
+                            className="grid-card grid-span-4"
+                            style={{
+                                padding: '2rem',
+                                display: 'flex',
+                                flexDirection: 'column',
+                                justifyContent: 'center',
+                                textAlign: 'center'
+                            }}
+                        >
+                            <div style={{
+                                fontSize: '3rem',
+                                marginBottom: '1rem',
+                                filter: 'grayscale(0.3)'
+                            }}>🧠</div>
+                            <h4 style={{
+                                color: 'var(--text-yuki)',
+                                fontSize: '1.2rem',
+                                marginBottom: '0.5rem'
+                            }}>
+                                認知負荷：零
+                            </h4>
+                            <p style={{
+                                fontSize: '0.9rem',
+                                color: 'var(--text-ishi)',
+                                marginBottom: 0
+                            }}>
+                                忘記語法錯誤。IDE 處理語法，您專注於邏輯。
+                            </p>
+                        </WashiCard>
 
-                            <style>{`
-                                .bento-grid > * { grid-column: span 12; }
-                                @media (min-width: 900px) {
-                                    .col-span-8 { grid-column: span 8 !important; }
-                                    .col-span-4 { grid-column: span 4 !important; }
-                                    .col-span-6 { grid-column: span 6 !important; }
-                                    .col-span-3 { grid-column: span 3 !important; }
-                                }
-                             `}</style>
+                        {/* 模塊卡片行 */}
+                        {[
+                            { to: '/vision', num: '弐', title: '願景', desc: '描繪夢想藍圖', icon: '👁️', color: 'var(--asagi)' },
+                            { to: '/generation', num: '参', title: '生成', desc: '即時程式碼合成', icon: '⚡', color: 'var(--fuji)' },
+                            { to: '/cloudflare', num: '肆', title: '部署', desc: '全球邊緣網路', icon: '☁️', color: 'var(--kincha)' },
+                            { to: '/firebase', num: '伍', title: '存儲', desc: '無伺服器後端', icon: '🔥', color: 'var(--shu)' }
+                        ].map((card, i) => (
+                            <WashiCard
+                                key={card.to}
+                                to={card.to}
+                                className="grid-card grid-span-6"
+                                style={{
+                                    padding: '1.75rem',
+                                    minHeight: '160px',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    justifyContent: 'space-between'
+                                }}
+                            >
+                                <div style={{
+                                    display: 'flex',
+                                    justifyContent: 'space-between',
+                                    alignItems: 'flex-start'
+                                }}>
+                                    <span style={{
+                                        fontSize: '1.5rem',
+                                        filter: 'grayscale(0.2)'
+                                    }}>{card.icon}</span>
+                                    <span style={{
+                                        fontFamily: 'var(--font-mincho)',
+                                        fontSize: '0.8rem',
+                                        color: card.color,
+                                        opacity: 0.8
+                                    }}>{card.num}</span>
+                                </div>
+                                <div>
+                                    <h4 style={{
+                                        fontSize: '1.3rem',
+                                        color: 'var(--text-yuki)',
+                                        marginBottom: '0.25rem'
+                                    }}>{card.title}</h4>
+                                    <p style={{
+                                        fontSize: '0.85rem',
+                                        color: 'var(--text-ishi)',
+                                        marginBottom: 0
+                                    }}>{card.desc}</p>
+                                </div>
+                            </WashiCard>
+                        ))}
+                    </div>
+                </div>
+            </section>
 
-                        </div>
-
-                        {/* We need to restructure the grid children because of the style block above */}
-                        <TiltCard className="col-span-8 surface-card" style={{ padding: '3rem', minHeight: '350px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                            <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>🧠</div>
-                            <h3 style={{ fontSize: '2rem', color: 'white' }}>Cognitive Load: Zero</h3>
-                            <p style={{ fontSize: '1.1rem' }}>Forget syntax errors. The IDE handles the grammar while you handle the logic.</p>
-                        </TiltCard>
-
-                        <TiltCard to="/vision" className="col-span-4 glass-panel" style={{ padding: '2rem', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', background: 'linear-gradient(to bottom right, var(--bg-surface), var(--bg-deep))' }}>
-                            <div style={{ marginBottom: 'auto', fontSize: '2rem', color: 'var(--secondary)' }}>👁️</div>
-                            <h3 style={{ fontSize: '1.5rem', color: 'white' }}>Vision Studio</h3>
-                            <p style={{ fontSize: '0.9rem' }}>Architect your dreams.</p>
-                        </TiltCard>
-
-                        <TiltCard to="/generation" className="col-span-4 glass-panel" style={{ padding: '2rem' }}>
-                            <h4 style={{ color: 'var(--text-muted)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em' }}>Module 02</h4>
-                            <h3 style={{ fontSize: '1.8rem', marginTop: '0.5rem', color: '#fff' }}>Generation</h3>
-                            <p style={{ marginTop: '1rem' }}>Real-time code synthesis.</p>
-                        </TiltCard>
-
-                        <TiltCard to="/cloudflare" className="col-span-4 glass-panel" style={{ padding: '2rem' }}>
-                            <h4 style={{ color: 'var(--text-muted)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em' }}>Module 03</h4>
-                            <h3 style={{ fontSize: '1.8rem', marginTop: '0.5rem', color: '#fff' }}>Deployment</h3>
-                            <p style={{ marginTop: '1rem' }}>Global edge network.</p>
-                        </TiltCard>
-
-                        <TiltCard to="/firebase" className="col-span-4 glass-panel" style={{ padding: '2rem' }}>
-                            <h4 style={{ color: 'var(--text-muted)', textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.1em' }}>Module 04</h4>
-                            <h3 style={{ fontSize: '1.8rem', marginTop: '0.5rem', color: '#fff' }}>Backend</h3>
-                            <p style={{ marginTop: '1rem' }}>Serverless infrastructure.</p>
-                        </TiltCard>
-
+            {/* === 精神區域 === */}
+            <section style={{
+                padding: '6rem 0',
+                borderTop: '1px solid var(--border-kasumi)'
+            }}>
+                <div className="container" style={{ maxWidth: '700px', textAlign: 'center' }}>
+                    <div style={{
+                        fontFamily: 'var(--font-mincho)',
+                        fontSize: '3rem',
+                        color: 'var(--text-ishi)',
+                        opacity: 0.3,
+                        marginBottom: '2rem'
+                    }}>
+                        流
+                    </div>
+                    <p style={{
+                        fontSize: '1.2rem',
+                        color: 'var(--text-nezumi)',
+                        lineHeight: 2,
+                        fontFamily: 'var(--font-gothic)'
+                    }}>
+                        「不執著於語法，專注於創意。<br />
+                        讓 AI 成為你的執行者，你只需做決策者。」
+                    </p>
+                    <div style={{
+                        marginTop: '2rem',
+                        fontSize: '0.85rem',
+                        color: 'var(--text-ishi)'
+                    }}>
+                        — FlowCode 開發理念
                     </div>
                 </div>
             </section>

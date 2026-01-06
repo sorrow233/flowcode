@@ -1,79 +1,171 @@
 import { Link } from 'react-router-dom'
-import CodeBlock from '../components/CodeBlock'
 
 function CloudflarePage() {
     return (
         <>
+            {/* 頁面標題 */}
             <section className="page-header">
-                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-                    <div style={{ display: 'inline-block', padding: '0.5rem 1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', marginBottom: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <span style={{ color: 'var(--secondary)' }}>Step 04</span>
+                <div className="container" style={{ maxWidth: '800px' }}>
+                    <div className="scroll-title animate-enter">
+                        <span style={{
+                            fontFamily: 'var(--font-mincho)',
+                            color: 'var(--kincha)'
+                        }}>肆</span>
+                        <span style={{ color: 'var(--text-nezumi)' }}>第四步</span>
                     </div>
-                    <h1 className="text-gradient-cyber" style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Global Deployment</h1>
-                    <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>Register for Cloudflare to bring your site to the edge.</p>
+                    <h1 className="animate-enter delay-100 text-gradient-asagi" style={{
+                        fontSize: '2.8rem',
+                        marginBottom: '1rem'
+                    }}>
+                        全球部署
+                    </h1>
+                    <p className="animate-enter delay-200" style={{
+                        fontSize: '1.1rem',
+                        color: 'var(--text-nezumi)',
+                        maxWidth: '500px',
+                        margin: '0 auto'
+                    }}>
+                        註冊 Cloudflare，將你的網站推向全球邊緣網路
+                    </p>
                 </div>
             </section>
 
-            <section className="page-content" style={{ marginTop: '-4rem' }}>
-                <div className="container">
-                    <div className="glass-panel card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem' }}>
+            {/* 主要內容 */}
+            <section className="page-content" style={{ marginTop: '-2rem' }}>
+                <div className="container" style={{ maxWidth: '700px' }}>
+                    <div className="washi-card-dark animate-enter delay-300" style={{ padding: '3rem' }}>
 
-                        <div className="tutorial-section">
-                            <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <span style={{ width: '32px', height: '32px', background: 'var(--secondary)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', color: 'black', fontWeight: 'bold' }}>1</span>
-                                Create Account
-                            </h3>
-                            <p className="text-muted" style={{ margin: '1rem 0 2rem', paddingLeft: '42px' }}>
-                                Cloudflare is the world's leading edge network. We'll use it to host your site for free with enterprise-grade speed.
+                        {/* 步驟 1 */}
+                        <div style={{ marginBottom: '2.5rem' }}>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.75rem',
+                                marginBottom: '1rem'
+                            }}>
+                                <span style={{
+                                    width: '28px',
+                                    height: '28px',
+                                    background: 'var(--kincha)',
+                                    borderRadius: '8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '0.85rem',
+                                    color: 'var(--bg-sumi)',
+                                    fontWeight: 600
+                                }}>1</span>
+                                <h3 style={{
+                                    fontSize: '1.2rem',
+                                    margin: 0,
+                                    fontWeight: 500
+                                }}>創建帳號</h3>
+                            </div>
+                            <p style={{
+                                color: 'var(--text-ishi)',
+                                marginBottom: '1.5rem',
+                                paddingLeft: '2.5rem',
+                                lineHeight: 1.8
+                            }}>
+                                Cloudflare 是全球領先的邊緣網路。我們將使用它免費託管你的網站，享受企業級速度。
                             </p>
-                            <div style={{ paddingLeft: '42px' }}>
+                            <div style={{ paddingLeft: '2.5rem' }}>
                                 <a
                                     href="https://dash.cloudflare.com/sign-up"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn btn-primary"
-                                    style={{ marginBottom: 'var(--space-lg)' }}
+                                    className="btn btn-ghost"
                                 >
-                                    Go to Cloudflare Sign Up →
+                                    前往 Cloudflare 註冊 →
                                 </a>
                             </div>
                         </div>
 
-                        <div className="tutorial-section" style={{ marginTop: '3rem' }}>
-                            <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <span style={{ width: '32px', height: '32px', background: 'var(--secondary)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', color: 'black', fontWeight: 'bold' }}>2</span>
-                                Get API Token
-                            </h3>
-                            <p className="text-muted" style={{ margin: '1rem 0', paddingLeft: '42px' }}>
-                                To let AI deploy for you, you need to generate an API Token.
+                        {/* 步驟 2 */}
+                        <div style={{ marginBottom: '2rem' }}>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.75rem',
+                                marginBottom: '1rem'
+                            }}>
+                                <span style={{
+                                    width: '28px',
+                                    height: '28px',
+                                    background: 'var(--kincha)',
+                                    borderRadius: '8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '0.85rem',
+                                    color: 'var(--bg-sumi)',
+                                    fontWeight: 600
+                                }}>2</span>
+                                <h3 style={{
+                                    fontSize: '1.2rem',
+                                    margin: 0,
+                                    fontWeight: 500
+                                }}>獲取 API Token</h3>
+                            </div>
+                            <p style={{
+                                color: 'var(--text-ishi)',
+                                marginBottom: '1rem',
+                                paddingLeft: '2.5rem'
+                            }}>
+                                讓 AI 為你自動部署，需要生成一個 API Token：
                             </p>
 
-                            <ul className="tutorial-list" style={{ paddingLeft: '60px' }}>
-                                <li>Log in to Cloudflare Dashboard</li>
-                                <li>Click User Icon (Top Right) → <strong>My Profile</strong></li>
-                                <li>Select <strong>API Tokens</strong> on the left</li>
-                                <li>Click <strong>Create Token</strong></li>
-                                <li>Use Template: <strong>Edit Cloudflare Workers</strong> (Includes Pages rights)</li>
-                                <li>Scroll down and click <strong>Continue to summary</strong></li>
-                                <li>Click <strong>Create Token</strong></li>
+                            <ul style={{
+                                paddingLeft: '4rem',
+                                color: 'var(--text-nezumi)',
+                                lineHeight: 2
+                            }}>
+                                <li>登入 Cloudflare Dashboard</li>
+                                <li>點擊右上角用戶圖標 → <strong style={{ color: 'var(--text-yuki)' }}>My Profile</strong></li>
+                                <li>左側選擇 <strong style={{ color: 'var(--text-yuki)' }}>API Tokens</strong></li>
+                                <li>點擊 <strong style={{ color: 'var(--text-yuki)' }}>Create Token</strong></li>
+                                <li>使用模板：<strong style={{ color: 'var(--text-yuki)' }}>Edit Cloudflare Workers</strong></li>
+                                <li>滾動到底部點擊 <strong style={{ color: 'var(--text-yuki)' }}>Create Token</strong></li>
                             </ul>
-
-                            <div className="glass-panel-heavy" style={{ marginTop: '2rem', padding: '1.5rem', borderRadius: '16px', borderLeft: '4px solid var(--secondary)' }}>
-                                <div className="info-box-title" style={{ color: 'var(--secondary)' }}>🔑 CRITICAL: Save Your Token</div>
-                                <p style={{ marginBottom: 0, marginTop: '0.5rem', fontSize: '0.95rem' }}>
-                                    The token is only shown <strong>ONCE</strong>. <br />
-                                    Copy it immediately to a safe place (Note/Password Manager).<br />
-                                    <strong>You will need this for the next step.</strong>
-                                </p>
-                            </div>
                         </div>
 
-                        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-dim)', paddingTop: '2rem' }}>
+                        {/* 重要提示 */}
+                        <div className="info-box" style={{
+                            borderLeftColor: 'var(--shu)',
+                            background: 'var(--shu-soft)'
+                        }}>
+                            <div className="info-box-title" style={{ color: 'var(--shu)' }}>
+                                🔑 重要：保存你的 Token
+                            </div>
+                            <p style={{
+                                marginBottom: '0.5rem',
+                                color: 'var(--text-nezumi)'
+                            }}>
+                                Token 只會顯示 <strong style={{ color: 'var(--text-yuki)' }}>一次</strong>。
+                            </p>
+                            <p style={{
+                                fontSize: '0.9rem',
+                                color: 'var(--text-ishi)',
+                                marginBottom: 0
+                            }}>
+                                請立即複製到安全的地方（備忘錄/密碼管理器）。<br />
+                                下一步你將需要用到它。
+                            </p>
+                        </div>
+
+                        {/* 導航按鈕 */}
+                        <div style={{
+                            marginTop: '2.5rem',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            paddingTop: '2rem',
+                            borderTop: '1px solid var(--border-kasumi)'
+                        }}>
                             <Link to="/generation" className="btn btn-secondary">
-                                ← Previous
+                                ← 生成
                             </Link>
                             <Link to="/firebase" className="btn btn-primary">
-                                Next: Database →
+                                下一步：存儲 →
                             </Link>
                         </div>
                     </div>

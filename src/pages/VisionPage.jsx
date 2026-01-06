@@ -1,86 +1,184 @@
 import { Link } from 'react-router-dom'
-import CodeBlock from '../components/CodeBlock'
 
 function VisionPage() {
     return (
         <>
+            {/* 頁面標題 */}
             <section className="page-header">
-                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-                    <div style={{ display: 'inline-block', padding: '0.5rem 1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', marginBottom: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <span style={{ color: 'var(--secondary)' }}>Step 02</span>
+                <div className="container" style={{ maxWidth: '800px' }}>
+                    <div className="scroll-title animate-enter">
+                        <span style={{
+                            fontFamily: 'var(--font-mincho)',
+                            color: 'var(--fuji)'
+                        }}>弐</span>
+                        <span style={{ color: 'var(--text-nezumi)' }}>第二步</span>
                     </div>
-                    <h1 className="text-gradient-cyber" style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Define Your Vision</h1>
-                    <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>Tell AI what you want. Simplicity is the ultimate sophistication.</p>
+                    <h1 className="animate-enter delay-100 text-gradient-asagi" style={{
+                        fontSize: '2.8rem',
+                        marginBottom: '1rem'
+                    }}>
+                        描繪願景
+                    </h1>
+                    <p className="animate-enter delay-200" style={{
+                        fontSize: '1.1rem',
+                        color: 'var(--text-nezumi)',
+                        maxWidth: '500px',
+                        margin: '0 auto'
+                    }}>
+                        告訴 AI 你想要什麼。簡單即是終極的複雜。
+                    </p>
                 </div>
             </section>
 
-            <section className="page-content" style={{ marginTop: '-4rem' }}>
-                <div className="container">
-                    <div className="glass-panel card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem' }}>
-                        <h2>Natural Language Description</h2>
-                        <p style={{ marginBottom: '3rem', fontSize: '1.1rem', color: 'var(--text-secondary)' }}>
-                            Open Antigravity IDE and type your thoughts into the chat.
-                            No jargon needed. Just answer these three:
+            {/* 主要內容 */}
+            <section className="page-content" style={{ marginTop: '-2rem' }}>
+                <div className="container" style={{ maxWidth: '750px' }}>
+                    <div className="washi-card-dark animate-enter delay-300" style={{ padding: '3rem' }}>
+
+                        <h2 style={{
+                            fontSize: '1.5rem',
+                            marginBottom: '1rem',
+                            fontWeight: 500
+                        }}>自然語言描述</h2>
+                        <p style={{
+                            marginBottom: '2.5rem',
+                            color: 'var(--text-nezumi)',
+                            lineHeight: 1.8
+                        }}>
+                            打開 Antigravity IDE，在對話框中輸入你的想法。<br />
+                            無需專業術語，只需回答這三個問題：
                         </p>
 
-                        <div className="feature-grid" style={{ marginBottom: '3rem', gridTemplateColumns: 'repeat(3, 1fr)' }}>
-                            <div className="surface-card" style={{ padding: '1.5rem', borderRadius: '16px' }}>
-                                <h4 style={{ color: 'var(--secondary)', marginBottom: '0.5rem' }}>🎯 Goal</h4>
-                                <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>What do you want to build?</p>
+                        {/* 三要素 */}
+                        <div className="feature-grid" style={{ marginBottom: '2.5rem' }}>
+                            {[
+                                { icon: '🎯', title: '目標', desc: '你想構建什麼？', color: 'var(--asagi)' },
+                                { icon: '💡', title: '目的', desc: '為什麼需要它？', color: 'var(--fuji)' },
+                                { icon: '📏', title: '限制', desc: '保持在 30 字以內', color: 'var(--kincha)' }
+                            ].map(item => (
+                                <div key={item.title} className="surface-card" style={{
+                                    padding: '1.25rem',
+                                    textAlign: 'center'
+                                }}>
+                                    <div style={{ fontSize: '1.5rem', marginBottom: '0.5rem' }}>{item.icon}</div>
+                                    <h4 style={{
+                                        color: item.color,
+                                        fontSize: '1rem',
+                                        marginBottom: '0.25rem'
+                                    }}>{item.title}</h4>
+                                    <p style={{
+                                        fontSize: '0.85rem',
+                                        color: 'var(--text-ishi)',
+                                        marginBottom: 0
+                                    }}>{item.desc}</p>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* 提示模板 */}
+                        <div className="info-box" style={{
+                            marginBottom: '2.5rem',
+                            borderLeftColor: 'var(--asagi)',
+                            background: 'var(--asagi-soft)'
+                        }}>
+                            <div className="info-box-title" style={{ color: 'var(--asagi)' }}>
+                                📝 提示模板
                             </div>
-                            <div className="surface-card" style={{ padding: '1.5rem', borderRadius: '16px' }}>
-                                <h4 style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>💡 Purpose</h4>
-                                <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Why do you need it?</p>
-                            </div>
-                            <div className="surface-card" style={{ padding: '1.5rem', borderRadius: '16px' }}>
-                                <h4 style={{ color: '#fbbf24', marginBottom: '0.5rem' }}>📏 Constraint</h4>
-                                <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Keep it under 30 words.</p>
+                            <div style={{
+                                fontFamily: 'var(--font-mono)',
+                                fontSize: '0.95rem',
+                                color: 'var(--text-yuki)',
+                                lineHeight: 1.6
+                            }}>
+                                「我想構建一個 [應用類型] 來 [解決什麼問題/達成什麼目標]。（保持簡潔）」
                             </div>
                         </div>
 
-                        <div className="glass-panel-heavy" style={{ marginBottom: '3rem', padding: '2rem', borderRadius: '16px', borderLeft: '4px solid var(--secondary)' }}>
-                            <div className="info-box-title" style={{ color: 'var(--secondary)', marginBottom: '1rem' }}>📝 Prompt Template</div>
-                            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1rem', lineHeight: 1.6 }}>
-                                "I want to build a [Type of App] to [solve what problem/achieve what goal]. (Keep it simple)"
-                            </div>
-                        </div>
+                        {/* 對話示例 */}
+                        <h3 style={{
+                            marginBottom: '1.5rem',
+                            fontSize: '1.2rem',
+                            fontWeight: 500
+                        }}>對話示例</h3>
 
-                        <h3>Interaction Example</h3>
-                        <p style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>This is how Antigravity AI responds to your vision:</p>
-
-                        <div className="code-block" style={{ padding: '2rem', background: 'var(--bg-base)', borderRadius: '16px', border: '1px solid var(--border-dim)' }}>
-                            <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
-                                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--bg-elevated)', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', color: 'var(--text-muted)' }}>YOU</div>
-                                <div>
-                                    <div style={{ background: 'var(--bg-elevated)', padding: '1rem', borderRadius: '0 16px 16px 16px', color: 'var(--text-primary)' }}>
-                                        I want to make a minimalist Todo list to remind me to buy milk, styled like sticky notes.
-                                    </div>
+                        <div className="code-block" style={{
+                            padding: '1.5rem',
+                            marginBottom: '2rem'
+                        }}>
+                            {/* 用戶消息 */}
+                            <div style={{
+                                display: 'flex',
+                                gap: '1rem',
+                                marginBottom: '1.5rem'
+                            }}>
+                                <div style={{
+                                    width: '36px',
+                                    height: '36px',
+                                    borderRadius: '50%',
+                                    background: 'var(--bg-shitan)',
+                                    flexShrink: 0,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '0.75rem',
+                                    color: 'var(--text-ishi)'
+                                }}>你</div>
+                                <div style={{
+                                    background: 'var(--bg-shitan)',
+                                    padding: '1rem',
+                                    borderRadius: '0 12px 12px 12px',
+                                    color: 'var(--text-yuki)',
+                                    fontSize: '0.95rem'
+                                }}>
+                                    我想做一個極簡的待辦清單，用來提醒我買牛奶，風格像便利貼一樣。
                                 </div>
                             </div>
 
+                            {/* AI 回覆 */}
                             <div style={{ display: 'flex', gap: '1rem' }}>
-                                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--grad-primary)', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem', fontWeight: 'bold' }}>AI</div>
-                                <div>
-                                    <div style={{ background: 'rgba(99, 102, 241, 0.1)', border: '1px solid rgba(99, 102, 241, 0.2)', padding: '1rem', borderRadius: '0 16px 16px 16px' }}>
-                                        <p style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>
-                                            <strong>Understood:</strong><br />
-                                            You want a <strong>Sticky Note style Minimalist Todo List</strong>.
-                                        </p>
-                                        <p style={{ color: 'var(--text-secondary)' }}>
-                                            <strong>My Plan:</strong><br />
-                                            Great idea! The sticky note aesthetic adds a fun, tactile feel. I suggest using a yellow background for cards with a handwritten font, removing complex categorization to keep it pure.
-                                        </p>
-                                    </div>
+                                <div style={{
+                                    width: '36px',
+                                    height: '36px',
+                                    borderRadius: '50%',
+                                    background: 'var(--grad-sunset)',
+                                    flexShrink: 0,
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '0.8rem',
+                                    fontWeight: 600
+                                }}>AI</div>
+                                <div style={{
+                                    background: 'var(--fuji-soft)',
+                                    border: '1px solid var(--fuji-soft)',
+                                    padding: '1rem',
+                                    borderRadius: '0 12px 12px 12px',
+                                    fontSize: '0.95rem'
+                                }}>
+                                    <p style={{ marginBottom: '0.75rem', color: 'var(--text-yuki)' }}>
+                                        <strong>理解了：</strong><br />
+                                        你想要一個 <strong>便利貼風格的極簡待辦清單</strong>。
+                                    </p>
+                                    <p style={{ color: 'var(--text-nezumi)', marginBottom: 0 }}>
+                                        <strong>我的方案：</strong><br />
+                                        很棒的想法！便利貼美學增添了有趣的觸感。建議使用黃色背景卡片搭配手寫字體，去除複雜分類以保持純粹。
+                                    </p>
                                 </div>
                             </div>
                         </div>
 
-                        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-dim)', paddingTop: '2rem' }}>
+                        {/* 導航按鈕 */}
+                        <div style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            paddingTop: '2rem',
+                            borderTop: '1px solid var(--border-kasumi)'
+                        }}>
                             <Link to="/download" className="btn btn-secondary">
-                                ← Download IDE
+                                ← 下載 IDE
                             </Link>
                             <Link to="/generation" className="btn btn-primary">
-                                Next: Generation →
+                                下一步：生成 →
                             </Link>
                         </div>
                     </div>
