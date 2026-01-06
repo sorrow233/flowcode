@@ -89,63 +89,65 @@ function DomainPage() {
                             gap: '1rem',
                             marginBottom: '2rem'
                         }}>
-                            <a
-                                key={provider.name}
-                                href={provider.url}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="surface-card"
-                                style={{
-                                    padding: '1.25rem',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '1rem',
-                                    textDecoration: 'none',
-                                    transition: 'all 0.3s ease',
-                                    border: provider.featured
-                                        ? '1px solid var(--asagi-soft)'
-                                        : '1px solid var(--border-kasumi)'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.borderColor = 'var(--asagi)';
-                                    e.currentTarget.style.transform = 'translateY(-2px)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.borderColor = provider.featured ? 'var(--asagi-soft)' : 'var(--border-kasumi)';
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                }}
-                            >
-                                <div style={{ fontSize: '1.75rem' }}>{provider.icon}</div>
-                                <div style={{ flex: 1 }}>
-                                    <div style={{
+                            {providers.map(provider => (
+                                <a
+                                    key={provider.name}
+                                    href={provider.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="surface-card"
+                                    style={{
+                                        padding: '1.25rem',
                                         display: 'flex',
                                         alignItems: 'center',
-                                        gap: '0.5rem',
-                                        marginBottom: '0.25rem'
-                                    }}>
-                                        <h4 style={{
-                                            color: 'var(--text-yuki)',
-                                            fontSize: '1rem',
+                                        gap: '1rem',
+                                        textDecoration: 'none',
+                                        transition: 'all 0.3s ease',
+                                        border: provider.featured
+                                            ? '1px solid var(--asagi-soft)'
+                                            : '1px solid var(--border-kasumi)'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.borderColor = 'var(--asagi)';
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.borderColor = provider.featured ? 'var(--asagi-soft)' : 'var(--border-kasumi)';
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                    }}
+                                >
+                                    <div style={{ fontSize: '1.75rem' }}>{provider.icon}</div>
+                                    <div style={{ flex: 1 }}>
+                                        <div style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '0.5rem',
+                                            marginBottom: '0.25rem'
+                                        }}>
+                                            <h4 style={{
+                                                color: 'var(--text-yuki)',
+                                                fontSize: '1rem',
+                                                margin: 0
+                                            }}>{provider.name}</h4>
+                                            {provider.tag && (
+                                                <span style={{
+                                                    fontSize: '0.7rem',
+                                                    padding: '0.2rem 0.5rem',
+                                                    background: 'var(--asagi-soft)',
+                                                    color: 'var(--asagi)',
+                                                    borderRadius: 'var(--radius-full)'
+                                                }}>{provider.tag}</span>
+                                            )}
+                                        </div>
+                                        <p style={{
+                                            fontSize: '0.85rem',
+                                            color: 'var(--text-ishi)',
                                             margin: 0
-                                        }}>{provider.name}</h4>
-                                        {provider.tag && (
-                                            <span style={{
-                                                fontSize: '0.7rem',
-                                                padding: '0.2rem 0.5rem',
-                                                background: 'var(--asagi-soft)',
-                                                color: 'var(--asagi)',
-                                                borderRadius: 'var(--radius-full)'
-                                            }}>{provider.tag}</span>
-                                        )}
+                                        }}>{provider.desc}</p>
                                     </div>
-                                    <p style={{
-                                        fontSize: '0.85rem',
-                                        color: 'var(--text-ishi)',
-                                        margin: 0
-                                    }}>{provider.desc}</p>
-                                </div>
-                                <div style={{ color: 'var(--text-ishi)', fontSize: '0.8rem' }}>↗</div>
-                            </a>
+                                    <div style={{ color: 'var(--text-ishi)', fontSize: '0.8rem' }}>↗</div>
+                                </a>
+                            ))}
                         </div>
 
                         {/* 連結提示 */}
