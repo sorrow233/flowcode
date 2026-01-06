@@ -123,11 +123,13 @@ function FirebasePage() {
                                 </div>
                                 <div style={{ paddingLeft: '3.75rem' }}>
                                     <ul style={{ color: 'var(--text-nezumi)', display: 'grid', gap: '0.75rem', paddingLeft: '1.2rem', fontSize: '0.95rem' }}>
-                                        {Array.isArray(step2List) && step2List.map((item, index) => (
+                                        {Array.isArray(step2List) && step2List.map((_, index) => (
                                             <li key={index}>
-                                                <Trans i18nKey={`firebase.steps.2.list.${index}`} ns="pages">
-                                                    {item}
-                                                </Trans>
+                                                <Trans
+                                                    i18nKey={`firebase.steps.2.list.${index}`}
+                                                    ns="pages"
+                                                    components={[<strong key="0" />, <code key="1" />]}
+                                                />
                                             </li>
                                         ))}
                                     </ul>

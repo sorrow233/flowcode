@@ -127,14 +127,15 @@ function CloudflarePage() {
                                         paddingLeft: '1.2rem',
                                         fontSize: '0.95rem'
                                     }}>
-                                        <Trans i18nKey="cloudflare.steps.2.list" ns="pages">
-                                            <li>登入 Cloudflare Dashboard</li>
-                                            <li>點擊右上角用戶圖誌 → <strong>My Profile</strong></li>
-                                            <li>左側選擇 <strong>API Tokens</strong></li>
-                                            <li>點擊 <strong>Create Token</strong></li>
-                                            <li>使用模板：<strong>Edit Cloudflare Workers</strong></li>
-                                            <li>滾動到底部點擊 <strong>Create Token</strong></li>
-                                        </Trans>
+                                        {t('cloudflare.steps.2.list', { returnObjects: true }).map((_, index) => (
+                                            <li key={index}>
+                                                <Trans
+                                                    i18nKey={`cloudflare.steps.2.list.${index}`}
+                                                    ns="pages"
+                                                    components={[<strong key="0" />]}
+                                                />
+                                            </li>
+                                        ))}
                                     </ul>
                                 </div>
                             </div>
@@ -210,10 +211,10 @@ function CloudflarePage() {
                                     {t('cloudflare.warning.title')}
                                 </div>
                                 <p style={{ fontSize: '0.95rem', color: 'var(--text-nezumi)', margin: 0 }}>
-                                    <Trans i18nKey="cloudflare.warning.text_1" ns="pages" />
+                                    <Trans i18nKey="cloudflare.warning.text_1" ns="pages" components={[<strong key="0" />]} />
                                 </p>
                                 <p style={{ fontSize: '0.9rem', color: 'var(--text-ishi)', marginTop: '0.5rem', margin: 0 }}>
-                                    <Trans i18nKey="cloudflare.warning.text_2" ns="pages" />
+                                    <Trans i18nKey="cloudflare.warning.text_2" ns="pages" components={[<br key="0" />]} />
                                 </p>
                             </div>
 
