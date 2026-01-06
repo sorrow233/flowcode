@@ -1,3 +1,6 @@
+import { Link } from 'react-router-dom'
+import { useTranslation, Trans } from 'react-i18next'
+import ProgressSidebar from '../components/ProgressSidebar'
 import { useStepProgress } from '../utils/useStepProgress'
 
 function DomainPage() {
