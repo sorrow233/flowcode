@@ -13,7 +13,7 @@ function VisionPage() {
             toast.error('請填寫完整資訊')
             return
         }
-        const prompt = `我想構建一個：${appType}。我希望這個軟件能解決：${goal}。我正在開發一些軟件，我給你一些我的想法，你理解我的想法之後，完整的把想法複述一下,然後給我完美的實現或者解決方案什麼的，你只需要給思路，不要寫代碼`
+        const prompt = `我正在開發一些軟件，我給你一些我的想法，你理解我的想法之後，完整的把想法複述一下,然後給我完美的實現或者解決方案什麼的，你只需要給思路，不要寫代碼\n\n我想構建一個：${appType}。我希望這個軟件能解決：${goal}。`
         setGeneratedPrompt(prompt)
         toast.success('提示詞已生成！')
     }
@@ -212,7 +212,8 @@ function VisionPage() {
                                             color: 'var(--text-yuki)',
                                             fontFamily: 'var(--font-mono)',
                                             fontSize: '0.95rem',
-                                            lineHeight: 1.6
+                                            lineHeight: 1.6,
+                                            whiteSpace: 'pre-wrap'
                                         }}>
                                             {generatedPrompt}
                                         </div>
@@ -246,6 +247,38 @@ function VisionPage() {
                                         >
                                             <Copy size={16} />
                                         </button>
+                                    </div>
+                                    <div style={{
+                                        marginTop: '1rem',
+                                        textAlign: 'right'
+                                    }}>
+                                        <a
+                                            href="https://gemini.google.com/"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{
+                                                color: 'var(--asagi)',
+                                                textDecoration: 'none',
+                                                fontSize: '0.9rem',
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                gap: '0.4rem',
+                                                padding: '0.5rem 1rem',
+                                                background: 'var(--asagi-soft)',
+                                                borderRadius: 'var(--radius-md)',
+                                                transition: 'all 0.2s'
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.filter = 'brightness(1.1)';
+                                                e.currentTarget.style.transform = 'translateY(-1px)';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.filter = 'brightness(1)';
+                                                e.currentTarget.style.transform = 'translateY(0)';
+                                            }}
+                                        >
+                                            前往 Gemini 問 AI ↗
+                                        </a>
                                     </div>
                                 </div>
                             )}
