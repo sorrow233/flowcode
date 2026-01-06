@@ -62,5 +62,10 @@
         "vision_quote_highlight": "and the first era of AI creation.",
         "vision_desc": "A perfect AI workflow makes your dreams easier to realize than you imagine. Join history.",
         "vision_cta": "Start Creating"
+    },
+    "seo": {
+        "title": "FlowCode - AI-Powered Website Development Tutorial",
+        "description": "Enable beginners to develop and launch websites with AI assistance. Create infinite possibilities with natural language.",
+        "keywords": "AI Development,Website Development,No-Code Programming,Cloudflare,Git Tutorial,AI Programming"
     }
 }

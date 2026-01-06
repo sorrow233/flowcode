@@ -1,6 +1,6 @@
 {
     "hero": {
-        "system_online": "System Online",
+        "system_online": "システムオンライン",
         "title_flow": "F L O W",
         "title_code": "C O D E",
         "subtitle": "「 自然言語で、無限の可能性を 」",
@@ -22,13 +22,9 @@
         "visual_intelligence_desc": "テンプレートコードを書くのをやめましょう。FlowCode は意図を理解し、アーキテクチャを即座に構築します。",
         "cognitive_load_title": "認知負荷：ゼロ",
         "cognitive_load_desc": "構文エラーを忘れてください。IDE が構文を処理し、あなたはロジックに集中します。",
-        "vision_title": "ビジョン",
         "vision_desc": "夢の青写真を描く",
-        "generation_title": "生成",
         "generation_desc": "即時コード合成",
-        "deploy_title": "デプロイ",
         "deploy_desc": "グローバルエッジネットワーク",
-        "storage_title": "ストレージ",
         "storage_desc": "サーバーレスバックエンド",
         "philosophy_quote": "「構文に固執せず、創造性に集中する。\nAI を実行者にし、あなたは意思決定者になる。」",
         "philosophy_author": "— FlowCode 開発理念",
@@ -37,5 +33,39 @@
         "flowing_code": "流動するコード",
         "copyright": "© {{year}} FlowCode v{{version}}",
         "built_with": "Built with Antigravity"
+    },
+    "footer": {
+        "antigravity": "Antigravity",
+        "github": "GitHub",
+        "year": "二〇二六"
+    },
+    "logo": {
+        "char": "流",
+        "text": "FlowCode"
+    },
+    "features": {
+        "eyebrow": "未来のクリエイターへ",
+        "title": "創造の境界を打ち破り、",
+        "title_highlight": "恐れることなく",
+        "subtitle": "ゼロからのスタートへの躊躇い、よく分かります。でも FlowCode では、かつての障壁が進化への階段に変わります。",
+        "card1_title": "コードが書けない？",
+        "card1_subtitle": "構文より論理",
+        "card1_desc": "AI の世界では、固い構文を暗記する必要はありません。FlowCode はあなたの意図を理解し、堅固なアーキテクチャを構築します。あなたは「何をしたいか」に集中するだけ。創造性を自由に流れさせ、論理が残りを完成させます。",
+        "card2_title": "アイデアがない？",
+        "card2_subtitle": "インスピレーションは火花",
+        "card2_desc": "最初から完璧な設計図は必要ありません。AI があなたの直感的な衝動をキャッチし、徐々に詳細を描き出します。インスピレーションの火花ひとつで、プロジェクト全体に火をつけます。",
+        "card3_title": "開発が複雑すぎる？",
+        "card3_subtitle": "シンプルこそ力",
+        "card3_desc": "煩わしい従来の設定は捨てましょう。自然言語でのやり取り、Google の安定した同期、Cloudflare のゼロコストデプロイ。すべての複雑さは隠され、あなたの創造性だけが自由に広がります。",
+        "vision_quote_1": "誰もがAIを使って、本当に好きなことができるようになってほしい。",
+        "vision_quote_2": "これはAIプログラミングの最高の時代であり、",
+        "vision_quote_highlight": "始まりの時代でもある。",
+        "vision_desc": "より完璧なAIワークフローは、想像以上に簡単にあなたの夢を実現します。この変革に参加しましょう。",
+        "vision_cta": "創造を始める"
+    },
+    "seo": {
+        "title": "FlowCode - AI支援ウェブサイト開発チュートリアル",
+        "description": "初心者でもAIの力を借りてウェブサイトを開発・公開できます。自然言語で無限の可能性を創造。",
+        "keywords": "AI開発,ウェブサイト開発,ノーコード,Cloudflare,Gitチュートリアル,AIプログラミング"
     }
 }

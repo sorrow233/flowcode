@@ -62,5 +62,10 @@
         "vision_quote_highlight": "也是最初的时代。",
         "vision_desc": "一个更完善的 AI 流程，会比我们想象中更容易实现你的梦想。欢迎加入这场变革。",
         "vision_cta": "开始创造"
+    },
+    "seo": {
+        "title": "FlowCode - AI 辅助网站开发教程",
+        "description": "让零基础用户也能借助 AI 开发并上线自己的网站。用自然语言创造无限可能。",
+        "keywords": "AI开发,网站开发,零基础编程,Cloudflare,Git教程,AI编程"
     }
 }

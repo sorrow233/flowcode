@@ -1,241 +1,349 @@
 {
     "download": {
-        "step_num_kanji": "I",
-        "step_num_text": "Step 01",
-        "title": "Get Tools",
-        "subtitle": "Download Google Antigravity, start your creative journey",
+        "step_num_kanji": "壱",
+        "step_num_text": "ステップ 01",
+        "title": "ツールを入手",
+        "subtitle": "Google Antigravity をダウンロードして、AI プログラミングの旅を始めましょう",
         "card": {
             "title": "Google Antigravity IDE",
-            "desc": "AI Native Development Environment by Google DeepMind",
-            "button": "Official Download →"
+            "desc": "Google DeepMind が開発した AI ネイティブ開発環境",
+            "button": "公式ダウンロード →"
         },
         "warning": {
-            "title": "⚠️ Important",
-            "text_1": "We use the",
-            "highlight": "Official Google Antigravity IDE",
-            "text_2": "Please download from official channels to ensure security and get the latest Gemini 2.0 model support."
+            "title": "⚠️ 重要なお知らせ",
+            "text_1": "私たちは",
+            "highlight": "公式 Google Antigravity IDE",
+            "text_2": "を使用しています。セキュリティと最新の Gemini 2.0 モデルサポートを確保するため、必ず公式チャンネルからダウンロードしてください。"
         },
         "nav": {
-            "home": "← Home",
-            "vision": "Next: Vision →"
+            "home": "← ホーム",
+            "vision": "次へ：ビジョン →"
+        },
+        "sidebar": {
+            "title": "現在の進捗",
+            "items": [
+                {
+                    "label": "IDE ソースを確認",
+                    "desc": "公式バージョンであることを確認"
+                },
+                {
+                    "label": "インストールして起動",
+                    "desc": "AI 創造エンジンを起動"
+                },
+                {
+                    "label": "ビジョンに備える",
+                    "desc": "作りたいアプリを考える"
+                }
+            ]
         }
     },
+    "nav": {
+        "home": "← ホーム",
+        "vision": "次へ：ビジョン →"
+    },
     "vision": {
-        "step_num_kanji": "II",
-        "step_num_text": "Step 02",
-        "title": "Define Vision",
-        "subtitle": "Tell AI what you want. Simplicity is the ultimate sophistication.",
-        "desc_title": "Natural Language Description",
-        "desc_text": "Open Antigravity IDE and type your ideas in the chat.<br />No jargon needed, just answer these questions:",
+        "step_num_kanji": "弐",
+        "step_num_text": "ステップ 02",
+        "title": "ビジョンを描く",
+        "subtitle": "AI に何が欲しいか伝えましょう。シンプルで明確な説明が、効率的な創造の第一歩です。",
+        "desc_title": "自然言語で説明",
+        "desc_text": "Antigravity IDE を開き、チャットボックスにあなたのアイデアを入力してください。<br />専門用語は不要です。この3つの質問に答えるだけ：",
         "features": {
             "target": {
-                "title": "Target",
-                "desc": "What do you want to build?"
+                "title": "目標",
+                "desc": "何を作りたいですか？"
             },
             "purpose": {
-                "title": "Purpose",
-                "desc": "Why do you need it?"
+                "title": "目的",
+                "desc": "なぜそれが必要ですか？"
             }
         },
-        "generator": {
-            "title": "Prompt Generator",
-            "app_type_label": "1. Application Type <0>(Application Type)</0>",
-            "app_type_placeholder": "e.g., Todo List, Pomodoro Timer, Blog",
-            "goal_label": "2. Problem to Solve / Goal <0>(Goal/Purpose)</0>",
-            "goal_placeholder": "e.g., Remind me to buy milk, Track study progress",
-            "button": "Generate Prompt",
-            "result_title": "✨ Generated Prompt (Your Prompt)",
-            "copy_toast": "Copied to clipboard",
-            "prompt_template": "I am developing some software. I'll share my ideas with you. Once you understand them, please completely restate them, and then provide a perfect implementation plan or solution. Just give me the approach, do not write code.\n\nI want to build a: {{appType}}. I hope this software can solve: {{goal}}.",
-            "error_toast": "Please fill in all fields",
-            "success_toast": "Prompt Generated!"
+        "sidebar": {
+            "title": "現在の進捗",
+            "items": [
+                {
+                    "label": "アプリタイプを決める",
+                    "desc": "どんなアプリを作りたいですか？"
+                },
+                {
+                    "label": "コア目標を明確に",
+                    "desc": "このアプリは何を解決しますか？"
+                },
+                {
+                    "label": "プロンプトを生成してコピー",
+                    "desc": "あなた専用の開発指示を取得"
+                }
+            ],
+            "why_title": "なぜこのステップが重要？",
+            "why_desc": "明確なビジョンがすべての始まりです。日常の言葉であなたのアイデアを説明すれば、AI が思考を整理し、正しい方向を確認します。"
         },
-        "gemini_link": "Ask Gemini AI ↗",
+        "generator": {
+            "title": "プロンプトジェネレーター",
+            "app_type_label": "1. アプリケーションタイプ <0>(Application Type)</0>",
+            "app_type_placeholder": "例：ミニマルToDo、ポモドーロタイマー、個人ブログ",
+            "goal_label": "2. 解決したい問題 / 達成したい目標 <0>(Goal/Purpose)</0>",
+            "goal_placeholder": "例：牛乳を買うことを思い出させる、学習進捗を記録する",
+            "button": "プロンプトを生成",
+            "result_title": "✨ 生成されたプロンプト (Your Prompt)",
+            "copy_toast": "クリップボードにコピーしました",
+            "prompt_template": "ソフトウェアを開発しています。私のアイデアをお伝えしますので、理解したら完全に復唱し、完璧な実装案やソリューションを提供してください。アプローチだけ教えてください、コードは書かないでください。\n\n作りたいもの：{{appType}}。このソフトウェアで解決したいこと：{{goal}}。",
+            "error_toast": "すべての項目を入力してください",
+            "success_toast": "プロンプトを生成しました！"
+        },
+        "gemini_link": "Gemini AI に聞く ↗",
         "example": {
-            "title": "Conversation Example",
-            "user_text": "I want to make a minimal todo list to remind me to buy milk, styled like sticky notes.",
-            "ai_response_title": "Understood:",
-            "ai_response_text_1": "You want a <strong>sticky-note styled minimal todo list</strong>.",
-            "ai_response_title_2": "My Plan:",
-            "ai_response_text_2": "Great idea! Sticky note aesthetics add a fun touch. I suggest using yellow background cards with handwritten fonts, removing complex categories to keep it pure."
+            "title": "会話の例",
+            "user_text": "付箋のようなスタイルで、牛乳を買うことを思い出させるミニマルなToDoリストを作りたいです。",
+            "ai_response_title": "理解しました：",
+            "ai_response_text_1": "あなたは<strong>付箋スタイルのミニマルなToDoリスト</strong>を望んでいます。",
+            "ai_response_title_2": "私の提案：",
+            "ai_response_text_2": "素晴らしいアイデアです！付箋の美学は楽しいタッチを加えます。手書きフォントと黄色の背景カードを使用し、複雑なカテゴリを削除してピュアに保つことをお勧めします。"
         },
         "ai_cmd": {
-            "title": "AI Communication Command",
-            "desc": "Copy this command to AI to get professional advice:",
-            "text": "Please provide reasonable suggestions for my requirements. In your reply, you should offer a reasonable plan that does not involve technical details. If you have no questions, we will proceed to the next step."
+            "title": "AI コミュニケーションコマンド",
+            "desc": "以下のコマンドを AI にコピーして、専門的なアドバイスを得ましょう：",
+            "text": "私の要件に対して合理的な提案をしてください。あなたの回答では、技術的な詳細を含まない合理的なプランを提供してください。問題がなければ、次のステップに進みます。"
         },
         "nav": {
-            "download": "← Download IDE",
-            "generation": "Next: Generation →"
+            "download": "← IDE をダウンロード",
+            "generation": "次へ：生成 →"
         }
     },
     "generation": {
-        "step_num_kanji": "III",
-        "step_num_text": "Step 03",
-        "title": "Code Synthesis",
-        "subtitle": "Witness magic. Let AI turn your thoughts into reality.",
+        "step_num_kanji": "参",
+        "step_num_text": "ステップ 03",
+        "title": "コード生成",
+        "subtitle": "AI があなたのアイデアを実行可能なコードに変える瞬間を目撃しましょう。",
         "steps": [
             {
                 "num": "01",
-                "title": "Integrate Prompt",
-                "desc": "Combine your original vision with the 'Understanding + Suggestions' from step 2 into a complete prompt block."
+                "title": "プロンプトを統合",
+                "desc": "元のビジョンとステップ2でのAIの「理解確認 + 提案」を1つの完全なプロンプトブロックにまとめます。"
             },
             {
                 "num": "02",
-                "title": "Send to Antigravity",
-                "desc": "Paste this prompt block into the IDE chat and press Enter."
+                "title": "Antigravity に送信",
+                "desc": "このプロンプトブロックをIDEのチャットに貼り付け、Enterを押します。"
             },
             {
                 "num": "03",
-                "title": "Wait for Creation",
-                "desc": "AI will automatically plan the file structure and write code. Watch the progress bar until 'Task Completed'."
+                "title": "創造を待つ",
+                "desc": "AI が自動的にファイル構造を計画し、コードを書きます。「タスク完了」と表示されるまで進捗バーを確認してください。"
             }
         ],
         "coffee_break": {
-            "title": "Grab a Coffee",
-            "desc": "Depending on complexity, this may take a few minutes.<br />You can use this time to sign up for accounts needed in the next step."
+            "title": "コーヒーブレイク",
+            "desc": "複雑さによっては、数分かかることがあります。<br />この時間を使って、次のステップに必要なアカウントを登録できます。"
         },
         "ai_cmd": {
-            "title": "AI Generation Command",
-            "desc": "Copy the command below to AI to start your magical journey:",
-            "text": "Please help me merge the vision from my ideas with your previous suggestions and start writing code. Please ensure the latest React and CSS tech stack is used."
+            "title": "AI 生成コマンド",
+            "desc": "以下のコマンドを AI にコピーして、魔法の旅を始めましょう：",
+            "text": "私のアイデアのビジョンとあなたの以前の提案をマージして、コードを書き始めてください。最新の React と CSS 技術スタックを使用してください。"
         },
         "nav": {
-            "vision": "← Vision",
-            "cloudflare": "Next: Deploy →"
+            "vision": "← ビジョン",
+            "cloudflare": "次へ：デプロイ →"
+        },
+        "sidebar": {
+            "title": "現在の進捗",
+            "items": [
+                {
+                    "label": "最終プロンプトを確認",
+                    "desc": "AI があなたのすべての要件を理解していることを確認"
+                },
+                {
+                    "label": "送信して監視",
+                    "desc": "Antigravity で創造プロセスを開始"
+                },
+                {
+                    "label": "成果を楽しむ",
+                    "desc": "ブラウザでアプリを見る準備をしましょう"
+                }
+            ]
         }
     },
     "cloudflare": {
-        "step_num_kanji": "IV",
-        "step_num_text": "Step 04",
-        "title": "Global Deploy",
-        "subtitle": "Sign up for Cloudflare and push your site to the global edge network",
+        "step_num_kanji": "肆",
+        "step_num_text": "ステップ 04",
+        "title": "グローバルデプロイ",
+        "subtitle": "Cloudflare に登録して、サイトをグローバルエッジネットワークにプッシュしましょう",
         "steps": {
             "1": {
-                "title": "Create Account",
-                "desc": "Cloudflare is the leading global edge network. We will use it to host your site for free with enterprise-grade speed.",
-                "button": "Go to Cloudflare Sign Up →"
+                "title": "アカウント作成",
+                "desc": "Cloudflare は世界をリードするエッジネットワークです。エンタープライズグレードの速度で無料でサイトをホストします。",
+                "button": "Cloudflare に登録 →"
             },
             "2": {
-                "title": "Get API Token",
-                "desc": "To let AI deploy automatically, you need to generate an API Token:",
+                "title": "API トークンを取得",
+                "desc": "AI に自動デプロイをさせるには、API トークンを生成する必要があります：",
                 "list": [
-                    "Log in to Cloudflare Dashboard",
-                    "Click user icon top right → <0>My Profile</0>",
-                    "Select <0>API Tokens</0> on the left",
-                    "Click <0>Create Token</0>",
-                    "Use template: <0>Edit Cloudflare Workers</0>",
-                    "Scroll to bottom and click <0>Create Token</0>"
+                    "Cloudflare ダッシュボードにログイン",
+                    "右上のユーザーアイコン → <0>My Profile</0>",
+                    "左側で <0>API Tokens</0> を選択",
+                    "<0>Create Token</0> をクリック",
+                    "テンプレートを使用：<0>Edit Cloudflare Workers</0>",
+                    "下にスクロールして <0>Create Token</0> をクリック"
                 ]
             },
             "3": {
-                "title": "AI Deploy Command",
-                "desc": "Copy the command below to AI to complete deployment:",
-                "text": "Please install npm dependencies locally, push to Cloudflare Pages after build, and return the clickable website link."
+                "title": "AI デプロイコマンド",
+                "desc": "以下のコマンドを AI にコピーして、デプロイを完了させましょう：",
+                "text": "ローカルで npm 依存関係をインストールし、ビルド後に Cloudflare Pages にプッシュして、クリック可能なウェブサイトリンクを返してください。"
             }
         },
         "warning": {
-            "title": "🔑 Important: Save your Token",
-            "text_1": "Token will only be shown <0>once</0>.",
-            "text_2": "Please copy it to a safe place (Notes/Password Manager) immediately.<br />You will need it in the next step."
+            "title": "🔑 重要：トークンを保存してください",
+            "text_1": "トークンは<0>一度だけ</0>表示されます。",
+            "text_2": "すぐに安全な場所（メモ/パスワードマネージャー）にコピーしてください。<br />次のステップで必要になります。"
         },
         "nav": {
-            "generation": "← Generation",
-            "firebase": "Next: Storage →"
+            "generation": "← 生成",
+            "firebase": "次へ：ストレージ →"
+        },
+        "sidebar": {
+            "title": "現在の進捗",
+            "items": [
+                {
+                    "label": "アカウント作成",
+                    "desc": "世界中の数百万の開発者に参加"
+                },
+                {
+                    "label": "API トークンを取得",
+                    "desc": "自動デプロイの鍵を開く"
+                },
+                {
+                    "label": "AI コマンドでデプロイ",
+                    "desc": "ワンクリックでコードをオンラインに"
+                }
+            ]
         }
     },
     "firebase": {
-        "step_num_kanji": "V",
-        "step_num_text": "Step 05",
-        "title": "Infinite Storage",
-        "subtitle": "Connect Google Firebase for scalable data storage",
+        "step_num_kanji": "伍",
+        "step_num_text": "ステップ 05",
+        "title": "無限ストレージ",
+        "subtitle": "Google Firebase に接続して、スケーラブルなデータストレージを実現",
         "steps": {
             "1": {
-                "title": "Create Project",
-                "desc": "Firebase provides ready-to-use real-time database and authentication services.",
-                "button": "Open Firebase Console →"
+                "title": "プロジェクト作成",
+                "desc": "Firebase はすぐに使えるリアルタイムデータベースと認証サービスを提供します。",
+                "button": "Firebase コンソールを開く →"
             },
             "2": {
-                "title": "Configure Settings",
+                "title": "設定を構成",
                 "list": [
-                    "Click <0>Current Project</0> (in IDE settings)",
-                    "Select <0>Project Settings</0>",
-                    "Scroll to 'Your apps'",
-                    "Select <0>Web app</0> <1></></1>",
-                    "Copy <0>firebaseConfig</0> object"
+                    "<0>現在のプロジェクト</0>をクリック（IDE設定内）",
+                    "<0>Project Settings</0> を選択",
+                    "「Your apps」までスクロール",
+                    "<0>Web app</0> を選択 <1></></1>",
+                    "<0>firebaseConfig</0> オブジェクトをコピー"
                 ]
             },
             "3": {
-                "title": "AI Config Command",
-                "desc": "Copy the command below to AI to complete database configuration:",
-                "text": "I have obtained the Firebase config, please help me fill it in src/firebase.js and complete initialization to ensure the app can read/write data normally."
+                "title": "AI 設定コマンド",
+                "desc": "以下のコマンドを AI にコピーして、データベース設定を完了させましょう：",
+                "text": "Firebase 設定を取得しました。src/firebase.js に入力して初期化を完了し、アプリがデータの読み書きを正常に行えるようにしてください。"
             }
         },
         "config_info": {
-            "title": "💾 Where to put config?",
-            "desc": "Paste config into:"
+            "title": "💾 設定はどこに？",
+            "desc": "設定を貼り付ける場所："
         },
         "nav": {
-            "cloudflare": "← Deploy",
-            "domain": "Next: Domain →"
+            "cloudflare": "← デプロイ",
+            "domain": "次へ：ドメイン →"
+        },
+        "sidebar": {
+            "title": "現在の進捗",
+            "items": [
+                {
+                    "label": "プロジェクト初期化",
+                    "desc": "Google のクラウドに拠点を確立"
+                },
+                {
+                    "label": "設定ファイルを抽出",
+                    "desc": "アプリを接続するための資格情報を取得"
+                },
+                {
+                    "label": "AI 設定を注入",
+                    "desc": "アプリにデータストレージ機能を追加"
+                }
+            ]
         }
     },
     "domain": {
-        "step_num_kanji": "VI",
-        "step_num_text": "Step 06",
-        "title": "Your Identity",
-        "subtitle": "Custom domain is your digital asset",
-        "providers_title": "Domain Providers",
-        "providers_desc": "We recommend these stable and reasonably priced providers:",
-        "disclaimer": "* All are direct official links, this project has no affiliation or commissions.",
+        "step_num_kanji": "陸",
+        "step_num_text": "ステップ 06",
+        "title": "あなたのアイデンティティ",
+        "subtitle": "カスタムドメインはあなたのデジタル資産です",
+        "providers_title": "ドメインプロバイダー",
+        "providers_desc": "安定していて価格が手頃なプロバイダーをお勧めします：",
+        "disclaimer": "* すべて公式への直接リンクです。このプロジェクトには提携やコミッションはありません。",
         "providers": [
             {
                 "name": "Spaceship",
-                "tag": "Ultra Low Price",
-                "desc": "New platform by Namecheap. Minimalist interface, extremely transparent pricing, great for .top, .xyz quick starts."
+                "tag": "超低価格",
+                "desc": "Namecheap による新プラットフォーム。ミニマリストなインターフェース、極めて透明な価格設定。.top、.xyz のクイックスタートに最適。"
             },
             {
                 "name": "Namecheap",
-                "tag": "First Year Discount",
-                "desc": "Veteran provider, huge first year discounts (.xyz ~$1, .top ~$2), perfect for low cost experiments."
+                "tag": "初年度割引",
+                "desc": "老舗プロバイダー。初年度の割引が大きい（.xyz ~$1、.top ~$2）。低コストの実験に最適。"
             },
             {
                 "name": "Cloudflare",
-                "tag": "Secure & Stable",
-                "desc": "Sold at cost (no markup), lowest long-term holding cost. Perfectly integrated with Pages service."
+                "tag": "安全＆安定",
+                "desc": "原価販売（マークアップなし）。長期保有コストが最も低い。Pages サービスと完璧に統合。"
             }
         ],
         "connect_info": {
-            "title": "🔗 How to connect?",
-            "desc": "After purchase, go to Cloudflare Pages project settings → <0>Custom Domains</0>.<br />Cloudflare handles SSL and DNS automatically."
+            "title": "🔗 接続方法は？",
+            "desc": "購入後、Cloudflare Pages プロジェクト設定 → <0>Custom Domains</0> に移動します。<br />Cloudflare が SSL と DNS を自動で処理します。"
         },
         "nav": {
-            "firebase": "← Storage",
-            "success": "Finish →"
+            "firebase": "← ストレージ",
+            "success": "完了 →"
+        },
+        "sidebar": {
+            "title": "現在の進捗",
+            "items": [
+                {
+                    "label": "ドメイン業者を選ぶ",
+                    "desc": "最もお得な登録価格を探す"
+                },
+                {
+                    "label": "登録して保有",
+                    "desc": "デジタル資産をロック"
+                },
+                {
+                    "label": "解決と接続",
+                    "desc": "ドメインをウェブサイトに向ける"
+                }
+            ]
         }
     },
     "success": {
-        "title": "Ready for Takeoff",
-        "subtitle": "You are now a developer",
-        "canvas_title": "The World is Your Canvas",
-        "canvas_desc": "You have the tools, the vision, and the AI.<br />From now on, you only need to do two things:",
+        "title": "準備完了",
+        "subtitle": "おめでとうございます！すべての準備が整いました",
+        "canvas_title": "世界はあなたのキャンバス",
+        "canvas_desc": "ツール、ビジョン、AI があなたのものです。<br />これからは、2つのことだけをすればいい：",
         "steps": {
             "ask": {
-                "title": "1. Ask",
-                "desc": "Describe your ideas in everyday language"
+                "title": "1. 質問する",
+                "desc": "日常の言葉でアイデアを説明"
             },
             "iterate": {
-                "title": "2. Iterate",
-                "desc": "Refine repeatedly until perfect"
+                "title": "2. 反復する",
+                "desc": "完璧になるまで繰り返し改善"
             }
         },
         "giant": {
-            "title": "🌟 Giants Walk With You",
-            "text_1": "Never doubt yourself.<br />Standing behind you is <strong>the most powerful AI model in human history</strong>.",
-            "text_2": "You are not coding alone. You have a world-class engineering team on standby 24/7.<br />Unleash your creativity, leave the rest to AI."
+            "title": "🌟 巨人があなたと共に",
+            "text_1": "決して自分を疑わないでください。<br />あなたの背後には<strong>人類史上最も強力な AI モデル</strong>が立っています。",
+            "text_2": "あなたは一人でコーディングしているのではありません。ワールドクラスのエンジニアリングチームが24時間365日待機しています。<br />創造性を解放し、残りは AI に任せましょう。"
         },
-        "disclaimer": "ℹ️ This project is an unofficial guide for AI-assisted coding. We strongly recommend Google's Antigravity IDE as the pinnacle of current technology.",
-        "cta": "Launch Mission 🚀",
-        "back_domain": "← Back to Domain Settings"
+        "disclaimer": "ℹ️ このプロジェクトは AI 支援コーディングの非公式ガイドです。現在の技術の頂点として、Google の Antigravity IDE を強くお勧めします。",
+        "cta": "ミッション開始 🚀",
+        "back_domain": "← ドメイン設定に戻る"
     }
 }

@@ -18,7 +18,28 @@
         "nav": {
             "home": "← Home",
             "vision": "Next: Vision →"
+        },
+        "sidebar": {
+            "title": "Current Progress",
+            "items": [
+                {
+                    "label": "Confirm IDE Source",
+                    "desc": "Ensure you're downloading the official version"
+                },
+                {
+                    "label": "Install and Run",
+                    "desc": "Launch your AI creation engine"
+                },
+                {
+                    "label": "Prepare for Vision",
+                    "desc": "Think about the app you want to build"
+                }
+            ]
         }
+    },
+    "nav": {
+        "home": "← Home",
+        "vision": "Next: Vision →"
     },
     "vision": {
         "step_num_kanji": "II",
@@ -36,6 +57,25 @@
                 "title": "Purpose",
                 "desc": "Why do you need it?"
             }
+        },
+        "sidebar": {
+            "title": "Current Progress",
+            "items": [
+                {
+                    "label": "Define App Type",
+                    "desc": "What kind of app do you want to build?"
+                },
+                {
+                    "label": "Clarify Core Goal",
+                    "desc": "What problem does this app solve?"
+                },
+                {
+                    "label": "Generate and Copy Prompt",
+                    "desc": "Get your personalized development instructions"
+                }
+            ],
+            "why_title": "Why is this step important?",
+            "why_desc": "A clear vision is the start of everything. Describe your idea in everyday language, and AI will help organize your thoughts and ensure the right direction."
         },
         "generator": {
             "title": "Prompt Generator",
@@ -103,6 +143,23 @@
         "nav": {
             "vision": "← Vision",
             "cloudflare": "Next: Deploy →"
+        },
+        "sidebar": {
+            "title": "Current Progress",
+            "items": [
+                {
+                    "label": "Confirm Final Prompt",
+                    "desc": "Ensure AI understands all your requirements"
+                },
+                {
+                    "label": "Send and Monitor",
+                    "desc": "Start the creation process in Antigravity"
+                },
+                {
+                    "label": "Enjoy the Results",
+                    "desc": "Get ready to see your app in the browser"
+                }
+            ]
         }
     },
     "cloudflare": {
@@ -142,6 +199,23 @@
         "nav": {
             "generation": "← Generation",
             "firebase": "Next: Storage →"
+        },
+        "sidebar": {
+            "title": "Current Progress",
+            "items": [
+                {
+                    "label": "Create Account",
+                    "desc": "Join millions of developers worldwide"
+                },
+                {
+                    "label": "Get API Token",
+                    "desc": "Unlock the key to automated deployment"
+                },
+                {
+                    "label": "AI Command Deploy",
+                    "desc": "One-click to put your code online"
+                }
+            ]
         }
     },
     "firebase": {
@@ -178,6 +252,23 @@
         "nav": {
             "cloudflare": "← Deploy",
             "domain": "Next: Domain →"
+        },
+        "sidebar": {
+            "title": "Current Progress",
+            "items": [
+                {
+                    "label": "Initialize Project",
+                    "desc": "Establish a foothold in Google's cloud"
+                },
+                {
+                    "label": "Extract Config File",
+                    "desc": "Get credentials to connect your app"
+                },
+                {
+                    "label": "Inject AI Config",
+                    "desc": "Give your app data storage capability"
+                }
+            ]
         }
     },
     "domain": {
@@ -212,6 +303,23 @@
         "nav": {
             "firebase": "← Storage",
             "success": "Finish →"
+        },
+        "sidebar": {
+            "title": "Current Progress",
+            "items": [
+                {
+                    "label": "Choose Domain Registrar",
+                    "desc": "Find the best registration price"
+                },
+                {
+                    "label": "Register and Own",
+                    "desc": "Lock in your digital asset"
+                },
+                {
+                    "label": "Resolve and Connect",
+                    "desc": "Point your domain to your website"
+                }
+            ]
         }
     },
     "success": {

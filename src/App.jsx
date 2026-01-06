@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
+import SEOHead from './components/SEOHead'
 import HomePage from './pages/HomePage'
 import DownloadPage from './pages/DownloadPage'
 import VisionPage from './pages/VisionPage'
@@ -12,6 +13,7 @@ import SuccessPage from './pages/SuccessPage'
 function App() {
     return (
         <BrowserRouter>
+            <SEOHead />
             <Routes>
                 <Route path="/" element={<Layout />}>
                     <Route index element={<HomePage />} />

@@ -57,5 +57,19 @@
         "vision_quote_highlight": "也是最初的時代。",
         "vision_desc": "一個更完善的 AI 流程，會比我們想像中更容易實現你的夢想。歡迎加入這場變革。",
         "vision_cta": "開始創造"
+    },
+    "footer": {
+        "antigravity": "Antigravity",
+        "github": "GitHub",
+        "year": "二〇二六"
+    },
+    "logo": {
+        "char": "流",
+        "text": "FlowCode"
+    },
+    "seo": {
+        "title": "FlowCode - AI 輔助網站開發教學",
+        "description": "讓零基礎用戶也能借助 AI 開發並上線自己的網站。用自然語言創造無限可能。",
+        "keywords": "AI開發,網站開發,零基礎編程,Cloudflare,Git教程,AI編程"
     }
 }
