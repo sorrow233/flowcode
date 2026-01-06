@@ -13,6 +13,7 @@
         "empty": "結果が見つかりません",
         "nav": "ナビゲーション (Navigation)",
         "theme": "テーマ (Theme)",
+        "lang": "言語 (Language)",
         "system": "システム (System)",
         "home": "ホーム (Home)",
         "download": "ダウンロード (Download)",
@@ -23,6 +24,9 @@
         "domain": "ドメイン (Domain)",
         "success": "完了 (Success)",
         "switch_theme": "テーマ切り替え: ",
+        "lang_zh": "中国語 (繁体字)",
+        "lang_en": "英語",
+        "lang_ja": "日本語",
         "github": "GitHubソースを表示"
     }
 }

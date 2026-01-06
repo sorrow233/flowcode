@@ -13,6 +13,7 @@
         "empty": "找不到結果",
         "nav": "導航 (Navigation)",
         "theme": "主題 (Theme)",
+        "lang": "語言 (Language)",
         "system": "系統 (System)",
         "home": "首頁 (Home)",
         "download": "下載 (Download)",
@@ -23,6 +24,9 @@
         "domain": "域名 (Domain)",
         "success": "完成 (Success)",
         "switch_theme": "切換至",
+        "lang_zh": "中文 (繁體)",
+        "lang_en": "English",
+        "lang_ja": "日本語",
         "github": "查看 GitHub 源碼"
     }
 }

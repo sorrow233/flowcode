@@ -13,6 +13,7 @@
         "empty": "No results found.",
         "nav": "Navigation",
         "theme": "Theme",
+        "lang": "Language",
         "system": "System",
         "home": "Home",
         "download": "Download",
@@ -23,6 +24,9 @@
         "domain": "Domain",
         "success": "Success",
         "switch_theme": "Switch to",
+        "lang_zh": "Chinese (Traditional)",
+        "lang_en": "English",
+        "lang_ja": "Japanese",
         "github": "View GitHub Source"
     }
 }

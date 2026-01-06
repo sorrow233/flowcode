@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Command } from 'cmdk'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import i18n from '../i18n'
 import {
     Home,
     Download,
@@ -82,6 +83,21 @@ export const CommandPalette = () => {
                             {t('cmd.switch_theme')} {theme.name}
                         </Command.Item>
                     ))}
+                </Command.Group>
+
+                <Command.Group heading={t('cmd.lang')}>
+                    <Command.Item onSelect={() => runCommand(() => i18n.changeLanguage('zh'))}>
+                        <Globe size={18} />
+                        {t('cmd.lang_zh')}
+                    </Command.Item>
+                    <Command.Item onSelect={() => runCommand(() => i18n.changeLanguage('en'))}>
+                        <Globe size={18} />
+                        {t('cmd.lang_en')}
+                    </Command.Item>
+                    <Command.Item onSelect={() => runCommand(() => i18n.changeLanguage('ja'))}>
+                        <Globe size={18} />
+                        {t('cmd.lang_ja')}
+                    </Command.Item>
                 </Command.Group>
 
                 <Command.Group heading={t('cmd.system')}>

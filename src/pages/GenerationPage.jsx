@@ -125,76 +125,74 @@ function GenerationPage() {
                             </p>
                         </div>
 
-                    </div>
-
-                    {/* AI 指令 */}
-                    <div style={{ marginTop: '2.5rem' }}>
-                        <div style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.75rem',
-                            marginBottom: '1rem'
-                        }}>
-                            <span style={{
-                                width: '28px',
-                                height: '28px',
-                                background: 'var(--asagi)',
-                                borderRadius: '8px',
+                        {/* AI 指令 */}
+                        <div style={{ marginTop: '2.5rem' }}>
+                            <div style={{
                                 display: 'flex',
                                 alignItems: 'center',
-                                justifyContent: 'center',
-                                fontSize: '0.85rem',
-                                color: 'var(--bg-sumi)',
-                                fontWeight: 600
-                            }}>✨</span>
-                            <h3 style={{
-                                fontSize: '1.2rem',
-                                margin: 0,
-                                fontWeight: 500
-                            }}>AI 生成指令</h3>
-                        </div>
-                        <p style={{
-                            color: 'var(--text-ishi)',
-                            marginBottom: '1rem',
-                            paddingLeft: '2.5rem'
-                        }}>
-                            複製以下指令給 AI，開始你的魔法之旅：
-                        </p>
-                        <div style={{ paddingLeft: '2.5rem' }}>
-                            <div style={{
-                                background: 'var(--bg-kuro)',
-                                padding: '1.25rem',
-                                borderRadius: '8px',
-                                border: '1px solid var(--border-kasumi)',
-                                color: 'var(--text-yuki)',
-                                fontSize: '0.95rem',
-                                lineHeight: '1.6',
-                                position: 'relative',
-                                fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
+                                gap: '0.75rem',
+                                marginBottom: '1rem'
                             }}>
-                                請幫我將我想法中的願景與你之前的建議合併，開始編寫程式碼。請確保使用最新的 React 和 CSS 技術棧。
+                                <span style={{
+                                    width: '28px',
+                                    height: '28px',
+                                    background: 'var(--asagi)',
+                                    borderRadius: '8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '0.85rem',
+                                    color: 'var(--bg-sumi)',
+                                    fontWeight: 600
+                                }}>✨</span>
+                                <h3 style={{
+                                    fontSize: '1.2rem',
+                                    margin: 0,
+                                    fontWeight: 500
+                                }}>AI 生成指令</h3>
+                            </div>
+                            <p style={{
+                                color: 'var(--text-ishi)',
+                                marginBottom: '1rem',
+                                paddingLeft: '2.5rem'
+                            }}>
+                                複製以下指令給 AI，開始你的魔法之旅：
+                            </p>
+                            <div style={{ paddingLeft: '2.5rem' }}>
+                                <div style={{
+                                    background: 'var(--bg-kuro)',
+                                    padding: '1.25rem',
+                                    borderRadius: '8px',
+                                    border: '1px solid var(--border-kasumi)',
+                                    color: 'var(--text-yuki)',
+                                    fontSize: '0.95rem',
+                                    lineHeight: '1.6',
+                                    position: 'relative',
+                                    fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
+                                }}>
+                                    請幫我將我想法中的願景與你之前的建議合併，開始編寫程式碼。請確保使用最新的 React 和 CSS 技術棧。
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    {/* 導航按鈕 */}
-                    <div style={{
-                        marginTop: '2.5rem',
-                        display: 'flex',
-                        justifyContent: 'space-between',
-                        paddingTop: '2rem',
-                        borderTop: '1px solid var(--border-kasumi)'
-                    }}>
-                        <Link to="/vision" className="btn btn-secondary">
-                            ← 願景
-                        </Link>
-                        <Link to="/cloudflare" className="btn btn-primary">
-                            下一步：部署 →
-                        </Link>
+                        {/* 導航按鈕 */}
+                        <div style={{
+                            marginTop: '2.5rem',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            paddingTop: '2rem',
+                            borderTop: '1px solid var(--border-kasumi)'
+                        }}>
+                            <Link to="/vision" className="btn btn-secondary">
+                                ← 願景
+                            </Link>
+                            <Link to="/cloudflare" className="btn btn-primary">
+                                下一步：部署 →
+                            </Link>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section >
+            </section>
         </>
     )
 }

@@ -75,8 +75,7 @@ function VisionPage() {
                         <div className="feature-grid" style={{ marginBottom: '2.5rem' }}>
                             {[
                                 { icon: '🎯', title: '目標', desc: '你想構建什麼？', color: 'var(--asagi)' },
-                                { icon: '💡', title: '目的', desc: '為什麼需要它？', color: 'var(--fuji)' },
-                                { icon: '📏', title: '限制', desc: '保持在 30 字以內', color: 'var(--kincha)' }
+                                { icon: '💡', title: '目的', desc: '為什麼需要它？', color: 'var(--fuji)' }
                             ].map(item => (
                                 <div key={item.title} className="surface-card" style={{
                                     padding: '1.25rem',
@@ -172,9 +171,6 @@ function VisionPage() {
                                         onFocus={(e) => e.target.style.borderColor = 'var(--asagi)'}
                                         onBlur={(e) => e.target.style.borderColor = 'var(--border-kasumi)'}
                                     />
-                                    <div style={{ textAlign: 'right', fontSize: '0.8rem', color: 'var(--text-ishi)', marginTop: '0.4rem' }}>
-                                        {goal.length > 30 && <span style={{ color: 'var(--shu)' }}>⚠️ 建議保持在 30 字以內 ({goal.length})</span>}
-                                    </div>
                                 </div>
 
                                 {/* Generate Button */}
@@ -324,6 +320,56 @@ function VisionPage() {
                                         <strong>我的方案：</strong><br />
                                         很棒的想法！便利貼美學增添了有趣的觸感。建議使用黃色背景卡片搭配手寫字體，去除複雜分類以保持純粹。
                                     </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* AI 指令 */}
+                        <div style={{ marginTop: '2.5rem', marginBottom: '2.5rem' }}>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.75rem',
+                                marginBottom: '1rem'
+                            }}>
+                                <span style={{
+                                    width: '28px',
+                                    height: '28px',
+                                    background: 'var(--fuji)',
+                                    borderRadius: '8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '0.85rem',
+                                    color: 'white',
+                                    fontWeight: 600
+                                }}>✨</span>
+                                <h3 style={{
+                                    fontSize: '1.2rem',
+                                    margin: 0,
+                                    fontWeight: 500
+                                }}>AI 溝通指令</h3>
+                            </div>
+                            <p style={{
+                                color: 'var(--text-ishi)',
+                                marginBottom: '1rem',
+                                paddingLeft: '2.5rem'
+                            }}>
+                                複製以下指令給 AI，讓它為你提供專業建議：
+                            </p>
+                            <div style={{ paddingLeft: '2.5rem' }}>
+                                <div style={{
+                                    background: 'var(--bg-kuro)',
+                                    padding: '1.25rem',
+                                    borderRadius: '8px',
+                                    border: '1px solid var(--border-kasumi)',
+                                    color: 'var(--text-yuki)',
+                                    fontSize: '0.95rem',
+                                    lineHeight: '1.6',
+                                    position: 'relative',
+                                    fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
+                                }}>
+                                    請針對我的需求給出合理的建議，在你的回覆中，你應該針對這個需求給出一個合理的方案，這個方案不涉及任何技術點。如果你沒問題，我們將進行下一步。
                                 </div>
                             </div>
                         </div>
