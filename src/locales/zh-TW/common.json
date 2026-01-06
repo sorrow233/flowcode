@@ -37,5 +37,25 @@
         "flowing_code": "流動的程式碼",
         "copyright": "© {{year}} FlowCode v{{version}}",
         "built_with": "Built with Antigravity"
+    },
+    "features": {
+        "eyebrow": "寫給未來的創造者",
+        "title": "打破創造的邊界",
+        "title_highlight": "無所畏懼",
+        "subtitle": "我們深知從零開始的猶豫。但在 FlowCode，這些曾經的障礙，都將成為你進化的階梯。",
+        "card1_title": "擔心不會寫程式？",
+        "card1_subtitle": "邏輯優於語法",
+        "card1_desc": "在 AI 的世界裡，你不需要背誦死板的語法。FlowCode 理解你的意圖，它負責構建穩固的架構，而你只需專注於「想做什麼」。讓創意直接流動，剩下的交給邏輯。",
+        "card2_title": "覺得自己沒有想法？",
+        "card2_subtitle": "靈感即是火花",
+        "card2_desc": "不需要在開始時就擁有完美的藍圖。AI 會捕捉你最直覺的衝動，並為你逐漸勾勒出細節。只要有一個靈感的火花，我們就能幫你點燃整個項目。",
+        "card3_title": "擔心開發太複雜？",
+        "card3_subtitle": "簡單即是力量",
+        "card3_desc": "拋棄繁瑣的傳統配置。這裡有自然語言的交互，有 Google 穩定的同步，有 Cloudflare 零成本的部署。一切複雜都被掩蓋，只為讓你的創意能夠自由伸展。",
+        "vision_quote_1": "我希望每個人都能用 AI 做他自己喜歡的事。",
+        "vision_quote_2": "這是 AI 編寫程式最好的時代，",
+        "vision_quote_highlight": "也是最初的時代。",
+        "vision_desc": "一個更完善的 AI 流程，會比我們想像中更容易實現你的夢想。歡迎加入這場變革。",
+        "vision_cta": "開始創造"
     }
 }
