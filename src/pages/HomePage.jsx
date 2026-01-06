@@ -49,19 +49,11 @@ const WashiCard = ({ children, to, className = '', style = {} }) => {
 function HomePage() {
     const { t } = useTranslation()
     return (
-        <div style={{ overflowX: 'hidden' }}>
+    return (
+        <div className="snap-container">
 
             {/* === 英雄區域 === */}
-            <section style={{
-                minHeight: '90vh',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-                alignItems: 'center',
-                position: 'relative',
-                padding: '2rem 0 4rem',
-                marginTop: '-60px'
-            }}>
+            <section className="snap-section" style={{ alignItems: 'center' }}>
                 {/* 墨暈背景 */}
                 <div style={{
                     position: 'absolute',
@@ -188,7 +180,7 @@ function HomePage() {
 
 
             {/* === 功能模塊區域 === */}
-            <section style={{ padding: '4rem 0 8rem' }}>
+            <section className="snap-section allow-scroll">
                 <div className="container" style={{ maxWidth: '1100px' }}>
 
                     {/* 區域標題 */}
@@ -353,9 +345,9 @@ function HomePage() {
             </section>
 
             {/* === 精神區域 === */}
-            <section style={{
-                padding: '6rem 0',
-                borderTop: '1px solid var(--border-kasumi)'
+            <section className="snap-section" style={{
+                borderTop: '1px solid var(--border-kasumi)',
+                alignItems: 'center'
             }}>
                 <div className="container" style={{ maxWidth: '700px', textAlign: 'center' }}>
                     <div style={{
