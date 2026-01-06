@@ -83,7 +83,7 @@ i18n
             escapeValue: false,
         },
         detection: {
-            order: ['localStorage', 'navigator'],
+            order: ['path', 'htmlTag', 'localStorage', 'navigator'],
             caches: ['localStorage'],
         }
     });
