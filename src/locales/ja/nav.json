@@ -11,5 +11,8 @@
     "storage": "伍・ストレージ",
     "domain": "陸・ドメイン",
     "success": "柒・完了",
-    "lang_zh": "中国語"
+    "lang_zh": "中国語",
+    "lang_en": "English",
+    "lang_ja": "日本語",
+    "lang_ko": "한국어"
 }

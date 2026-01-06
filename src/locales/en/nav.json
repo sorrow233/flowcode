@@ -11,5 +11,8 @@
     "storage": "V. Storage",
     "domain": "VI. Domain",
     "success": "VII. Success",
-    "lang_zh": "Chinese"
+    "lang_zh": "Chinese",
+    "lang_en": "English",
+    "lang_ja": "日本語",
+    "lang_ko": "한국어"
 }

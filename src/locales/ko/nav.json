@@ -9,7 +9,10 @@
     "generation": "3・생성",
     "deploy": "4・배포",
     "storage": "5・스토리지",
-    "domain": "6・도 main",
+    "domain": "6・도메인",
     "success": "7・완료",
-    "lang_zh": "중국어"
+    "lang_zh": "중국어",
+    "lang_en": "English",
+    "lang_ja": "日本語",
+    "lang_ko": "한국어"
 }

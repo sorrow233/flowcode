@@ -11,5 +11,8 @@
     "storage": "五・同步",
     "domain": "六・域名",
     "success": "七・完成",
-    "lang_zh": "中文"
+    "lang_zh": "中文",
+    "lang_en": "English",
+    "lang_ja": "日本語",
+    "lang_ko": "한국어"
 }

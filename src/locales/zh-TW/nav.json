@@ -11,5 +11,8 @@
     "storage": "伍・存儲",
     "domain": "陸・域名",
     "success": "柒・完成",
-    "lang_zh": "中文 (繁體)"
+    "lang_zh": "中文 (繁體)",
+    "lang_en": "English",
+    "lang_ja": "日本語",
+    "lang_ko": "한국어"
 }
