@@ -3,17 +3,24 @@ import { Link } from 'react-router-dom'
 function DomainPage() {
     const providers = [
         {
-            icon: '☁️',
-            name: 'Cloudflare',
-            tag: '推薦',
-            desc: '零加價。與 Pages 完美整合。',
+            icon: '🏷️',
+            name: 'Spaceship',
+            tag: '超低價',
+            desc: 'Namecheap 旗下新平台。介面極簡，價格往往是全網最低 (.com ~$8/年)。',
             featured: true
         },
         {
-            icon: '🏷️',
+            icon: '⚡',
             name: 'Namecheap',
-            tag: null,
-            desc: '首年優惠力度大，支援多種頂級域名。',
+            tag: '首年折扣',
+            desc: '首年優惠力度極大 ( .com ~$6, .xyz ~$2 )，適合低成本啟動專案。',
+            featured: false
+        },
+        {
+            icon: '☁️',
+            name: 'Cloudflare',
+            tag: '續費最省',
+            desc: '以成本價售賣 (無加價)，長期持有成本最低。與 Pages 完美整合。',
             featured: false
         }
     ]
