@@ -1,6 +1,28 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Copy, Sparkles } from 'lucide-react'
+import { toast } from 'sonner'
 
 function VisionPage() {
+    const [appType, setAppType] = useState('')
+    const [goal, setGoal] = useState('')
+    const [generatedPrompt, setGeneratedPrompt] = useState('')
+
+    const handleGenerate = () => {
+        if (!appType.trim() || !goal.trim()) {
+            toast.error('請填寫完整資訊')
+            return
+        }
+        const prompt = `我想構建一個 ${appType} 來 ${goal}。（保持簡潔）`
+        setGeneratedPrompt(prompt)
+        toast.success('提示詞已生成！')
+    }
+
+    const handleCopy = () => {
+        if (!generatedPrompt) return
+        navigator.clipboard.writeText(generatedPrompt)
+        toast.success('已複製到剪貼簿')
+    }
     return (
         <>
             {/* 頁面標題 */}
