@@ -786,3 +786,16 @@ a:hover {
     padding-bottom: 4rem;
   }
 }
+
+.home-scroll-fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  z-index: 60;
+  /* Above bg-grain (50) but below header (100) */
+  padding-top: 0 !important;
+  background: transparent;
+}

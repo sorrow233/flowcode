@@ -153,6 +153,56 @@ function FirebasePage() {
                             </div>
                         </div>
 
+                        {/* 步驟 3 */}
+                        <div style={{ marginTop: '2.5rem' }}>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.75rem',
+                                marginBottom: '1rem'
+                            }}>
+                                <span style={{
+                                    width: '28px',
+                                    height: '28px',
+                                    background: 'var(--shu)',
+                                    borderRadius: '8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '0.85rem',
+                                    color: 'white',
+                                    fontWeight: 600
+                                }}>3</span>
+                                <h3 style={{
+                                    fontSize: '1.2rem',
+                                    margin: 0,
+                                    fontWeight: 500
+                                }}>AI 配置指令</h3>
+                            </div>
+                            <p style={{
+                                color: 'var(--text-ishi)',
+                                marginBottom: '1rem',
+                                paddingLeft: '2.5rem'
+                            }}>
+                                複製以下指令給 AI，讓它為你完成數據庫配置：
+                            </p>
+                            <div style={{ paddingLeft: '2.5rem' }}>
+                                <div style={{
+                                    background: 'var(--bg-kuro)',
+                                    padding: '1.25rem',
+                                    borderRadius: '8px',
+                                    border: '1px solid var(--border-kasumi)',
+                                    color: 'var(--text-yuki)',
+                                    fontSize: '0.95rem',
+                                    lineHeight: '1.6',
+                                    position: 'relative',
+                                    fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
+                                }}>
+                                    我已經獲取了 Firebase 配置，請幫我在 src/firebase.js 中填寫，並完成初始化，確保應用可以正常進行數據庫讀寫。
+                                </div>
+                            </div>
+                        </div>
+
                         {/* 導航按鈕 */}
                         <div style={{
                             marginTop: '2.5rem',

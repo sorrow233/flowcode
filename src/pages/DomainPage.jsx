@@ -6,22 +6,25 @@ function DomainPage() {
             icon: '🏷️',
             name: 'Spaceship',
             tag: '超低價',
-            desc: 'Namecheap 旗下新平台。介面極簡，價格往往是全網最低 (.com ~$8/年)。',
-            featured: true
+            desc: 'Namecheap 旗下新平台。介面極簡，價格極其透明，適合購買 .top, .xyz 等極速啟動域名。',
+            featured: true,
+            url: 'https://www.spaceship.com/'
         },
         {
             icon: '⚡',
             name: 'Namecheap',
             tag: '首年折扣',
-            desc: '首年優惠力度極大 ( .com ~$6, .xyz ~$2 )，適合低成本啟動專案。',
-            featured: false
+            desc: '老牌服務商，首年優惠力度極大 ( .xyz ~$1, .top ~$2 )，非常適合低成本專案實驗。',
+            featured: false,
+            url: 'https://www.namecheap.com/'
         },
         {
             icon: '☁️',
             name: 'Cloudflare',
-            tag: '續費最省',
-            desc: '以成本價售賣 (無加價)，長期持有成本最低。與 Pages 完美整合。',
-            featured: false
+            tag: '安全穩定',
+            desc: '以成本價售賣 (無任何加價)，長期持有成本最低。與 Pages 服務完美整合。',
+            featured: false,
+            url: 'https://www.cloudflare.com/products/registrar/'
         }
     ]
 
@@ -66,9 +69,17 @@ function DomainPage() {
                         }}>域名提供商</h3>
                         <p style={{
                             color: 'var(--text-ishi)',
-                            marginBottom: '1.5rem'
+                            marginBottom: '0.5rem'
                         }}>
                             我們推薦這些穩定且價格合理的提供商：
+                        </p>
+                        <p style={{
+                            fontSize: '0.8rem',
+                            color: 'var(--asagi)',
+                            marginBottom: '1.5rem',
+                            opacity: 0.8
+                        }}>
+                            * 均為官方直達連結，本專案無任何利益關係或佣金抽成。
                         </p>
 
                         {/* 提供商卡片 */}
@@ -78,51 +89,63 @@ function DomainPage() {
                             gap: '1rem',
                             marginBottom: '2rem'
                         }}>
-                            {providers.map(provider => (
-                                <div
-                                    key={provider.name}
-                                    className="surface-card"
-                                    style={{
-                                        padding: '1.25rem',
+                            <a
+                                key={provider.name}
+                                href={provider.url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="surface-card"
+                                style={{
+                                    padding: '1.25rem',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '1rem',
+                                    textDecoration: 'none',
+                                    transition: 'all 0.3s ease',
+                                    border: provider.featured
+                                        ? '1px solid var(--asagi-soft)'
+                                        : '1px solid var(--border-kasumi)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.borderColor = 'var(--asagi)';
+                                    e.currentTarget.style.transform = 'translateY(-2px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.borderColor = provider.featured ? 'var(--asagi-soft)' : 'var(--border-kasumi)';
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                }}
+                            >
+                                <div style={{ fontSize: '1.75rem' }}>{provider.icon}</div>
+                                <div style={{ flex: 1 }}>
+                                    <div style={{
                                         display: 'flex',
                                         alignItems: 'center',
-                                        gap: '1rem',
-                                        border: provider.featured
-                                            ? '1px solid var(--asagi-soft)'
-                                            : '1px solid var(--border-kasumi)'
-                                    }}
-                                >
-                                    <div style={{ fontSize: '1.75rem' }}>{provider.icon}</div>
-                                    <div style={{ flex: 1 }}>
-                                        <div style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '0.5rem',
-                                            marginBottom: '0.25rem'
-                                        }}>
-                                            <h4 style={{
-                                                color: 'var(--text-yuki)',
-                                                fontSize: '1rem',
-                                                margin: 0
-                                            }}>{provider.name}</h4>
-                                            {provider.tag && (
-                                                <span style={{
-                                                    fontSize: '0.7rem',
-                                                    padding: '0.2rem 0.5rem',
-                                                    background: 'var(--asagi-soft)',
-                                                    color: 'var(--asagi)',
-                                                    borderRadius: 'var(--radius-full)'
-                                                }}>{provider.tag}</span>
-                                            )}
-                                        </div>
-                                        <p style={{
-                                            fontSize: '0.85rem',
-                                            color: 'var(--text-ishi)',
+                                        gap: '0.5rem',
+                                        marginBottom: '0.25rem'
+                                    }}>
+                                        <h4 style={{
+                                            color: 'var(--text-yuki)',
+                                            fontSize: '1rem',
                                             margin: 0
-                                        }}>{provider.desc}</p>
+                                        }}>{provider.name}</h4>
+                                        {provider.tag && (
+                                            <span style={{
+                                                fontSize: '0.7rem',
+                                                padding: '0.2rem 0.5rem',
+                                                background: 'var(--asagi-soft)',
+                                                color: 'var(--asagi)',
+                                                borderRadius: 'var(--radius-full)'
+                                            }}>{provider.tag}</span>
+                                        )}
                                     </div>
+                                    <p style={{
+                                        fontSize: '0.85rem',
+                                        color: 'var(--text-ishi)',
+                                        margin: 0
+                                    }}>{provider.desc}</p>
                                 </div>
-                            ))}
+                                <div style={{ color: 'var(--text-ishi)', fontSize: '0.8rem' }}>↗</div>
+                            </a>
                         </div>
 
                         {/* 連結提示 */}
@@ -141,6 +164,56 @@ function DomainPage() {
                                 <br />
                                 Cloudflare 會自動處理 SSL 和 DNS。
                             </p>
+                        </div>
+
+                        {/* 步驟 3 */}
+                        <div style={{ marginTop: '2.5rem' }}>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.75rem',
+                                marginBottom: '1rem'
+                            }}>
+                                <span style={{
+                                    width: '28px',
+                                    height: '28px',
+                                    background: 'var(--asagi)',
+                                    borderRadius: '8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '0.85rem',
+                                    color: 'var(--bg-sumi)',
+                                    fontWeight: 600
+                                }}>3</span>
+                                <h3 style={{
+                                    fontSize: '1.2rem',
+                                    margin: 0,
+                                    fontWeight: 500
+                                }}>AI 優化指令</h3>
+                            </div>
+                            <p style={{
+                                color: 'var(--text-ishi)',
+                                marginBottom: '1rem',
+                                paddingLeft: '2.5rem'
+                            }}>
+                                複製以下指令給 AI，讓它為你完成最後的優化：
+                            </p>
+                            <div style={{ paddingLeft: '2.5rem' }}>
+                                <div style={{
+                                    background: 'var(--bg-kuro)',
+                                    padding: '1.25rem',
+                                    borderRadius: '8px',
+                                    border: '1px solid var(--border-kasumi)',
+                                    color: 'var(--text-yuki)',
+                                    fontSize: '0.95rem',
+                                    lineHeight: '1.6',
+                                    position: 'relative',
+                                    fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
+                                }}>
+                                    請幫我進行全站 SEO 優化，確保標題、描述、Meta 標籤以及移動端體驗都達到商業化標準，準備好在自定義域名下發布。
+                                </div>
+                            </div>
                         </div>
 
                         {/* 導航按鈕 */}

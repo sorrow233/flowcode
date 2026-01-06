@@ -49,8 +49,7 @@ const WashiCard = ({ children, to, className = '', style = {} }) => {
 function HomePage() {
     const { t } = useTranslation()
     return (
-    return (
-        <div className="snap-container">
+        <div className="snap-container home-scroll-fix">
 
             {/* === 英雄區域 === */}
             <section className="snap-section" style={{ alignItems: 'center' }}>
@@ -159,7 +158,7 @@ function HomePage() {
                     color: 'var(--text-ishi)',
                     opacity: 0.4
                 }}>
-                    <div>版本 2.4.0</div>
+                    <div>版本 2.1.5</div>
                     <div>穩定運行中</div>
                 </div>
 
@@ -375,6 +374,24 @@ function HomePage() {
                     }}>
                         — FlowCode 開發理念
                     </div>
+                </div>
+
+                {/* 內嵌式頁腳 - 僅在首頁顯示，解決 snap 衝突 */}
+                <div style={{
+                    position: 'absolute',
+                    bottom: '2rem',
+                    left: 0,
+                    right: 0,
+                    display: 'flex',
+                    justifyContent: 'center',
+                    gap: '2rem',
+                    opacity: 0.4,
+                    fontSize: '0.75rem',
+                    color: 'var(--text-ishi)'
+                }}>
+                    <span>© 2026 FlowCode v2.1.5</span>
+                    <a href="https://github.com/sorrow233/flowcode" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>GitHub</a>
+                    <span>Built with Antigravity</span>
                 </div>
             </section>
         </div>
