@@ -2,15 +2,17 @@ import { Link } from 'react-router-dom'
 import { useTranslation, Trans } from 'react-i18next'
 import { Copy } from 'lucide-react'
 import { toast } from 'sonner'
-import ProgressSidebar from '../components/ProgressSidebar'
+import { useStepProgress } from '../utils/useStepProgress'
 
 function FirebasePage() {
     const { t } = useTranslation(['pages'])
+    const [activeIndex, setActiveIndex] = useStepProgress('firebase', 0)
     const sidebarItems = t('firebase.sidebar.items', { returnObjects: true })
 
     const handleCopy = () => {
         navigator.clipboard.writeText(t('firebase.steps.3.text'))
         toast.success(t('vision.generator.copy_toast'))
+        setActiveIndex(2)
     }
 
     const step2List = t('firebase.steps.2.list', { returnObjects: true })
@@ -56,7 +58,7 @@ function FirebasePage() {
                     <ProgressSidebar
                         title={t('firebase.sidebar.title')}
                         items={sidebarItems}
-                        activeIndex={0}
+                        activeIndex={activeIndex}
                         whyTitle={t('firebase.sidebar.why_title')}
                         whyDesc={t('firebase.sidebar.why_desc')}
                     />

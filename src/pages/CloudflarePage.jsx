@@ -56,7 +56,7 @@ function CloudflarePage() {
                     <ProgressSidebar
                         title={t('cloudflare.sidebar.title')}
                         items={sidebarItems}
-                        activeIndex={0}
+                        activeIndex={activeIndex}
                         whyTitle={t('cloudflare.sidebar.why_title')}
                         whyDesc={t('cloudflare.sidebar.why_desc')}
                     />

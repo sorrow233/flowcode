@@ -1,17 +1,17 @@
 {
     "download": {
         "step_num_kanji": "壱",
-        "step_num_text": "第一步：破晓",
-        "title": "握住创造之火",
-        "subtitle": "获取 Google Antigravity —— 这不是工具，这是你改写现实的权杖",
+        "step_num_text": "第一步：基石",
+        "title": "配置开发环境",
+        "subtitle": "获取 Google Antigravity，开启 AI 原生开发的第一步",
         "step_num_kanji": "壱",
         "step_num_text": "第一步",
         "title": "获取工具",
         "subtitle": "下载 Google Antigravity，开启你的创造之旅",
         "card": {
             "title": "Google Antigravity IDE",
-            "desc": "由 Google DeepMind 孕育的 AI 原生创造核心",
-            "button": "执掌权杖 →"
+            "desc": "Google DeepMind 打造的 AI 原生高效开发核心",
+            "button": "立即获取 →"
         },
         "warning": {
             "title": "⚠️ 重要提示",
@@ -47,9 +47,9 @@
     },
     "vision": {
         "step_num_kanji": "弐",
-        "step_num_text": "第二步：构想",
-        "title": "描摹神迹",
-        "subtitle": "告诉 AI 你想如何改变世界。极简，即是终极的华丽。",
+        "step_num_text": "第二步：构词",
+        "title": "定义想法蓝图",
+        "subtitle": "用自然语言描述愿景。越简洁，越高效。",
         "desc_title": "自然语言描述",
         "desc_text": "打开 Antigravity IDE，在对话框中输入你的想法。<br />无需专业术语，只需回答这三个问题：",
         "features": {
@@ -113,9 +113,9 @@
     },
     "generation": {
         "step_num_kanji": "参",
-        "step_num_text": "第三步：凝练",
-        "title": "意志化身",
-        "subtitle": "屏息以待。看硅基智慧如何将你的灵魂注入代码。",
+        "step_num_text": "第三步：合成",
+        "title": "生成核心代码",
+        "subtitle": "见证灵感实时转化为代码。这是创造力最高效的瞬间。",
         "steps": [
             {
                 "num": "01",
@@ -166,9 +166,9 @@
     },
     "cloudflare": {
         "step_num_kanji": "肆",
-        "step_num_text": "第四步",
-        "title": "全球部署",
-        "subtitle": "注册 Cloudflare，将你的网站推向全球边缘网路",
+        "step_num_text": "第四步：分发",
+        "title": "全球极速部署",
+        "subtitle": "接入 Cloudflare，让你的作品在世界各地瞬间开启。",
         "steps": {
             "1": {
                 "title": "创建帐号",
@@ -222,9 +222,9 @@
     },
     "firebase": {
         "step_num_kanji": "伍",
-        "step_num_text": "第五步",
-        "title": "无限存储",
-        "subtitle": "连接 Google Firebase，实现规模化数据存储",
+        "step_num_text": "第五步：连接",
+        "title": "注入持久记忆",
+        "subtitle": "集成 Google Firebase，让应用具备强大的云端数据能力。",
         "steps": {
             "1": {
                 "title": "创建项目",
@@ -268,16 +268,16 @@
                 },
                 {
                     "label": "注入 AI 配置",
-                    "desc": "让应用具备数据存储能力"
+                    "desc": "让应用具备云端同步能力"
                 }
             ]
         }
     },
     "domain": {
         "step_num_kanji": "陆",
-        "step_num_text": "第六步",
-        "title": "你的身份",
-        "subtitle": "自订域名是你的位元资产",
+        "step_num_text": "第六步：归属",
+        "title": "配置个人品牌",
+        "subtitle": "绑定专属域名，建立你在数字世界中的独特领地。",
         "providers_title": "域名提供商",
         "providers_desc": "我们推荐这些稳定且价格合理的提供商：",
         "disclaimer": "* 均为官方直达连结，本专案无任何利益关系或佣金抽成。",
@@ -325,8 +325,8 @@
         }
     },
     "success": {
-        "title": "星海起航",
-        "subtitle": "从此刻起，你是规则的重塑者",
+        "title": "创造力已觉醒",
+        "subtitle": "现在，开启你的开发者生涯",
         "canvas_title": "世界是你的画布",
         "canvas_desc": "你已拥有工具、愿景和 AI。<br />从此刻起，你只需做两件事：",
         "steps": {
