@@ -18,7 +18,7 @@ export default function VisionGenerator({
             padding: '2rem',
             marginBottom: '2rem',
             border: '1px solid var(--border-kin)',
-            background: 'linear-gradient(180deg, rgba(22, 22, 30, 0.4) 0%, rgba(22, 22, 30, 0.6) 100%)'
+            background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.6) 0%, rgba(255, 255, 255, 0.8) 100%)'
         }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
                 <Sparkles size={20} color="var(--asagi)" />

@@ -161,7 +161,7 @@
                     "Click <0>Current Project</0> (in IDE settings)",
                     "Select <0>Project Settings</0>",
                     "Scroll to 'Your apps'",
-                    "Select <0>Web app</0> <1>&lt;/&gt;</1>",
+                    "Select <0>Web app</0> <1></></1>",
                     "Copy <0>firebaseConfig</0> object"
                 ]
             },

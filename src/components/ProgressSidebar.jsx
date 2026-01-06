@@ -25,7 +25,7 @@ export function ProgressSidebar({ title, items = [], activeIndex = 0, whyTitle, 
                 padding: '1.5rem',
                 marginBottom: '1.5rem',
                 border: '1px solid var(--border-kasumi)',
-                background: 'rgba(22, 22, 30, 0.8)'
+                background: 'rgba(255, 255, 255, 0.8)'
             }}>
                 <h3 style={{
                     fontSize: '1rem',
@@ -61,7 +61,7 @@ export function ProgressSidebar({ title, items = [], activeIndex = 0, whyTitle, 
                     </div>
                     <div style={{
                         height: '4px',
-                        background: 'rgba(255, 255, 255, 0.05)',
+                        background: 'rgba(0, 0, 0, 0.06)',
                         borderRadius: '2px',
                         overflow: 'hidden',
                         position: 'relative'

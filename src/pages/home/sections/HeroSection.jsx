@@ -55,7 +55,7 @@ const HeroSection = () => {
                     <span style={{
                         display: 'block',
                         color: 'transparent',
-                        WebkitTextStroke: '1px rgba(255,255,255,0.2)',
+                        WebkitTextStroke: '1px rgba(0, 0, 0, 0.15)',
                         fontFamily: 'var(--font-mincho)'
                     }}>
                         {t('hero.title_flow')}

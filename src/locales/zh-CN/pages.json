@@ -235,7 +235,7 @@
                     "点击 <0>当前项目</0>（在 IDE 设定中）",
                     "选择 <0>Project Settings</0>",
                     "滚动到 「Your apps」",
-                    "选择 <0>Web app</0> <1>&lt;/&gt;</1>",
+                    "选择 <0>Web app</0> <1></></1>",
                     "复制 <0>firebaseConfig</0> 对象"
                 ]
             },
