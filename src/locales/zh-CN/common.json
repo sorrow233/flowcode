@@ -26,7 +26,7 @@
         "generation_desc": "即时代码合成",
         "deploy_desc": "全球边缘网络",
         "storage_desc": "无服务器后端",
-        "philosophy_quote": "「不执着于语法，专注于创意。\n让 AI 成为你的执行者，你只需做决策者。」",
+        "philosophy_quote": "「不，专注于创意。\n你只需做决策者。」",
         "philosophy_author": "— FlowCode 开发理念",
         "version": "版本 {{version}}",
         "stable": "稳定运行中",
