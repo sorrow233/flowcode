@@ -1,79 +1,176 @@
 import { Link } from 'react-router-dom'
-import CodeBlock from '../components/CodeBlock'
 
 function FirebasePage() {
     return (
         <>
+            {/* 頁面標題 */}
             <section className="page-header">
-                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-                    <div style={{ display: 'inline-block', padding: '0.5rem 1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', marginBottom: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <span style={{ color: 'var(--secondary)' }}>Step 05</span>
+                <div className="container" style={{ maxWidth: '800px' }}>
+                    <div className="scroll-title animate-enter">
+                        <span style={{
+                            fontFamily: 'var(--font-mincho)',
+                            color: 'var(--shu)'
+                        }}>伍</span>
+                        <span style={{ color: 'var(--text-nezumi)' }}>第五步</span>
                     </div>
-                    <h1 className="text-gradient-cyber" style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Infinite Storage</h1>
-                    <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>Connect to Google Firebase. Store data at scale.</p>
+                    <h1 className="animate-enter delay-100 text-gradient-asagi" style={{
+                        fontSize: '2.8rem',
+                        marginBottom: '1rem'
+                    }}>
+                        無限存儲
+                    </h1>
+                    <p className="animate-enter delay-200" style={{
+                        fontSize: '1.1rem',
+                        color: 'var(--text-nezumi)',
+                        maxWidth: '500px',
+                        margin: '0 auto'
+                    }}>
+                        連接 Google Firebase，實現規模化數據存儲
+                    </p>
                 </div>
             </section>
 
-            <section className="page-content" style={{ marginTop: '-4rem' }}>
-                <div className="container">
-                    <div className="glass-panel card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem' }}>
+            {/* 主要內容 */}
+            <section className="page-content" style={{ marginTop: '-2rem' }}>
+                <div className="container" style={{ maxWidth: '700px' }}>
+                    <div className="washi-card-dark animate-enter delay-300" style={{ padding: '3rem' }}>
 
-                        <div className="tutorial-section">
-                            <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <span style={{ width: '32px', height: '32px', background: 'var(--secondary)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', color: 'black', fontWeight: 'bold' }}>1</span>
-                                Create Project
-                            </h3>
-                            <p className="text-muted" style={{ margin: '1rem 0 2rem', paddingLeft: '42px' }}>
-                                Firebase provides real-time databases and authentication out of the box.
+                        {/* 步驟 1 */}
+                        <div style={{ marginBottom: '2.5rem' }}>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.75rem',
+                                marginBottom: '1rem'
+                            }}>
+                                <span style={{
+                                    width: '28px',
+                                    height: '28px',
+                                    background: 'var(--shu)',
+                                    borderRadius: '8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '0.85rem',
+                                    color: 'white',
+                                    fontWeight: 600
+                                }}>1</span>
+                                <h3 style={{
+                                    fontSize: '1.2rem',
+                                    margin: 0,
+                                    fontWeight: 500
+                                }}>創建專案</h3>
+                            </div>
+                            <p style={{
+                                color: 'var(--text-ishi)',
+                                marginBottom: '1.5rem',
+                                paddingLeft: '2.5rem',
+                                lineHeight: 1.8
+                            }}>
+                                Firebase 提供即用型實時數據庫和身份驗證服務。
                             </p>
-                            <div style={{ paddingLeft: '42px' }}>
+                            <div style={{ paddingLeft: '2.5rem' }}>
                                 <a
                                     href="https://console.firebase.google.com/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="btn btn-primary"
-                                    style={{ marginBottom: 'var(--space-lg)' }}
+                                    className="btn btn-ghost"
+                                    style={{
+                                        borderColor: 'var(--shu)',
+                                        color: 'var(--shu)',
+                                        boxShadow: '0 0 15px var(--shu-soft)'
+                                    }}
                                 >
-                                    Open Firebase Console →
+                                    打開 Firebase 控制台 →
                                 </a>
                             </div>
                         </div>
 
-                        <div className="tutorial-section" style={{ marginTop: '3rem' }}>
-                            <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                                <span style={{ width: '32px', height: '32px', background: 'var(--secondary)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', color: 'black', fontWeight: 'bold' }}>2</span>
-                                Configuration
-                            </h3>
-                            <ul className="tutorial-list" style={{ paddingLeft: '60px', marginTop: '1rem' }}>
-                                <li>Click <strong>Current Project</strong> (in IDE Settings)</li>
-                                <li>Select <strong>Project Settings</strong></li>
-                                <li>Scroll to "Your apps"</li>
-                                <li>Select <strong>Web app</strong> <code>&lt;/&gt;</code></li>
-                                <li>Copy the `firebaseConfig` object</li>
+                        {/* 步驟 2 */}
+                        <div style={{ marginBottom: '2rem' }}>
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.75rem',
+                                marginBottom: '1rem'
+                            }}>
+                                <span style={{
+                                    width: '28px',
+                                    height: '28px',
+                                    background: 'var(--shu)',
+                                    borderRadius: '8px',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    fontSize: '0.85rem',
+                                    color: 'white',
+                                    fontWeight: 600
+                                }}>2</span>
+                                <h3 style={{
+                                    fontSize: '1.2rem',
+                                    margin: 0,
+                                    fontWeight: 500
+                                }}>配置設定</h3>
+                            </div>
+
+                            <ul style={{
+                                paddingLeft: '4rem',
+                                color: 'var(--text-nezumi)',
+                                lineHeight: 2
+                            }}>
+                                <li>點擊 <strong style={{ color: 'var(--text-yuki)' }}>當前專案</strong>（在 IDE 設定中）</li>
+                                <li>選擇 <strong style={{ color: 'var(--text-yuki)' }}>Project Settings</strong></li>
+                                <li>滾動到 「Your apps」</li>
+                                <li>選擇 <strong style={{ color: 'var(--text-yuki)' }}>Web app</strong> <code style={{ color: 'var(--asagi)' }}>&lt;/&gt;</code></li>
+                                <li>複製 <code style={{ color: 'var(--asagi)' }}>firebaseConfig</code> 對象</li>
                             </ul>
                         </div>
 
-                        <div className="glass-panel-heavy" style={{ marginTop: '2rem', padding: '2rem', borderRadius: '16px', border: '1px solid var(--border-light)' }}>
-                            <div className="info-box-title" style={{ color: 'var(--primary)', marginBottom: '1rem' }}>💾 Where to put it?</div>
-                            <p>
-                                Paste the config into:
+                        {/* 配置提示 */}
+                        <div className="info-box" style={{
+                            borderLeftColor: 'var(--fuji)',
+                            background: 'var(--fuji-soft)'
+                        }}>
+                            <div className="info-box-title" style={{ color: 'var(--fuji)' }}>
+                                💾 配置放在哪裡？
+                            </div>
+                            <p style={{
+                                marginBottom: '0.75rem',
+                                color: 'var(--text-nezumi)'
+                            }}>
+                                將配置貼入：
                             </p>
-                            <div style={{ background: 'var(--bg-base)', padding: '0.5rem 1rem', borderRadius: '8px', fontFamily: 'var(--font-mono)', display: 'inline-block' }}>
+                            <div style={{
+                                background: 'var(--bg-yoru)',
+                                padding: '0.6rem 1rem',
+                                borderRadius: '6px',
+                                fontFamily: 'var(--font-mono)',
+                                fontSize: '0.9rem',
+                                color: 'var(--asagi)',
+                                display: 'inline-block'
+                            }}>
                                 src/firebase.js
                             </div>
                         </div>
 
-                        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-dim)', paddingTop: '2rem' }}>
+                        {/* 導航按鈕 */}
+                        <div style={{
+                            marginTop: '2.5rem',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            paddingTop: '2rem',
+                            borderTop: '1px solid var(--border-kasumi)'
+                        }}>
                             <Link to="/cloudflare" className="btn btn-secondary">
-                                ← Previous
+                                ← 部署
                             </Link>
                             <Link to="/domain" className="btn btn-primary">
-                                Next: Domain →
+                                下一步：域名 →
                             </Link>
                         </div>
                     </div>
                 </div>
-            </section >
+            </section>
         </>
     )
 }

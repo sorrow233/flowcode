@@ -1,63 +1,154 @@
 import { Link } from 'react-router-dom'
 
 function DomainPage() {
+    const providers = [
+        {
+            icon: '☁️',
+            name: 'Cloudflare',
+            tag: '推薦',
+            desc: '零加價。與 Pages 完美整合。',
+            featured: true
+        },
+        {
+            icon: '🏷️',
+            name: 'Namecheap',
+            tag: null,
+            desc: '首年優惠力度大，支援多種頂級域名。',
+            featured: false
+        }
+    ]
+
     return (
         <>
+            {/* 頁面標題 */}
             <section className="page-header">
-                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
-                    <div style={{ display: 'inline-block', padding: '0.5rem 1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', marginBottom: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
-                        <span style={{ color: 'var(--secondary)' }}>Step 06</span>
+                <div className="container" style={{ maxWidth: '800px' }}>
+                    <div className="scroll-title animate-enter">
+                        <span style={{
+                            fontFamily: 'var(--font-mincho)',
+                            color: 'var(--sakura)'
+                        }}>陸</span>
+                        <span style={{ color: 'var(--text-nezumi)' }}>第六步</span>
                     </div>
-                    <h1 className="text-gradient-cyber" style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Your Identity</h1>
-                    <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>A custom domain is your digital real estate.</p>
+                    <h1 className="animate-enter delay-100 text-gradient-asagi" style={{
+                        fontSize: '2.8rem',
+                        marginBottom: '1rem'
+                    }}>
+                        你的身份
+                    </h1>
+                    <p className="animate-enter delay-200" style={{
+                        fontSize: '1.1rem',
+                        color: 'var(--text-nezumi)',
+                        maxWidth: '500px',
+                        margin: '0 auto'
+                    }}>
+                        自訂域名是你的數位資產
+                    </p>
                 </div>
             </section>
 
-            <section className="page-content" style={{ marginTop: '-4rem' }}>
-                <div className="container">
-                    <div className="glass-panel card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem' }}>
+            {/* 主要內容 */}
+            <section className="page-content" style={{ marginTop: '-2rem' }}>
+                <div className="container" style={{ maxWidth: '700px' }}>
+                    <div className="washi-card-dark animate-enter delay-300" style={{ padding: '3rem' }}>
 
-                        <div className="tutorial-section">
-                            <h3>Providers</h3>
-                            <p className="text-muted" style={{ marginBottom: '2rem' }}>
-                                We recommend these providers for stability and price.
-                            </p>
+                        <h3 style={{
+                            fontSize: '1.2rem',
+                            marginBottom: '0.5rem',
+                            fontWeight: 500
+                        }}>域名提供商</h3>
+                        <p style={{
+                            color: 'var(--text-ishi)',
+                            marginBottom: '1.5rem'
+                        }}>
+                            我們推薦這些穩定且價格合理的提供商：
+                        </p>
 
-                            <div className="surface-card animate-float" style={{ padding: '1.5rem', marginBottom: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem', borderRadius: '16px' }}>
-                                <div style={{ fontSize: '2rem' }}>☁️</div>
-                                <div>
-                                    <h4 style={{ marginBottom: '0.25rem', color: 'var(--text-primary)' }}>Cloudflare (Recommended)</h4>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 0 }}>
-                                        Zero markup pricing. Best integration with Pages.
-                                    </p>
+                        {/* 提供商卡片 */}
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '1rem',
+                            marginBottom: '2rem'
+                        }}>
+                            {providers.map(provider => (
+                                <div
+                                    key={provider.name}
+                                    className="surface-card"
+                                    style={{
+                                        padding: '1.25rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '1rem',
+                                        border: provider.featured
+                                            ? '1px solid var(--asagi-soft)'
+                                            : '1px solid var(--border-kasumi)'
+                                    }}
+                                >
+                                    <div style={{ fontSize: '1.75rem' }}>{provider.icon}</div>
+                                    <div style={{ flex: 1 }}>
+                                        <div style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '0.5rem',
+                                            marginBottom: '0.25rem'
+                                        }}>
+                                            <h4 style={{
+                                                color: 'var(--text-yuki)',
+                                                fontSize: '1rem',
+                                                margin: 0
+                                            }}>{provider.name}</h4>
+                                            {provider.tag && (
+                                                <span style={{
+                                                    fontSize: '0.7rem',
+                                                    padding: '0.2rem 0.5rem',
+                                                    background: 'var(--asagi-soft)',
+                                                    color: 'var(--asagi)',
+                                                    borderRadius: 'var(--radius-full)'
+                                                }}>{provider.tag}</span>
+                                            )}
+                                        </div>
+                                        <p style={{
+                                            fontSize: '0.85rem',
+                                            color: 'var(--text-ishi)',
+                                            margin: 0
+                                        }}>{provider.desc}</p>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div className="surface-card" style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1.5rem', borderRadius: '16px' }}>
-                                <div style={{ fontSize: '2rem' }}>🏷️</div>
-                                <div>
-                                    <h4 style={{ marginBottom: '0.25rem', color: 'var(--text-primary)' }}>Namecheap</h4>
-                                    <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', marginBottom: 0 }}>
-                                        Great for first-year discounts and alternative TLDs.
-                                    </p>
-                                </div>
-                            </div>
+                            ))}
                         </div>
 
-                        <div className="glass-panel-heavy" style={{ marginTop: '3rem', padding: '2rem', borderRadius: '16px', borderLeft: '4px solid var(--secondary)' }}>
-                            <div className="info-box-title" style={{ color: 'var(--secondary)', marginBottom: '1rem' }}>🔗 Linking</div>
-                            <p style={{ marginBottom: 0 }}>
-                                After purchase, go to Cloudflare Pages Project Settings → <strong>Custom Domains</strong>.<br />
-                                Cloudflare handles the SSL and DNS automatically.
+                        {/* 連結提示 */}
+                        <div className="info-box" style={{
+                            borderLeftColor: 'var(--asagi)',
+                            background: 'var(--asagi-soft)'
+                        }}>
+                            <div className="info-box-title" style={{ color: 'var(--asagi)' }}>
+                                🔗 如何連結？
+                            </div>
+                            <p style={{
+                                color: 'var(--text-nezumi)',
+                                marginBottom: 0
+                            }}>
+                                購買後，前往 Cloudflare Pages 專案設定 → <strong style={{ color: 'var(--text-yuki)' }}>Custom Domains</strong>。
+                                <br />
+                                Cloudflare 會自動處理 SSL 和 DNS。
                             </p>
                         </div>
 
-                        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-dim)', paddingTop: '2rem' }}>
+                        {/* 導航按鈕 */}
+                        <div style={{
+                            marginTop: '2.5rem',
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            paddingTop: '2rem',
+                            borderTop: '1px solid var(--border-kasumi)'
+                        }}>
                             <Link to="/firebase" className="btn btn-secondary">
-                                ← Previous
+                                ← 存儲
                             </Link>
-                            <Link to="/success" className="btn btn-primary" style={{ background: 'var(--color-success)', color: 'black' }}>
-                                Finish →
+                            <Link to="/success" className="btn btn-primary">
+                                完成 →
                             </Link>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 {
   "name": "flowcode",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "FlowCode - 零基础 AI 辅助网站开发教程",
   "private": true,
   "type": "module",
