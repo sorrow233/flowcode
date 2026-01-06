@@ -2,14 +2,17 @@ import { Link } from 'react-router-dom'
 import { Copy, Coffee } from 'lucide-react'
 import { toast } from 'sonner'
 import { useTranslation, Trans } from 'react-i18next'
-import ProgressSidebar from '../components/ProgressSidebar'
+import { useStepProgress } from '../utils/useStepProgress'
 
 function GenerationPage() {
     const { t } = useTranslation(['pages'])
+    const [activeIndex, setActiveIndex] = useStepProgress('generation', 0)
 
     const handleCopy = () => {
         navigator.clipboard.writeText(t('generation.ai_cmd.text'))
         toast.success(t('vision.generator.copy_toast'))
+        // Assume user proceeds to next step after copying
+        setActiveIndex(1)
     }
 
     const steps = t('generation.steps', { returnObjects: true })
@@ -56,7 +59,7 @@ function GenerationPage() {
                     <ProgressSidebar
                         title={t('generation.sidebar.title')}
                         items={sidebarItems}
-                        activeIndex={0}
+                        activeIndex={activeIndex}
                         whyTitle={t('generation.sidebar.why_title')}
                         whyDesc={t('generation.sidebar.why_desc')}
                     />

@@ -1,10 +1,19 @@
 import { Link } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import ProgressSidebar from '../components/ProgressSidebar'
+import { useStepProgress } from '../utils/useStepProgress'
 
 function DownloadPage() {
     const { t } = useTranslation(['pages'])
+    const [activeIndex, setActiveIndex] = useStepProgress('download', 0)
     const sidebarItems = t('download.sidebar.items', { returnObjects: true })
+
+    const handleDownload = () => {
+        // Mark first two steps as completed (Confirmation + Install/Run)
+        // Set active index to the third step (Wait for vision)
+        setActiveIndex(2)
+        window.open('https://antigravity.google/', '_blank')
+    }
 
     return (
         <>
@@ -47,7 +56,7 @@ function DownloadPage() {
                     <ProgressSidebar
                         title={t('download.sidebar.title')}
                         items={sidebarItems}
-                        activeIndex={0}
+                        activeIndex={activeIndex}
                         whyTitle={t('download.sidebar.why_title')}
                         whyDesc={t('download.sidebar.why_desc')}
                     />
@@ -84,15 +93,13 @@ function DownloadPage() {
                                 }}>
                                     {t('download.card.desc')}
                                 </p>
-                                <a
-                                    href="https://antigravity.google/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
+                                <button
+                                    onClick={handleDownload}
                                     className="btn btn-primary"
                                     style={{ padding: '1rem 3rem', fontSize: '1rem' }}
                                 >
                                     {t('download.card.button')}
-                                </a>
+                                </button>
                             </div>
 
                             {/* 提示區域 */}

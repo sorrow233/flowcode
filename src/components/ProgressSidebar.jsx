@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from 'framer-motion'
  * @param {string} props.whyDesc - Description for the "Why" section
  */
 export function ProgressSidebar({ title, items = [], activeIndex = 0, whyTitle, whyDesc }) {
-    const progress = items.length > 0 ? ((activeIndex + 1) / items.length) * 100 : 0
+    const progress = items.length > 0 ? (activeIndex / items.length) * 100 : 0
 
     return (
         <aside className="progress-sidebar" style={{

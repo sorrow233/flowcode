@@ -2,15 +2,17 @@ import { Link } from 'react-router-dom'
 import { useTranslation, Trans } from 'react-i18next'
 import { Copy } from 'lucide-react'
 import { toast } from 'sonner'
-import ProgressSidebar from '../components/ProgressSidebar'
+import { useStepProgress } from '../utils/useStepProgress'
 
 function CloudflarePage() {
     const { t } = useTranslation(['pages'])
+    const [activeIndex, setActiveIndex] = useStepProgress('cloudflare', 0)
     const sidebarItems = t('cloudflare.sidebar.items', { returnObjects: true })
 
     const handleCopy = () => {
         navigator.clipboard.writeText(t('cloudflare.steps.3.text'))
         toast.success(t('vision.generator.copy_toast'))
+        setActiveIndex(2)
     }
 
     return (

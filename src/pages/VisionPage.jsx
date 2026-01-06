@@ -7,9 +7,21 @@ import ProgressSidebar from '../components/ProgressSidebar'
 
 function VisionPage() {
     const { t } = useTranslation(['pages'])
-    const [appType, setAppType] = useState('')
-    const [goal, setGoal] = useState('')
-    const [generatedPrompt, setGeneratedPrompt] = useState('')
+    const [appType, setAppType] = useState(() => localStorage.getItem('flowcode_vision_appType') || '')
+    const [goal, setGoal] = useState(() => localStorage.getItem('flowcode_vision_goal') || '')
+    const [generatedPrompt, setGeneratedPrompt] = useState(() => localStorage.getItem('flowcode_vision_prompt') || '')
+
+    useEffect(() => {
+        localStorage.setItem('flowcode_vision_appType', appType)
+    }, [appType])
+
+    useEffect(() => {
+        localStorage.setItem('flowcode_vision_goal', goal)
+    }, [goal])
+
+    useEffect(() => {
+        localStorage.setItem('flowcode_vision_prompt', generatedPrompt)
+    }, [generatedPrompt])
 
     const handleGenerate = () => {
         if (!appType.trim() || !goal.trim()) {
