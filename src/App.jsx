@@ -7,6 +7,7 @@ import GenerationPage from './pages/GenerationPage'
 import CloudflarePage from './pages/CloudflarePage'
 import FirebasePage from './pages/FirebasePage'
 import DomainPage from './pages/DomainPage'
+import SuccessPage from './pages/SuccessPage'
 
 function App() {
     return (
@@ -20,6 +21,7 @@ function App() {
                     <Route path="cloudflare" element={<CloudflarePage />} />
                     <Route path="firebase" element={<FirebasePage />} />
                     <Route path="domain" element={<DomainPage />} />
+                    <Route path="success" element={<SuccessPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>

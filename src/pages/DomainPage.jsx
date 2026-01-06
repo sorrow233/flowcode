@@ -92,8 +92,8 @@ function DomainPage() {
                             <Link to="/firebase" className="btn btn-secondary" style={{ marginRight: 'var(--space-md)' }}>
                                 ← 上一步
                             </Link>
-                            <Link to="/" className="btn btn-primary" style={{ background: 'var(--color-success)' }}>
-                                🎓 恭喜毕业，回到首页
+                            <Link to="/success" className="btn btn-primary" style={{ background: 'var(--color-success)' }}>
+                                下一步：完成 →
                             </Link>
                         </div>
                     </div>
