@@ -4,6 +4,10 @@
         "step_num_text": "第一步",
         "title": "获取工具",
         "subtitle": "下载 Google Antigravity，开启你的创造之旅",
+        "step_num_kanji": "壱",
+        "step_num_text": "第一步",
+        "title": "获取工具",
+        "subtitle": "下载 Google Antigravity，开启你的创造之旅",
         "card": {
             "title": "Google Antigravity IDE",
             "desc": "Google DeepMind 打造的 AI 原生开发环境",
@@ -18,6 +22,25 @@
         "nav": {
             "home": "← 首页",
             "vision": "下一步：愿景 →"
+        },
+        "sidebar": {
+            "title": "当前进度",
+            "why_title": "为什么要有这个清单？",
+            "why_desc": "准备好正确的工具，是成功的一半。这些步骤确保你的开发环境安全且高效。",
+            "items": [
+                {
+                    "label": "确认 IDE 来源",
+                    "desc": "确保下载的是官方版本"
+                },
+                {
+                    "label": "安装并运行",
+                    "desc": "启动你的 AI 创造引擎"
+                },
+                {
+                    "label": "准备迎接愿景",
+                    "desc": "思考你想构建的应用"
+                }
+            ]
         }
     },
     "nav": {
@@ -40,6 +63,25 @@
                 "title": "目的",
                 "desc": "为什么需要它？"
             }
+        },
+        "sidebar": {
+            "title": "当前进度",
+            "why_title": "为什么要有这个清单？",
+            "why_desc": "完成这些步骤有助于理清思路，生成最精准的 AI 提示词。",
+            "items": [
+                {
+                    "label": "确认应用类型",
+                    "desc": "你想做什么样的应用？"
+                },
+                {
+                    "label": "明确核心目标",
+                    "desc": "这个应用解决了什么问题？"
+                },
+                {
+                    "label": "生成并复制指令",
+                    "desc": "获取你的专属开发指令"
+                }
+            ]
         },
         "generator": {
             "title": "指令生成器",
@@ -107,6 +149,25 @@
         "nav": {
             "vision": "← 愿景",
             "cloudflare": "下一步：部署 →"
+        },
+        "sidebar": {
+            "title": "当前进度",
+            "why_title": "为什么要有这个清单？",
+            "why_desc": "将想法转化为代码是整个过程中最激动人心的部分。这些步骤帮助你见证这一时刻的诞生。",
+            "items": [
+                {
+                    "label": "确认最终指令",
+                    "desc": "确保 AI 理解你的全部需求"
+                },
+                {
+                    "label": "发送并监控",
+                    "desc": "在 Antigravity 中启动创造流程"
+                },
+                {
+                    "label": "享受成果",
+                    "desc": "准备好在浏览器中查看你的应用"
+                }
+            ]
         }
     },
     "cloudflare": {
@@ -146,6 +207,25 @@
         "nav": {
             "generation": "← 生成",
             "firebase": "下一步：存储 →"
+        },
+        "sidebar": {
+            "title": "当前进度",
+            "why_title": "为什么要有这个清单？",
+            "why_desc": "Cloudflare 提供免费的全球加速和安全性。这些步骤确保你的应用能够快速地触达全球用户。",
+            "items": [
+                {
+                    "label": "创建账号",
+                    "desc": "加入全球数百万开发者的行列"
+                },
+                {
+                    "label": "获取 API 令牌",
+                    "desc": "开启自动化部署的钥匙"
+                },
+                {
+                    "label": "AI 指令部署",
+                    "desc": "一键将代码上线"
+                }
+            ]
         }
     },
     "firebase": {
@@ -182,6 +262,25 @@
         "nav": {
             "cloudflare": "← 部署",
             "domain": "下一步：域名 →"
+        },
+        "sidebar": {
+            "title": "当前进度",
+            "why_title": "为什么要有这个清单？",
+            "why_desc": "Firebase 能够管理你的所有数据和用户信息。配置它意味着你的应用从静态变得“有生命”。",
+            "items": [
+                {
+                    "label": "初始化项目",
+                    "desc": "在 Google 的云端建立据点"
+                },
+                {
+                    "label": "提取配置文件",
+                    "desc": "获取连接应用的凭据"
+                },
+                {
+                    "label": "注入 AI 配置",
+                    "desc": "让应用具备数据存储能力"
+                }
+            ]
         }
     },
     "domain": {
@@ -216,6 +315,25 @@
         "nav": {
             "firebase": "← 存储",
             "success": "完成 →"
+        },
+        "sidebar": {
+            "title": "当前进度",
+            "why_title": "为什么要有这个清单？",
+            "why_desc": "域名是你的数字门牌。一个好的域名能让用户记住你，并提升品牌的专业度。",
+            "items": [
+                {
+                    "label": "挑选域名商",
+                    "desc": "寻找最优惠的注册价格"
+                },
+                {
+                    "label": "注册并持有",
+                    "desc": "锁定你的数字资产"
+                },
+                {
+                    "label": "解析与连接",
+                    "desc": "将域名指向你的网站"
+                }
+            ]
         }
     },
     "success": {

@@ -1,8 +1,0 @@
-{
-    "common": {
-        "loading": "讀取中...",
-        "copy_success": "已複製到剪貼簿",
-        "copy_fail": "複製失敗",
-        "error": "發生錯誤"
-    }
-}

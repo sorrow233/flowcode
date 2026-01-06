@@ -2,9 +2,11 @@ import { Link } from 'react-router-dom'
 import { useTranslation, Trans } from 'react-i18next'
 import { Copy } from 'lucide-react'
 import { toast } from 'sonner'
+import ProgressSidebar from '../components/ProgressSidebar'
 
 function FirebasePage() {
     const { t } = useTranslation(['pages'])
+    const sidebarItems = t('firebase.sidebar.items', { returnObjects: true })
 
     const handleCopy = () => {
         navigator.clipboard.writeText(t('firebase.steps.3.text'))
@@ -42,225 +44,191 @@ function FirebasePage() {
                 </div>
             </section>
 
-            {/* 主要內容 */}
+            {/* 主要內容Layout */}
             <section className="page-content" style={{ marginTop: '-2rem' }}>
-                <div className="container" style={{ maxWidth: '700px' }}>
-                    <div className="washi-card-dark animate-enter delay-300" style={{ padding: '3rem' }}>
+                <div className="container" style={{
+                    maxWidth: '1100px',
+                    display: 'flex',
+                    gap: '3rem',
+                    alignItems: 'start'
+                }}>
+                    {/* 左側邊欄 */}
+                    <ProgressSidebar
+                        title={t('firebase.sidebar.title')}
+                        items={sidebarItems}
+                        activeIndex={0}
+                        whyTitle={t('firebase.sidebar.why_title')}
+                        whyDesc={t('firebase.sidebar.why_desc')}
+                    />
 
-                        {/* 步驟 1 */}
-                        <div style={{ marginBottom: '2.5rem' }}>
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.75rem',
-                                marginBottom: '1rem'
-                            }}>
-                                <span style={{
-                                    width: '28px',
-                                    height: '28px',
-                                    background: 'var(--shu)',
-                                    borderRadius: '8px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontSize: '0.85rem',
-                                    color: 'white',
-                                    fontWeight: 600
-                                }}>1</span>
-                                <h3 style={{
-                                    fontSize: '1.2rem',
-                                    margin: 0,
-                                    fontWeight: 500
-                                }}>{t('firebase.steps.1.title')}</h3>
-                            </div>
-                            <p style={{
-                                color: 'var(--text-ishi)',
-                                marginBottom: '1.5rem',
-                                paddingLeft: '2.5rem',
-                                lineHeight: 1.8
-                            }}>
-                                {t('firebase.steps.1.desc')}
-                            </p>
-                            <div style={{ paddingLeft: '2.5rem' }}>
-                                <a
-                                    href="https://console.firebase.google.com/"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="btn btn-ghost"
-                                    style={{
-                                        borderColor: 'var(--shu)',
+                    {/* 右側主內容 */}
+                    <div style={{ flex: 1, maxWidth: '750px' }}>
+                        <div className="washi-card-dark animate-enter delay-300" style={{ padding: '3rem' }}>
+
+                            {/* 步驟 1 */}
+                            <div style={{ marginBottom: '2.5rem' }}>
+                                <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
+                                    <div style={{
+                                        width: '40px',
+                                        height: '40px',
+                                        background: 'rgba(232, 92, 74, 0.05)',
+                                        border: '1px solid var(--shu)',
+                                        borderRadius: '12px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
                                         color: 'var(--shu)',
-                                        boxShadow: '0 0 15px var(--shu-soft)'
-                                    }}
-                                >
-                                    {t('firebase.steps.1.button')}
-                                </a>
-                            </div>
-                        </div>
-
-                        {/* 步驟 2 */}
-                        <div style={{ marginBottom: '2rem' }}>
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.75rem',
-                                marginBottom: '1rem'
-                            }}>
-                                <span style={{
-                                    width: '28px',
-                                    height: '28px',
-                                    background: 'var(--shu)',
-                                    borderRadius: '8px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontSize: '0.85rem',
-                                    color: 'white',
-                                    fontWeight: 600
-                                }}>2</span>
-                                <h3 style={{
-                                    fontSize: '1.2rem',
-                                    margin: 0,
-                                    fontWeight: 500
-                                }}>{t('firebase.steps.2.title')}</h3>
-                            </div>
-
-                            <ul style={{
-                                paddingLeft: '4rem',
-                                color: 'var(--text-nezumi)',
-                                lineHeight: 2
-                            }}>
-                                {Array.isArray(step2List) && step2List.map((item, index) => (
-                                    <li key={index}>
-                                        <Trans i18nKey={`firebase.steps.2.list.${index}`} ns="pages">
-                                            {item}
-                                        </Trans>
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-
-                        {/* 配置提示 */}
-                        <div className="info-box" style={{
-                            borderLeftColor: 'var(--fuji)',
-                            background: 'var(--fuji-soft)'
-                        }}>
-                            <div className="info-box-title" style={{ color: 'var(--fuji)' }}>
-                                {t('firebase.config_info.title')}
-                            </div>
-                            <p style={{
-                                marginBottom: '0.75rem',
-                                color: 'var(--text-nezumi)'
-                            }}>
-                                {t('firebase.config_info.desc')}
-                            </p>
-                            <div style={{
-                                background: 'var(--bg-yoru)',
-                                padding: '0.6rem 1rem',
-                                borderRadius: '6px',
-                                fontFamily: 'var(--font-mono)',
-                                fontSize: '0.9rem',
-                                color: 'var(--asagi)',
-                                display: 'inline-block'
-                            }}>
-                                src/firebase.js
-                            </div>
-                        </div>
-
-                        {/* 步驟 3 */}
-                        <div style={{ marginTop: '2.5rem' }}>
-                            <div style={{
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.75rem',
-                                marginBottom: '1rem'
-                            }}>
-                                <span style={{
-                                    width: '28px',
-                                    height: '28px',
-                                    background: 'var(--shu)',
-                                    borderRadius: '8px',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    fontSize: '0.85rem',
-                                    color: 'white',
-                                    fontWeight: 600
-                                }}>3</span>
-                                <h3 style={{
-                                    fontSize: '1.2rem',
-                                    margin: 0,
-                                    fontWeight: 500
-                                }}>{t('firebase.steps.3.title')}</h3>
-                            </div>
-                            <p style={{
-                                color: 'var(--text-ishi)',
-                                marginBottom: '1rem',
-                                paddingLeft: '2.5rem'
-                            }}>
-                                {t('firebase.steps.3.desc')}
-                            </p>
-                            <div style={{ paddingLeft: '2.5rem' }}>
-                                <div style={{
-                                    background: 'var(--bg-kuro)',
-                                    padding: '1.25rem',
-                                    borderRadius: '8px',
-                                    border: '1px solid var(--border-kasumi)',
-                                    color: 'var(--text-yuki)',
-                                    fontSize: '0.95rem',
-                                    lineHeight: '1.6',
-                                    position: 'relative',
-                                    fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace'
-                                }}>
-                                    {t('firebase.steps.3.text')}
-                                    <button
-                                        onClick={handleCopy}
-                                        title={t('vision.generator.copy_toast')}
-                                        style={{
-                                            position: 'absolute',
-                                            top: '0.8rem',
-                                            right: '0.8rem',
-                                            background: 'var(--bg-sumi)',
-                                            border: '1px solid var(--border-kasumi)',
-                                            color: 'var(--text-nezumi)',
-                                            width: '32px',
-                                            height: '32px',
-                                            borderRadius: '6px',
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            justifyContent: 'center',
-                                            cursor: 'pointer',
-                                            transition: 'all 0.2s'
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            e.currentTarget.style.color = 'var(--asagi)'
-                                            e.currentTarget.style.borderColor = 'var(--asagi)'
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.currentTarget.style.color = 'var(--text-nezumi)'
-                                            e.currentTarget.style.borderColor = 'var(--border-kasumi)'
-                                        }}
+                                        fontWeight: 600,
+                                        fontSize: '1.1rem'
+                                    }}>01</div>
+                                    <div>
+                                        <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{t('firebase.steps.1.title')}</h3>
+                                        <p style={{ color: 'var(--text-ishi)', lineHeight: 1.8 }}>{t('firebase.steps.1.desc')}</p>
+                                    </div>
+                                </div>
+                                <div style={{ paddingLeft: '3.75rem' }}>
+                                    <a
+                                        href="https://console.firebase.google.com/"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="btn btn-primary"
+                                        style={{ background: 'var(--shu)', borderColor: 'var(--shu)' }}
                                     >
-                                        <Copy size={14} />
-                                    </button>
+                                        {t('firebase.steps.1.button')}
+                                    </a>
                                 </div>
                             </div>
-                        </div>
 
-                        {/* 導航按鈕 */}
-                        <div style={{
-                            marginTop: '2.5rem',
-                            display: 'flex',
-                            justifyContent: 'space-between',
-                            paddingTop: '2rem',
-                            borderTop: '1px solid var(--border-kasumi)'
-                        }}>
-                            <Link to="/cloudflare" className="btn btn-secondary">
-                                {t('firebase.nav.cloudflare')}
-                            </Link>
-                            <Link to="/domain" className="btn btn-primary">
-                                {t('firebase.nav.domain')}
-                            </Link>
+                            {/* 步驟 2 */}
+                            <div style={{ marginBottom: '2.5rem' }}>
+                                <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
+                                    <div style={{
+                                        width: '40px',
+                                        height: '40px',
+                                        background: 'rgba(232, 92, 74, 0.05)',
+                                        border: '1px solid var(--shu)',
+                                        borderRadius: '12px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        color: 'var(--shu)',
+                                        fontWeight: 600,
+                                        fontSize: '1.1rem'
+                                    }}>02</div>
+                                    <div>
+                                        <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{t('firebase.steps.2.title')}</h3>
+                                    </div>
+                                </div>
+                                <div style={{ paddingLeft: '3.75rem' }}>
+                                    <ul style={{ color: 'var(--text-nezumi)', display: 'grid', gap: '0.75rem', paddingLeft: '1.2rem', fontSize: '0.95rem' }}>
+                                        {Array.isArray(step2List) && step2List.map((item, index) => (
+                                            <li key={index}>
+                                                <Trans i18nKey={`firebase.steps.2.list.${index}`} ns="pages">
+                                                    {item}
+                                                </Trans>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {/* 配置提示 */}
+                            <div className="info-box" style={{
+                                margin: '2rem 0 2.5rem 3.75rem',
+                                background: 'var(--fuji-soft)',
+                                borderColor: 'var(--fuji)',
+                                padding: '1.25rem 1.5rem'
+                            }}>
+                                <div className="info-box-title" style={{ color: 'var(--fuji)', marginBottom: '0.5rem' }}>
+                                    {t('firebase.config_info.title')}
+                                </div>
+                                <p style={{ fontSize: '0.95rem', color: 'var(--text-nezumi)', marginBottom: '1rem' }}>
+                                    {t('firebase.config_info.desc')}
+                                </p>
+                                <code style={{
+                                    background: 'var(--bg-yoru)',
+                                    padding: '0.4rem 0.8rem',
+                                    borderRadius: '6px',
+                                    color: 'var(--asagi)',
+                                    fontSize: '0.9rem'
+                                }}>src/firebase.js</code>
+                            </div>
+
+                            {/* 步驟 3 */}
+                            <div className="step-section" style={{ marginBottom: '3.5rem' }}>
+                                <div style={{ display: 'flex', gap: '1.25rem', marginBottom: '1.5rem' }}>
+                                    <div style={{
+                                        width: '40px',
+                                        height: '40px',
+                                        background: 'rgba(232, 92, 74, 0.05)',
+                                        border: '1px solid var(--shu)',
+                                        borderRadius: '12px',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        color: 'var(--shu)',
+                                        fontWeight: 600,
+                                        fontSize: '1.1rem'
+                                    }}>03</div>
+                                    <div>
+                                        <h3 style={{ fontSize: '1.2rem', marginBottom: '0.5rem' }}>{t('firebase.steps.3.title')}</h3>
+                                        <p style={{ color: 'var(--text-ishi)', lineHeight: 1.6 }}>{t('firebase.steps.3.desc')}</p>
+                                    </div>
+                                </div>
+                                <div style={{ paddingLeft: '3.75rem' }}>
+                                    <div style={{
+                                        background: 'var(--bg-yoru)',
+                                        padding: '1.25rem',
+                                        borderRadius: '8px',
+                                        border: '1px solid var(--border-kasumi)',
+                                        color: 'var(--text-yuki)',
+                                        fontFamily: 'var(--font-mono)',
+                                        fontSize: '0.9rem',
+                                        lineHeight: 1.6,
+                                        position: 'relative'
+                                    }}>
+                                        {t('firebase.steps.3.text')}
+                                        <button
+                                            onClick={handleCopy}
+                                            title={t('vision.generator.copy_toast')}
+                                            style={{
+                                                position: 'absolute',
+                                                top: '0.8rem',
+                                                right: '0.8rem',
+                                                background: 'var(--bg-sumi)',
+                                                border: '1px solid var(--border-kasumi)',
+                                                color: 'var(--text-nezumi)',
+                                                width: '32px',
+                                                height: '32px',
+                                                borderRadius: '6px',
+                                                display: 'flex',
+                                                alignItems: 'center',
+                                                justifyContent: 'center',
+                                                cursor: 'pointer',
+                                                transition: 'all 0.2s'
+                                            }}
+                                        >
+                                            <Copy size={14} />
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* 導航按鈕 */}
+                            <div style={{
+                                marginTop: '4rem',
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                paddingTop: '2.5rem',
+                                borderTop: '1px solid var(--border-kasumi)'
+                            }}>
+                                <Link to="/cloudflare" className="btn btn-secondary">
+                                    {t('firebase.nav.cloudflare')}
+                                </Link>
+                                <Link to="/domain" className="btn btn-primary">
+                                    {t('firebase.nav.domain')}
+                                </Link>
+                            </div>
                         </div>
                     </div>
                 </div>

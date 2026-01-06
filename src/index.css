@@ -573,6 +573,10 @@ a:hover {
   h2 {
     font-size: 1.6rem;
   }
+
+  .hidden-mobile {
+    display: none !important;
+  }
 }
 
 /* ===== 舊類名兼容 (過渡用) ===== */
