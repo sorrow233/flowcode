@@ -45,8 +45,8 @@ function FirebasePage() {
                             <Link to="/cloudflare" className="btn btn-secondary" style={{ marginRight: 'var(--space-md)' }}>
                                 ← 上一步
                             </Link>
-                            <Link to="/" className="btn btn-primary" style={{ background: 'var(--color-success)' }}>
-                                🎉 教程结束，开始创造吧！
+                            <Link to="/domain" className="btn btn-primary">
+                                下一步：专属域名 →
                             </Link>
                         </div>
                     </div>

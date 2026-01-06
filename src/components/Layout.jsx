@@ -16,6 +16,7 @@ function Layout() {
                         <NavLink to="/generation">3. 生成</NavLink>
                         <NavLink to="/cloudflare">4. 部署</NavLink>
                         <NavLink to="/firebase">5. 存储</NavLink>
+                        <NavLink to="/domain">6. 域名</NavLink>
                     </nav>
                 </div>
             </header>

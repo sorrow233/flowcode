@@ -6,6 +6,7 @@ import VisionPage from './pages/VisionPage'
 import GenerationPage from './pages/GenerationPage'
 import CloudflarePage from './pages/CloudflarePage'
 import FirebasePage from './pages/FirebasePage'
+import DomainPage from './pages/DomainPage'
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                     <Route path="generation" element={<GenerationPage />} />
                     <Route path="cloudflare" element={<CloudflarePage />} />
                     <Route path="firebase" element={<FirebasePage />} />
+                    <Route path="domain" element={<DomainPage />} />
                 </Route>
             </Routes>
         </BrowserRouter>
