@@ -1,5 +1,5 @@
 import { Outlet, NavLink, useLocation } from 'react-router-dom'
-import { useEffect, useState, useRef } from 'react'
+import { useEffect } from 'react'
 
 function Layout() {
     const location = useLocation()
@@ -9,79 +9,12 @@ function Layout() {
         window.scrollTo(0, 0)
     }, [location.pathname])
 
-    // --- Custom Cursor Logic ---
-    const cursorDotRef = useRef(null)
-    const cursorOutlineRef = useRef(null)
-
-    useEffect(() => {
-        const moveCursor = (e) => {
-            const { clientX, clientY } = e
-
-            // Direct update for performance (avoiding React render cycle for mouse move)
-            if (cursorDotRef.current) {
-                cursorDotRef.current.style.left = `${clientX}px`
-                cursorDotRef.current.style.top = `${clientY}px`
-            }
-
-            if (cursorOutlineRef.current) {
-                // Add a tiny bit of lag/smoothing to the outline
-                cursorOutlineRef.current.animate({
-                    left: `${clientX}px`,
-                    top: `${clientY}px`
-                }, { duration: 500, fill: 'forwards' })
-            }
-        }
-
-        const handleHoverStart = () => document.body.classList.add('hovering')
-        const handleHoverEnd = () => document.body.classList.remove('hovering')
-
-        window.addEventListener('mousemove', moveCursor)
-
-        // Attach hover listeners to all interactive elements
-        const interactables = document.querySelectorAll('a, button, input, textarea, .card')
-        interactables.forEach(el => {
-            el.addEventListener('mouseenter', handleHoverStart)
-            el.addEventListener('mouseleave', handleHoverEnd)
-        })
-
-        // Observer to attach listeners to dynamic elements
-        const observer = new MutationObserver((mutations) => {
-            mutations.forEach((mutation) => {
-                if (mutation.addedNodes.length) {
-                    const newInteractables = document.querySelectorAll('a, button, input, .card');
-                    newInteractables.forEach(el => {
-                        el.removeEventListener('mouseenter', handleHoverStart); // prevent dupes
-                        el.removeEventListener('mouseleave', handleHoverEnd);
-                        el.addEventListener('mouseenter', handleHoverStart);
-                        el.addEventListener('mouseleave', handleHoverEnd);
-                    });
-                }
-            });
-        });
-
-        observer.observe(document.body, { childList: true, subtree: true });
-
-        return () => {
-            window.removeEventListener('mousemove', moveCursor)
-            interactables.forEach(el => {
-                el.removeEventListener('mouseenter', handleHoverStart)
-                el.removeEventListener('mouseleave', handleHoverEnd)
-            })
-            observer.disconnect();
-            document.body.classList.remove('hovering')
-        }
-    }, [location.pathname]) // Re-run on route change to catch new links
-
     return (
         <div className="app">
             {/* Persistent Backgrounds */}
             <div className="bg-noise" />
             <div className="bg-mesh" />
             <div className="bg-grid" />
-
-            {/* Custom Cursor Elements */}
-            <div ref={cursorDotRef} className="cursor-dot" />
-            <div ref={cursorOutlineRef} className="cursor-outline" />
 
             <header className="header" style={{
                 background: 'transparent',

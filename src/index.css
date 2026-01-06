@@ -92,47 +92,12 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: var(--bg-deep);
-  cursor: none;
-  /* Hide default cursor for custom implementation */
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== Custom Cursor ===== */
-.cursor-dot,
-.cursor-outline {
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: var(--z-cursor);
-  pointer-events: none;
-}
 
-.cursor-dot {
-  width: 8px;
-  height: 8px;
-  background-color: var(--primary);
-}
-
-.cursor-outline {
-  width: 40px;
-  height: 40px;
-  border: 1px solid var(--primary);
-  transition: width 0.2s, height 0.2s, background-color 0.2s;
-}
-
-body:hover .cursor-outline {
-  opacity: 1;
-}
-
-/* Hover Sates */
-body.hovering .cursor-outline {
-  width: 60px;
-  height: 60px;
-  background-color: rgba(99, 102, 241, 0.1);
-  border-color: transparent;
-}
 
 ::selection {
   background: var(--primary);
