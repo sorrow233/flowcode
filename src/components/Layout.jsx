@@ -11,8 +11,11 @@ function Layout() {
                     </NavLink>
                     <nav className="nav">
                         <NavLink to="/" end>首页</NavLink>
-                        <NavLink to="/download">1. 下载 IDE</NavLink>
-                        <NavLink to="/vision">2. 定义愿景</NavLink>
+                        <NavLink to="/download">1. 下载</NavLink>
+                        <NavLink to="/vision">2. 愿景</NavLink>
+                        <NavLink to="/generation">3. 生成</NavLink>
+                        <NavLink to="/cloudflare">4. 部署</NavLink>
+                        <NavLink to="/firebase">5. 存储</NavLink>
                     </nav>
                 </div>
             </header>

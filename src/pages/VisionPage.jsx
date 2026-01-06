@@ -83,7 +83,9 @@ function VisionPage() {
                             <Link to="/download" className="btn btn-secondary" style={{ marginRight: 'var(--space-md)' }}>
                                 ← 上一步：下载 IDE
                             </Link>
-                            {/* 下一步预留 */}
+                            <Link to="/generation" className="btn btn-primary">
+                                下一步：生成代码 →
+                            </Link>
                         </div>
                     </div>
                 </div>
