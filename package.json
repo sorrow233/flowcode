@@ -1,7 +1,7 @@
 {
   "name": "flowcode",
-  "version": "2.3.0",
-  "description": "© 2026 FlowCode v2.3.0 - 零基础 AI 辅助網站開發教程",
+  "version": "2.2.1",
+  "description": "© 2026 FlowCode v2.2.1 - 零基础 AI 辅助網站開發教程",
   "private": true,
   "type": "module",
   "scripts": {
