@@ -4,64 +4,65 @@ function GenerationPage() {
     return (
         <>
             <section className="page-header">
-                <div className="container">
-                    <h1>第三步：生成代码</h1>
-                    <p>见证奇迹的时刻。让 AI 把你的想法变成现实。</p>
+                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+                    <div style={{ display: 'inline-block', padding: '0.5rem 1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', marginBottom: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <span style={{ color: 'var(--secondary)' }}>Step 03</span>
+                    </div>
+                    <h1 className="text-gradient-cyber" style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Code Generation</h1>
+                    <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>Witness the magic. Let AI turn your thoughts into reality.</p>
                 </div>
             </section>
 
-            <section className="page-content">
+            <section className="page-content" style={{ marginTop: '-4rem' }}>
                 <div className="container">
-                    <div className="card" style={{ maxWidth: '800px', margin: '0 auto' }}>
-                        <div className="steps-grid" style={{ gridTemplateColumns: '1fr', gap: 'var(--space-lg)' }}>
+                    <div className="glass-panel card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem' }}>
+                        <div className="steps-grid" style={{ gridTemplateColumns: '1fr', gap: '2rem' }}>
 
-                            <div className="step-card" style={{ padding: 'var(--space-lg)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)' }}>
-                                <div style={{ display: 'flex', gap: 'var(--space-md)', alignItems: 'center', marginBottom: 'var(--space-md)' }}>
-                                    <div className="step-number" style={{ position: 'static', fontSize: 'var(--text-3xl)', opacity: 1 }}>01</div>
-                                    <h3>复制指令</h3>
+                            <div className="glass-panel-heavy" style={{ padding: '2rem', borderRadius: '16px', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                                <div style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--secondary)', lineHeight: 1, opacity: 0.5 }}>01</div>
+                                <div>
+                                    <h3 style={{ marginBottom: '0.5rem' }}>Prepare Command</h3>
+                                    <p className="text-muted" style={{ marginBottom: 0 }}>
+                                        Combine your original vision with the AI's <strong>"Restated Understanding + Suggestions"</strong> from Step 2 into one complete instruction block.
+                                    </p>
                                 </div>
-                                <p>
-                                    把第二步中，AI 完善后的<strong>「理解复述 + 想法建议」</strong>以及你最初的愿景，
-                                    整理成一段完整的指令。
-                                </p>
                             </div>
 
-                            <div className="step-card" style={{ padding: 'var(--space-lg)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)' }}>
-                                <div style={{ display: 'flex', gap: 'var(--space-md)', alignItems: 'center', marginBottom: 'var(--space-md)' }}>
-                                    <div className="step-number" style={{ position: 'static', fontSize: 'var(--text-3xl)', opacity: 1 }}>02</div>
-                                    <h3>发送给 Antigravity</h3>
+                            <div className="glass-panel-heavy" style={{ padding: '2rem', borderRadius: '16px', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                                <div style={{ fontSize: '3rem', fontWeight: 800, color: 'var(--accent)', lineHeight: 1, opacity: 0.5 }}>02</div>
+                                <div>
+                                    <h3 style={{ marginBottom: '0.5rem' }}>Send to Antigravity</h3>
+                                    <p className="text-muted" style={{ marginBottom: 0 }}>
+                                        Paste this block into the IDE chat and press Enter.
+                                    </p>
                                 </div>
-                                <p>
-                                    回到 IDE 的对话框中，粘贴这内容，按下回车发送。
-                                </p>
                             </div>
 
-                            <div className="step-card" style={{ padding: 'var(--space-lg)', border: '1px solid var(--color-border)', borderRadius: 'var(--radius-lg)' }}>
-                                <div style={{ display: 'flex', gap: 'var(--space-md)', alignItems: 'center', marginBottom: 'var(--space-md)' }}>
-                                    <div className="step-number" style={{ position: 'static', fontSize: 'var(--text-3xl)', opacity: 1 }}>03</div>
-                                    <h3>等待生成</h3>
+                            <div className="glass-panel-heavy" style={{ padding: '2rem', borderRadius: '16px', display: 'flex', gap: '1.5rem', alignItems: 'flex-start' }}>
+                                <div style={{ fontSize: '3rem', fontWeight: 800, color: '#fbbf24', lineHeight: 1, opacity: 0.5 }}>03</div>
+                                <div>
+                                    <h3 style={{ marginBottom: '0.5rem' }}>Wait for Creation</h3>
+                                    <p className="text-muted" style={{ marginBottom: 0 }}>
+                                        AI will automatically plan the file structure and write code. Just watch the progress bar until you see "Task Completed".
+                                    </p>
                                 </div>
-                                <p>
-                                    AI 会开始自动规划文件结构、编写代码。你只需要看着进度条滚动，
-                                    等待直到出现 "Task Completed" 或类似的完成提示。
-                                </p>
                             </div>
 
                         </div>
 
-                        <div className="info-box" style={{ marginTop: 'var(--space-xl)' }}>
-                            <div className="info-box-title">☕️ 喝杯咖啡</div>
-                            <p>
-                                根据项目复杂度，这可能需要几分钟。你可以利用这段时间去注册下一步需要的账号。
+                        <div className="surface-card" style={{ marginTop: '3rem', padding: '2rem', borderRadius: '16px', textAlign: 'center' }}>
+                            <div className="info-box-title" style={{ justifyContent: 'center', marginBottom: '1rem', color: 'var(--text-primary)' }}>☕️ Grab a Coffee</div>
+                            <p style={{ color: 'var(--text-secondary)', marginBottom: 0 }}>
+                                Depending on complexity, this may take a few minutes. You can use this time to register for the next step's accounts.
                             </p>
                         </div>
 
-                        <div style={{ marginTop: 'var(--space-2xl)', textAlign: 'center' }}>
-                            <Link to="/vision" className="btn btn-secondary" style={{ marginRight: 'var(--space-md)' }}>
-                                ← 上一步
+                        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-dim)', paddingTop: '2rem' }}>
+                            <Link to="/vision" className="btn btn-secondary">
+                                ← Previous
                             </Link>
                             <Link to="/cloudflare" className="btn btn-primary">
-                                下一步：配置 Cloudflare →
+                                Next: Cloudflare Config →
                             </Link>
                         </div>
                     </div>

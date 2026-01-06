@@ -5,64 +5,75 @@ function CloudflarePage() {
     return (
         <>
             <section className="page-header">
-                <div className="container">
-                    <h1>第四步：准备部署</h1>
-                    <p>注册 Cloudflare 账号，为你的网站上线做准备。</p>
+                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+                    <div style={{ display: 'inline-block', padding: '0.5rem 1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', marginBottom: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <span style={{ color: 'var(--secondary)' }}>Step 04</span>
+                    </div>
+                    <h1 className="text-gradient-cyber" style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Global Deployment</h1>
+                    <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>Register for Cloudflare to bring your site to the edge.</p>
                 </div>
             </section>
 
-            <section className="page-content">
+            <section className="page-content" style={{ marginTop: '-4rem' }}>
                 <div className="container">
-                    <div className="card" style={{ maxWidth: '800px', margin: '0 auto' }}>
+                    <div className="glass-panel card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem' }}>
 
                         <div className="tutorial-section">
-                            <h3>1. 注册 Cloudflare</h3>
-                            <p style={{ marginBottom: 'var(--space-md)' }}>
-                                Cloudflare 是全球领先的云服务提供商，我们将使用它免费托管你的网站。
+                            <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                <span style={{ width: '32px', height: '32px', background: 'var(--secondary)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', color: 'black', fontWeight: 'bold' }}>1</span>
+                                Create Account
+                            </h3>
+                            <p className="text-muted" style={{ margin: '1rem 0 2rem', paddingLeft: '42px' }}>
+                                Cloudflare is the world's leading edge network. We'll use it to host your site for free with enterprise-grade speed.
                             </p>
-                            <a
-                                href="https://dash.cloudflare.com/sign-up"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn btn-secondary"
-                                style={{ marginBottom: 'var(--space-lg)' }}
-                            >
-                                前往 Cloudflare 注册
-                            </a>
+                            <div style={{ paddingLeft: '42px' }}>
+                                <a
+                                    href="https://dash.cloudflare.com/sign-up"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="btn btn-primary"
+                                    style={{ marginBottom: 'var(--space-lg)' }}
+                                >
+                                    Go to Cloudflare Sign Up →
+                                </a>
+                            </div>
                         </div>
 
-                        <div className="tutorial-section">
-                            <h3>2. 获取 API 令牌 (API Token)</h3>
-                            <p style={{ marginBottom: 'var(--space-md)' }}>
-                                为了让你本地的 AI 能够帮你部署网站，你需要一个 API 令牌。
+                        <div className="tutorial-section" style={{ marginTop: '3rem' }}>
+                            <h3 style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+                                <span style={{ width: '32px', height: '32px', background: 'var(--secondary)', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1rem', color: 'black', fontWeight: 'bold' }}>2</span>
+                                Get API Token
+                            </h3>
+                            <p className="text-muted" style={{ margin: '1rem 0', paddingLeft: '42px' }}>
+                                To let AI deploy for you, you need to generate an API Token.
                             </p>
 
-                            <ul className="tutorial-list">
-                                <li>登录 Cloudflare Dashboard</li>
-                                <li>点击右上角的用户头像 → <strong>My Profile (我的个人资料)</strong></li>
-                                <li>选择左侧的 <strong>API Tokens</strong></li>
-                                <li>点击 <strong>Create Token (创建令牌)</strong></li>
-                                <li>使用模板：选择 <strong>Edit Cloudflare Workers</strong> (这个模板包含 Pages 权限)</li>
-                                <li>滚动到底部点击 <strong>Continue to summary</strong></li>
-                                <li>点击 <strong>Create Token</strong></li>
+                            <ul className="tutorial-list" style={{ paddingLeft: '60px' }}>
+                                <li>Log in to Cloudflare Dashboard</li>
+                                <li>Click User Icon (Top Right) → <strong>My Profile</strong></li>
+                                <li>Select <strong>API Tokens</strong> on the left</li>
+                                <li>Click <strong>Create Token</strong></li>
+                                <li>Use Template: <strong>Edit Cloudflare Workers</strong> (Includes Pages rights)</li>
+                                <li>Scroll down and click <strong>Continue to summary</strong></li>
+                                <li>Click <strong>Create Token</strong></li>
                             </ul>
 
-                            <div className="info-box warning" style={{ marginTop: 'var(--space-lg)' }}>
-                                <div className="info-box-title">🔑 关键一步：保存令牌</div>
-                                <p>
-                                    令牌只会在创建时显示一次！<br />
-                                    请立刻把它复制下来，保存在一个安全的地方（比如记事本或密码管理器）。<br />
-                                    <strong>接下来的部署步骤必须用到它。</strong>
+                            <div className="glass-panel-heavy" style={{ marginTop: '2rem', padding: '1.5rem', borderRadius: '16px', borderLeft: '4px solid var(--secondary)' }}>
+                                <div className="info-box-title" style={{ color: 'var(--secondary)' }}>🔑 CRITICAL: Save Your Token</div>
+                                <p style={{ marginBottom: 0, marginTop: '0.5rem', fontSize: '0.95rem' }}>
+                                    The token is only shown <strong>ONCE</strong>. <br />
+                                    Copy it immediately to a safe place (Note/Password Manager).<br />
+                                    <strong>You will need this for the next step.</strong>
                                 </p>
                             </div>
                         </div>
 
-                        <div style={{ marginTop: 'var(--space-2xl)', textAlign: 'center' }}>
-                            <Link to="/generation" className="btn btn-secondary" style={{ marginRight: 'var(--space-md)' }}>
-                                ← 上一步
+                        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-dim)', paddingTop: '2rem' }}>
+                            <Link to="/generation" className="btn btn-secondary">
+                                ← Previous
                             </Link>
                             <Link to="/firebase" className="btn btn-primary">
-                                下一步：配置数据存储 →
+                                Next: Database →
                             </Link>
                         </div>
                     </div>

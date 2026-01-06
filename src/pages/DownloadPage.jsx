@@ -1,76 +1,55 @@
 import { Link } from 'react-router-dom'
-import CodeBlock from '../components/CodeBlock'
 
 function DownloadPage() {
     return (
         <>
             <section className="page-header">
-                <div className="container">
-                    <h1>下载 Antigravity</h1>
-                    <p>Google 官方出品 · 下一代 AI 编程工具</p>
+                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+                    <div style={{ display: 'inline-block', padding: '0.5rem 1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', marginBottom: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <span style={{ color: 'var(--secondary)' }}>Step 01</span>
+                    </div>
+                    <h1 className="text-gradient-cyber" style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Get the Tool</h1>
+                    <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>Download Google Antigravity. Start your journey.</p>
                 </div>
             </section>
 
-            <section className="page-content">
+            <section className="page-content" style={{ marginTop: '-4rem' }}>
                 <div className="container">
-                    <div className="card" style={{ maxWidth: '800px', margin: '0 auto' }}>
-                        <div style={{ textAlign: 'center', marginBottom: 'var(--space-xl)' }}>
-                            <div style={{
-                                width: '80px',
-                                height: '80px',
-                                background: 'var(--gradient-primary)',
-                                borderRadius: '20px',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                fontSize: '40px',
-                                fontWeight: 'bold',
-                                color: 'white',
-                                margin: '0 auto var(--space-lg)'
-                            }}>
-                                A
-                            </div>
-                            <h2>Antigravity IDE</h2>
-                            <p>The Agentic AI Coding Assistant</p>
-                        </div>
+                    <div className="glass-panel card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem' }}>
 
-                        <div className="info-box success" style={{ marginBottom: 'var(--space-xl)' }}>
-                            <div className="info-box-title">🌟 谷歌官方推荐</div>
-                            <p>
-                                这是由 Google Deepmind 团队专门为未来的 Agentic Coding 打造的 IDE。
-                                它不仅仅是一个编辑器，更是你的 AI 编程助手。
+                        <div className="surface-card" style={{ padding: '2rem', borderRadius: '16px', marginBottom: '3rem', textAlign: 'center' }}>
+                            <div style={{ fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '1rem', color: 'var(--text-primary)' }}>Google Antigravity IDE</div>
+                            <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
+                                The most powerful AI-native IDE. Built by Google DeepMind.
                             </p>
-                        </div>
-
-                        <div style={{ display: 'grid', gap: 'var(--space-lg)', marginBottom: 'var(--space-xl)' }}>
-                            <div className="tutorial-section">
-                                <h3>为什么选择 Antigravity？</h3>
-                                <ul className="tutorial-list">
-                                    <li><strong>原生 AI 集成</strong> — 深度整合 Google 最先进的模型</li>
-                                    <li><strong>Agentic Mode</strong> — 让 AI 主动帮你规划、执行和验证代码</li>
-                                    <li><strong>无缝体验</strong> — 开箱即用，无需复杂的配置</li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <div style={{ textAlign: 'center' }}>
                             <a
                                 href="https://antigravity.google/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="btn btn-primary"
-                                style={{ width: '100%', maxWidth: '300px', marginBottom: 'var(--space-lg)' }}
+                                style={{ padding: '1rem 3rem', fontSize: '1.2rem' }}
                             >
-                                前往官网下载
+                                Download Official IDE →
                             </a>
-                            <div>
-                                <Link to="/vision" className="btn btn-secondary">
-                                    下一步：定义愿景 →
-                                </Link>
-                            </div>
-                            <p style={{ marginTop: 'var(--space-md)', fontSize: 'var(--text-sm)' }}>
-                                支持 macOS, Windows 和 Linux
+                        </div>
+
+                        <div className="glass-panel-heavy" style={{ padding: '2rem', borderRadius: '16px', borderLeft: '4px solid var(--accent)' }}>
+                            <div className="info-box-title" style={{ color: 'var(--accent)', marginBottom: '1rem' }}>⚠️ Important Notice</div>
+                            <p style={{ marginBottom: '0.5rem' }}>
+                                We are using the <strong>Official Google Antigravity IDE</strong>.
                             </p>
+                            <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: 0 }}>
+                                Please ensure you download from the official source to guarantee security and access to the latest models (Gemini 2.0).
+                            </p>
+                        </div>
+
+                        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-dim)', paddingTop: '2rem' }}>
+                            <Link to="/" className="btn btn-secondary">
+                                ← Home
+                            </Link>
+                            <Link to="/vision" className="btn btn-primary">
+                                Next: Vision →
+                            </Link>
                         </div>
                     </div>
                 </div>

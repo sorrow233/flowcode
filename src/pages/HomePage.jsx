@@ -2,84 +2,112 @@ import { Link } from 'react-router-dom'
 
 function HomePage() {
     return (
-        <>
-            <section className="hero">
-                <div className="container">
-                    <div className="hero-content">
-                        <div className="hero-badge fade-in">
-                            <span className="hero-badge-dot"></span>
-                            <span>Project FlowCode</span>
+        <div className="home-container" style={{ overflowX: 'hidden' }}>
+            {/* Hero Section */}
+            <section className="hero" style={{ minHeight: '90vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', position: 'relative' }}>
+                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+                    <div className="hero-content" style={{ maxWidth: '1000px', margin: '0 auto', textAlign: 'center' }}>
+
+                        {/* Badge */}
+                        <div className="animate-enter fade-in-delay-1" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', padding: '8px 16px', background: 'rgba(99, 102, 241, 0.1)', border: '1px solid rgba(99, 102, 241, 0.2)', borderRadius: '100px', marginBottom: '2rem' }}>
+                            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#6366f1', boxShadow: '0 0 10px #6366f1' }}></span>
+                            <span style={{ color: '#a5b4fc', fontSize: '0.9rem', fontWeight: 500 }}>AI Native Development</span>
                         </div>
 
-                        <h1 className="fade-in fade-in-delay-1">
-                            AI 时代的<br />
-                            <span className="gradient-text">第一堂编程课</span>
+                        {/* Main Title */}
+                        <h1 className="animate-enter fade-in-delay-1" style={{
+                            fontSize: 'clamp(3rem, 8vw, 6rem)',
+                            fontWeight: 800,
+                            lineHeight: 1.1,
+                            marginBottom: '1.5rem',
+                            letterSpacing: '-0.03em'
+                        }}>
+                            <span className="text-gradient">FlowCode</span> <br />
+                            <span style={{ color: 'white' }}>Build the Future.</span>
                         </h1>
 
-                        <p className="hero-description fade-in fade-in-delay-2">
-                            你不需要懂代码。FlowCode 将手把手教你如何指挥 AI，
-                            把脑海中的想法变成能够在互联网上访问的真实网站。
+                        <p className="animate-enter fade-in-delay-2" style={{
+                            fontSize: 'clamp(1.1rem, 2vw, 1.5rem)',
+                            color: 'var(--text-secondary)',
+                            maxWidth: '700px',
+                            margin: '0 auto 3rem',
+                            lineHeight: 1.6
+                        }}>
+                            From idea to deployment in 30 minutes. <br />
+                            Master the art of AI-assisted engineering with Google Antigravity.
                         </p>
 
-                        <div className="hero-actions fade-in fade-in-delay-3">
-                            <Link to="/download" className="btn btn-primary">
-                                开始旅程 →
+                        <div className="animate-enter fade-in-delay-3" style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                            <Link to="/download" className="btn btn-primary" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
+                                Start Journey
                             </Link>
+                            <a href="https://github.com/sorrow233/flowcode" target="_blank" className="btn btn-glow" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
+                                View on GitHub
+                            </a>
                         </div>
                     </div>
                 </div>
+
+                {/* Abstract Background Elements */}
+                <div className="bg-mesh" style={{ opacity: 0.5 }}></div>
             </section>
 
-            {/* Philosophy / Intro */}
-            <section className="section">
+            {/* Bento Grid Section */}
+            <section className="section" style={{ padding: '4rem 0' }}>
                 <div className="container">
-                    <div className="card" style={{ maxWidth: '900px', margin: '0 auto', textAlign: 'center', padding: 'var(--space-2xl) var(--space-xl)' }}>
-                        <h2>编程不再是极客的特权</h2>
-                        <p style={{ margin: 'var(--space-lg) auto', maxWidth: '700px', fontSize: 'var(--text-lg)' }}>
-                            在过去，你需要学习几年的 C++、Java 或 JavaScript 才能构建一个像样的应用。<br />
-                            现在，有了人类最强大的 AI 模型，你只需要学会<strong>如何清晰地表达想法</strong>。
-                        </p>
-                        <p style={{ color: 'var(--color-text-secondary)' }}>
-                            FlowCode 不是一个工具，而是一套方法论。我们教你如何使用 Google 最新的 Antigravity IDE，
-                            配合 Cloudflare 等现代基础设施，在 30 分钟内上线你的第一个产品。
-                        </p>
-                    </div>
-                </div>
-            </section>
+                    <h2 className="text-center" style={{ marginBottom: '3rem', fontSize: '2.5rem', textAlign: 'center' }}>The New Workflow</h2>
 
-            {/* Preview Steps */}
-            <section className="section">
-                <div className="container" style={{ textAlign: 'center' }}>
-                    <h2 style={{ marginBottom: 'var(--space-3xl)' }}>七步成诗</h2>
+                    <div className="bento-grid" style={{
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                        gap: '24px',
+                        maxWidth: '1200px',
+                        margin: '0 auto'
+                    }}>
+                        {/* Large Card */}
+                        <div className="glass-panel card animate-float" style={{ gridColumn: 'span 2', padding: '3rem', minHeight: '300px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                            <h3 className="text-gradient" style={{ fontSize: '2rem', marginBottom: '1rem' }}>01. Visual First</h3>
+                            <p style={{ fontSize: '1.2rem' }}>Stop wrestling with syntax. Start painting with logic. FlowCode teaches you to think in components, flows, and systems.</p>
+                        </div>
 
-                    <div className="steps-grid" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))' }}>
-                        <Link to="/download" className="card step-card" style={{ textDecoration: 'none' }}>
-                            <span className="step-number">01</span>
-                            <h3>工具</h3>
-                            <p>获取 Google 官方 AI 开发环境</p>
+                        {/* Regular Cards */}
+                        <Link to="/vision" className="glass-panel card" style={{ padding: '2rem', textDecoration: 'none', transition: 'transform 0.3s' }}>
+                            <div className="card-icon" style={{ marginBottom: '1.5rem' }}>🎯</div>
+                            <h3 style={{ color: 'white' }}>Vision</h3>
+                            <p>Define the soul of your product with precision prompts.</p>
                         </Link>
 
-                        <Link to="/vision" className="card step-card" style={{ textDecoration: 'none' }}>
-                            <span className="step-number">02</span>
-                            <h3>愿景</h3>
-                            <p>学会用 Prompt 定义产品灵魂</p>
+                        <Link to="/generation" className="glass-panel card" style={{ padding: '2rem', textDecoration: 'none', transition: 'transform 0.3s' }}>
+                            <div className="card-icon" style={{ marginBottom: '1.5rem' }}>⚡</div>
+                            <h3 style={{ color: 'white' }}>Generation</h3>
+                            <p>Witness the power of code generation in real-time.</p>
                         </Link>
 
-                        <Link to="/generation" className="card step-card" style={{ textDecoration: 'none' }}>
-                            <span className="step-number">03</span>
-                            <h3>创造</h3>
-                            <p>见证 AI 将文字转化为代码</p>
+                        <Link to="/cloudflare" className="glass-panel card" style={{ padding: '2rem', textDecoration: 'none', transition: 'transform 0.3s' }}>
+                            <div className="card-icon" style={{ marginBottom: '1.5rem' }}>🌐</div>
+                            <h3 style={{ color: 'white' }}>Deploy</h3>
+                            <p>Global edge deployment with Cloudflare Pages.</p>
                         </Link>
-                    </div>
 
-                    <div style={{ marginTop: 'var(--space-2xl)' }}>
-                        <Link to="/download" className="btn btn-secondary">
-                            查看完整路线图
+                        <Link to="/firebase" className="glass-panel card" style={{ padding: '2rem', textDecoration: 'none', transition: 'transform 0.3s' }}>
+                            <div className="card-icon" style={{ marginBottom: '1.5rem' }}>🔥</div>
+                            <h3 style={{ color: 'white' }}>Backend</h3>
+                            <p>Serverless power with Firebase integration.</p>
                         </Link>
                     </div>
                 </div>
             </section>
-        </>
+
+            {/* Closing Section */}
+            <section className="section" style={{ textAlign: 'center', padding: '6rem 0' }}>
+                <div className="container">
+                    <h2 style={{ fontSize: '3rem', marginBottom: '2rem' }}>Ready to break the barrier?</h2>
+                    <Link to="/download" className="btn btn-primary" style={{ fontSize: '1.2rem', padding: '1.2rem 3rem' }}>
+                        Get Started Now
+                    </Link>
+                </div>
+            </section>
+        </div>
     )
 }
 

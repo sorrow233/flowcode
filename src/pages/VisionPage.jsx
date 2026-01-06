@@ -5,86 +5,82 @@ function VisionPage() {
     return (
         <>
             <section className="page-header">
-                <div className="container">
-                    <h1>第二步：定义愿景</h1>
-                    <p>告诉 AI 你想做什么，越简单越好。</p>
+                <div className="container" style={{ position: 'relative', zIndex: 10 }}>
+                    <div style={{ display: 'inline-block', padding: '0.5rem 1rem', borderRadius: '50px', background: 'rgba(255,255,255,0.1)', marginBottom: '1rem', border: '1px solid rgba(255,255,255,0.1)' }}>
+                        <span style={{ color: 'var(--secondary)' }}>Step 02</span>
+                    </div>
+                    <h1 className="text-gradient-cyber" style={{ fontSize: '3.5rem', marginBottom: '1rem' }}>Define Your Vision</h1>
+                    <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)' }}>Tell AI what you want. Simplicity is the ultimate sophistication.</p>
                 </div>
             </section>
 
-            <section className="page-content">
+            <section className="page-content" style={{ marginTop: '-4rem' }}>
                 <div className="container">
-                    <div className="card" style={{ maxWidth: '800px', margin: '0 auto' }}>
-                        <h2>用自然语言描述</h2>
-                        <p style={{ marginBottom: 'var(--space-xl)' }}>
-                            打开 Antigravity IDE，在对话框中输入你的想法。
-                            不需要专业的术语，只需要告诉它：
+                    <div className="glass-panel card" style={{ maxWidth: '900px', margin: '0 auto', padding: '3rem' }}>
+                        <h2>Natural Language Description</h2>
+                        <p style={{ marginBottom: '3rem', fontSize: '1.1rem', color: 'var(--text-secondary)' }}>
+                            Open Antigravity IDE and type your thoughts into the chat.
+                            No jargon needed. Just answer these three:
                         </p>
 
-                        <div className="feature-grid" style={{ marginBottom: 'var(--space-xl)' }}>
-                            <div style={{ background: 'var(--color-bg)', padding: 'var(--space-md)', borderRadius: 'var(--radius-lg)' }}>
-                                <h4 style={{ color: 'var(--color-accent)' }}>🎯 目标</h4>
-                                <p>你想开发什么？</p>
+                        <div className="feature-grid" style={{ marginBottom: '3rem', gridTemplateColumns: 'repeat(3, 1fr)' }}>
+                            <div className="surface-card" style={{ padding: '1.5rem', borderRadius: '16px' }}>
+                                <h4 style={{ color: 'var(--secondary)', marginBottom: '0.5rem' }}>🎯 Goal</h4>
+                                <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>What do you want to build?</p>
                             </div>
-                            <div style={{ background: 'var(--color-bg)', padding: 'var(--space-md)', borderRadius: 'var(--radius-lg)' }}>
-                                <h4 style={{ color: 'var(--color-success)' }}>💡 目的</h4>
-                                <p>为什么要做这个？</p>
+                            <div className="surface-card" style={{ padding: '1.5rem', borderRadius: '16px' }}>
+                                <h4 style={{ color: 'var(--accent)', marginBottom: '0.5rem' }}>💡 Purpose</h4>
+                                <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Why do you need it?</p>
                             </div>
-                            <div style={{ background: 'var(--color-bg)', padding: 'var(--space-md)', borderRadius: 'var(--radius-lg)' }}>
-                                <h4 style={{ color: 'var(--color-warning)' }}>📏 限制</h4>
-                                <p>30 字以内</p>
-                            </div>
-                        </div>
-
-                        <div className="info-box success" style={{ marginBottom: 'var(--space-xl)' }}>
-                            <div className="info-box-title">📝 Prompt 模板</div>
-                            <p style={{ marginBottom: 'var(--space-sm)' }}>你可以这样对 AI 说：</p>
-                            <div style={{ fontStyle: 'italic', opacity: 0.9 }}>
-                                "我想做一个[什么样的软件]，目的是[为了解决什么问题/达到什么效果]。(30字以内)"
+                            <div className="surface-card" style={{ padding: '1.5rem', borderRadius: '16px' }}>
+                                <h4 style={{ color: '#fbbf24', marginBottom: '0.5rem' }}>📏 Constraint</h4>
+                                <p style={{ fontSize: '0.9rem', marginBottom: 0 }}>Keep it under 30 words.</p>
                             </div>
                         </div>
 
-                        <h3>交互示例</h3>
-                        <p style={{ marginBottom: 'var(--space-md)' }}>当你输入愿景后，Antigravity AI 会这样回应你：</p>
-
-                        <div className="code-block" style={{ padding: 'var(--space-lg)', position: 'relative' }}>
-                            <div style={{ position: 'absolute', top: '10px', right: '10px', fontSize: '12px', color: 'var(--color-text-muted)' }}>
-                                模拟对话
+                        <div className="glass-panel-heavy" style={{ marginBottom: '3rem', padding: '2rem', borderRadius: '16px', borderLeft: '4px solid var(--secondary)' }}>
+                            <div className="info-box-title" style={{ color: 'var(--secondary)', marginBottom: '1rem' }}>📝 Prompt Template</div>
+                            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '1rem', lineHeight: 1.6 }}>
+                                "I want to build a [Type of App] to [solve what problem/achieve what goal]. (Keep it simple)"
                             </div>
+                        </div>
 
-                            <div style={{ display: 'flex', gap: 'var(--space-md)', marginBottom: 'var(--space-lg)' }}>
-                                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--color-text-secondary)', flexShrink: 0 }}></div>
+                        <h3>Interaction Example</h3>
+                        <p style={{ marginBottom: '1.5rem', color: 'var(--text-secondary)' }}>This is how Antigravity AI responds to your vision:</p>
+
+                        <div className="code-block" style={{ padding: '2rem', background: 'var(--bg-base)', borderRadius: '16px', border: '1px solid var(--border-dim)' }}>
+                            <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
+                                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--bg-elevated)', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.8rem', color: 'var(--text-muted)' }}>YOU</div>
                                 <div>
-                                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-muted)', marginBottom: '4px' }}>你</div>
-                                    <div style={{ background: 'var(--color-bg-elevated)', padding: 'var(--space-sm) var(--space-md)', borderRadius: '0 var(--radius-lg) var(--radius-lg) var(--radius-lg)' }}>
-                                        我想做一个极简的待办清单，为了让自己不再忘记买牛奶，风格要像便利贴一样。
+                                    <div style={{ background: 'var(--bg-elevated)', padding: '1rem', borderRadius: '0 16px 16px 16px', color: 'var(--text-primary)' }}>
+                                        I want to make a minimalist Todo list to remind me to buy milk, styled like sticky notes.
                                     </div>
                                 </div>
                             </div>
 
-                            <div style={{ display: 'flex', gap: 'var(--space-md)' }}>
-                                <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'var(--gradient-primary)', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px' }}>A</div>
+                            <div style={{ display: 'flex', gap: '1rem' }}>
+                                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--grad-primary)', flexShrink: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.9rem', fontWeight: 'bold' }}>AI</div>
                                 <div>
-                                    <div style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-muted)', marginBottom: '4px' }}>Antigravity AI</div>
-                                    <div style={{ background: 'rgba(99, 102, 241, 0.1)', border: '1px solid var(--color-accent-glow)', padding: 'var(--space-sm) var(--space-md)', borderRadius: '0 var(--radius-lg) var(--radius-lg) var(--radius-lg)' }}>
-                                        <p style={{ marginBottom: 'var(--space-sm)' }}>
-                                            <strong>理解复述：</strong><br />
-                                            你想创建一个<strong>模拟便利贴风格的极简待办清单（Todo List）</strong>，核心场景是生活备忘（如购物提醒）。
+                                    <div style={{ background: 'rgba(99, 102, 241, 0.1)', border: '1px solid rgba(99, 102, 241, 0.2)', padding: '1rem', borderRadius: '0 16px 16px 16px' }}>
+                                        <p style={{ marginBottom: '1rem', color: 'var(--text-primary)' }}>
+                                            <strong>Understood:</strong><br />
+                                            You want a <strong>Sticky Note style Minimalist Todo List</strong>.
                                         </p>
-                                        <p>
-                                            <strong>我的想法：</strong><br />
-                                            这非常有趣！便利贴风格可以带来轻松的使用体验。建议我们使用黄色背景卡片，配合手写体字体，去掉复杂的分类和标签，回归最纯粹的记录功能。
+                                        <p style={{ color: 'var(--text-secondary)' }}>
+                                            <strong>My Plan:</strong><br />
+                                            Great idea! The sticky note aesthetic adds a fun, tactile feel. I suggest using a yellow background for cards with a handwritten font, removing complex categorization to keep it pure.
                                         </p>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div style={{ marginTop: 'var(--space-2xl)', textAlign: 'center' }}>
-                            <Link to="/download" className="btn btn-secondary" style={{ marginRight: 'var(--space-md)' }}>
-                                ← 上一步：下载 IDE
+                        <div style={{ marginTop: '4rem', display: 'flex', justifyContent: 'space-between', borderTop: '1px solid var(--border-dim)', paddingTop: '2rem' }}>
+                            <Link to="/download" className="btn btn-secondary">
+                                ← Download IDE
                             </Link>
                             <Link to="/generation" className="btn btn-primary">
-                                下一步：生成代码 →
+                                Next: Generation →
                             </Link>
                         </div>
                     </div>
