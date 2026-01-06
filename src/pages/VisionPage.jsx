@@ -13,7 +13,7 @@ function VisionPage() {
             toast.error('請填寫完整資訊')
             return
         }
-        const prompt = `我想構建一個 ${appType} 來 ${goal}。（保持簡潔）`
+        const prompt = `我想構建一個：${appType}。我希望這個軟件能解決：${goal}。我正在開發一些軟件，我給你一些我的想法，你理解我的想法之後，完整的把想法複述一下,然後給我完美的實現或者解決方案什麼的，你只需要給思路，不要寫代碼`
         setGeneratedPrompt(prompt)
         toast.success('提示詞已生成！')
     }
