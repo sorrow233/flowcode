@@ -166,9 +166,9 @@
     },
     "cloudflare": {
         "step_num_kanji": "肆",
-        "step_num_text": "第四步",
-        "title": "全球部署",
-        "subtitle": "注册 Cloudflare，将你的网站推向全球边缘网路",
+        "step_num_text": "第四步：星途",
+        "title": "全球共鸣",
+        "subtitle": "接入 Cloudflare —— 它是你跨越山海的喉舌，让你的声音瞬间震动全球。",
         "steps": {
             "1": {
                 "title": "创建帐号",
@@ -222,9 +222,9 @@
     },
     "firebase": {
         "step_num_kanji": "伍",
-        "step_num_text": "第五步",
-        "title": "无限存储",
-        "subtitle": "连接 Google Firebase，实现规模化数据存储",
+        "step_num_text": "第五步：永恒",
+        "title": "生命脉动",
+        "subtitle": "唤醒 Google Firebase —— 它是你作品的记忆之魂，记录每一次心跳与流转。",
         "steps": {
             "1": {
                 "title": "创建项目",
@@ -275,9 +275,9 @@
     },
     "domain": {
         "step_num_kanji": "陆",
-        "step_num_text": "第六步",
-        "title": "你的身份",
-        "subtitle": "自订域名是你的位元资产",
+        "step_num_text": "第六步：冠冕",
+        "title": "唯一印记",
+        "subtitle": "铭刻你的域名 —— 它是你在位元洪流中的神圣资产，独一无二。",
         "providers_title": "域名提供商",
         "providers_desc": "我们推荐这些稳定且价格合理的提供商：",
         "disclaimer": "* 均为官方直达连结，本专案无任何利益关系或佣金抽成。",
