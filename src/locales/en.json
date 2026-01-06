@@ -1,0 +1,8 @@
+{
+    "common": {
+        "loading": "Loading...",
+        "copy_success": "Copied to clipboard",
+        "copy_fail": "Failed to copy",
+        "error": "Error occurred"
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "hero": {
+        "system_online": "System Online",
+        "title_flow": "F L O W",
+        "title_code": "C O D E",
+        "subtitle": "「 用自然語言，創造無限可能 」",
+        "subtitle_sub": "AI 原生開發環境",
+        "cta_start": "開始旅程",
+        "cta_github": "GitHub →"
+    },
+    "cmd": {
+        "placeholder": "輸入指令或是搜尋頁面...",
+        "empty": "找不到結果",
+        "nav": "導航 (Navigation)",
+        "theme": "主題 (Theme)",
+        "system": "系統 (System)",
+        "home": "首頁 (Home)",
+        "download": "下載 (Download)",
+        "vision": "願景 (Vision)",
+        "generation": "生成 (Generation)",
+        "deploy": "部署 (Cloudflare)",
+        "storage": "存儲 (Firebase)",
+        "domain": "域名 (Domain)",
+        "success": "完成 (Success)",
+        "switch_theme": "切換至",
+        "github": "查看 GitHub 源碼"
+    }
+}

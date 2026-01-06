@@ -1,0 +1,28 @@
+{
+    "hero": {
+        "system_online": "System Online",
+        "title_flow": "F L O W",
+        "title_code": "C O D E",
+        "subtitle": "\"Create infinite possibilities with natural language\"",
+        "subtitle_sub": "AI Native Development Environment",
+        "cta_start": "Start Journey",
+        "cta_github": "GitHub →"
+    },
+    "cmd": {
+        "placeholder": "Type a command or search...",
+        "empty": "No results found.",
+        "nav": "Navigation",
+        "theme": "Theme",
+        "system": "System",
+        "home": "Home",
+        "download": "Download",
+        "vision": "Vision",
+        "generation": "Generation",
+        "deploy": "Deploy (Cloudflare)",
+        "storage": "Storage (Firebase)",
+        "domain": "Domain",
+        "success": "Success",
+        "switch_theme": "Switch to",
+        "github": "View GitHub Source"
+    }
+}

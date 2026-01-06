@@ -1,0 +1,28 @@
+{
+    "hero": {
+        "system_online": "System Online",
+        "title_flow": "F L O W",
+        "title_code": "C O D E",
+        "subtitle": "「 自然言語で、無限の可能性を創造する 」",
+        "subtitle_sub": "AIネイティブ開発環境",
+        "cta_start": "旅を始める",
+        "cta_github": "GitHub →"
+    },
+    "cmd": {
+        "placeholder": "コマンドを入力または検索...",
+        "empty": "結果が見つかりません",
+        "nav": "ナビゲーション (Navigation)",
+        "theme": "テーマ (Theme)",
+        "system": "システム (System)",
+        "home": "ホーム (Home)",
+        "download": "ダウンロード (Download)",
+        "vision": "ビジョン (Vision)",
+        "generation": "生成 (Generation)",
+        "deploy": "デプロイ (Cloudflare)",
+        "storage": "ストレージ (Firebase)",
+        "domain": "ドメイン (Domain)",
+        "success": "完了 (Success)",
+        "switch_theme": "テーマ切り替え: ",
+        "github": "GitHubソースを表示"
+    }
+}

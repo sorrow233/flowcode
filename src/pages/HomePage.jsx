@@ -1,5 +1,6 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 // --- 和紙卡片組件 ---
 const WashiCard = ({ children, to, className = '', style = {} }) => {
@@ -46,6 +47,7 @@ const WashiCard = ({ children, to, className = '', style = {} }) => {
 }
 
 function HomePage() {
+    const { t } = useTranslation()
     return (
         <div style={{ overflowX: 'hidden' }}>
 
@@ -84,7 +86,7 @@ function HomePage() {
                             color: 'var(--text-nezumi)',
                             letterSpacing: '0.15em'
                         }}>
-                            System Online
+                            {t('hero.system_online')}
                         </span>
                     </div>
 
@@ -102,14 +104,14 @@ function HomePage() {
                             WebkitTextStroke: '1px rgba(255,255,255,0.2)',
                             fontFamily: 'var(--font-mincho)'
                         }}>
-                            F L O W
+                            {t('hero.title_flow')}
                         </span>
                         <span className="text-gradient-shu" style={{
                             display: 'block',
                             fontWeight: 500,
                             fontFamily: 'var(--font-gothic)'
                         }}>
-                            C O D E
+                            {t('hero.title_code')}
                         </span>
                     </h1>
 
@@ -122,10 +124,10 @@ function HomePage() {
                         lineHeight: 1.8,
                         fontFamily: 'var(--font-gothic)'
                     }}>
-                        「 用自然語言，創造無限可能 」
+                        {t('hero.subtitle')}
                         <br />
                         <span style={{ color: 'var(--text-ishi)', fontSize: '0.9em' }}>
-                            AI 原生開發環境
+                            {t('hero.subtitle_sub')}
                         </span>
                     </p>
 
@@ -140,7 +142,7 @@ function HomePage() {
                             padding: '1rem 2.5rem',
                             fontSize: '1rem'
                         }}>
-                            開始旅程
+                            {t('hero.cta_start')}
                         </Link>
                         <a
                             href="https://github.com/sorrow233/flowcode"
@@ -149,7 +151,7 @@ function HomePage() {
                             className="btn btn-secondary"
                             style={{ padding: '1rem 2rem' }}
                         >
-                            GitHub →
+                            {t('hero.cta_github')}
                         </a>
                     </div>
                 </div>

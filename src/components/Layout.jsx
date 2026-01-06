@@ -1,5 +1,8 @@
-import { Outlet, NavLink, useLocation } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import { CommandPalette } from './CommandPalette'
+import AnimatedOutlet from './AnimatedOutlet'
+import { loadSavedTheme } from '../utils/theme'
 
 // Sakura Particle Component
 const SakuraParticles = () => {
@@ -36,6 +39,11 @@ function Layout() {
     const location = useLocation()
     const [scrolled, setScrolled] = useState(false)
 
+    // Load saved theme on mount
+    useEffect(() => {
+        loadSavedTheme()
+    }, [])
+
     // Scroll to top on route change
     useEffect(() => {
         window.scrollTo(0, 0)
@@ -63,6 +71,8 @@ function Layout() {
 
     return (
         <div className="app" style={{ minHeight: '100vh', position: 'relative' }}>
+            <CommandPalette />
+
             {/* 背景層 */}
             <div className="bg-ink-wash" />
             <div className="bg-grain" />
@@ -158,7 +168,7 @@ function Layout() {
                 minHeight: '100vh',
                 paddingTop: '100px'
             }}>
-                <Outlet />
+                <AnimatedOutlet />
             </main>
 
             {/* 禪意頁腳 */}
